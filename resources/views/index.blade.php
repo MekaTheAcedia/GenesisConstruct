@@ -44,26 +44,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!--sidebar nav start-->
 					<ul class="nav nav-pills nav-stacked custom-nav">
 						<li class="active"><a href="index.html"><i class="lnr lnr-home"></i><span>Home</span></a></li>
-						<li><a href="radio.html"><i class="camera"></i> <span>Radio</span></a></li>
+						<li><a href="radio"><i class="camera"></i> <span>Radio</span></a></li>
 						<li><a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-th"></i><span>Apps</span></a></li>
-						<li><a href="radio.html"><i class="lnr lnr-users"></i> <span>Artists</span></a></li>
-						<li><a href="browse.html"><i class="lnr lnr-music-note"></i> <span>Albums</span></a></li>
-						<li class="menu-list"><a href="browse.html"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>
+						<li><a href="radio"><i class="lnr lnr-users"></i> <span>Artists</span></a></li>
+						<li><a href="browse"><i class="lnr lnr-music-note"></i> <span>Albums</span></a></li>
+						<li class="menu-list"><a href="browse"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>
 						<ul class="sub-menu-list">
-							<li><a href="browse.html">Artists</a> </li>
+							<li><a href="browse">Artists</a> </li>
 							<li><a href="404.html">Services</a> </li>
 						</ul>
 					</li>
-					<li><a href="blog.html"><i class="lnr lnr-book"></i><span>Blog</span></a></li>
-					<li><a href="typography.html"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>
+					<li><a href="blog"><i class="lnr lnr-book"></i><span>Blog</span></a></li>
+					<li><a href="typography"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>
 					<li class="menu-list"><a href="#"><i class="lnr lnr-heart"></i>  <span>My Favourities</span></a>
 					<ul class="sub-menu-list">
-						<li><a href="radio.html">All Songs</a></li>
+						<li><a href="radio">All Songs</a></li>
 					</ul>
 				</li>
-				<li class="menu-list"><a href="contact.html"><i class="fa fa-thumb-tack"></i><span>Contact</span></a>
+				<li class="menu-list"><a href="contact"><i class="fa fa-thumb-tack"></i><span>Contact</span></a>
 				<ul class="sub-menu-list">
-					<li><a href="contact.html">Location</a> </li>
+					<li><a href="contact">Location</a> </li>
 				</ul>
 			</li>
 		</ul>
@@ -127,7 +127,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<input type="text" value="Mobile number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile number';}" required="">
 								<input type="text" value="Email id" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email id';}" required="">
 								<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-								
+
 								<input type="submit" value="CREATE ACCOUNT" >
 							</form>
 						</div>
@@ -198,7 +198,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<ul class="next-top">
 						<li><a class="ar" href="#"> <img src="images/arrow.png" alt=""/></a></li>
 						<li><a class="ar2" href="#"><img src="images/arrow2.png" alt=""/></i></a></li>
-						
+
 					</ul>
 				</div>
 				<div class="col-md-4 login-pop">
@@ -234,7 +234,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //header-ends -->
 <div id="page-wrapper">
 	<div class="inner-content">
-		
+
 		<div class="music-left">
 			<!--banner-section-->
 			<div class="banner-section">
@@ -246,7 +246,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<img src="images/11.jpg" class="img-responsive" alt="">
 								</div>
 								<div class="banner-info">
-									<a class="trend" href="single.html">TRENDING</a>
+									<a class="trend" href="single">TRENDING</a>
 									<h3>Let Your Home</h3>
 									<p>Album by <span>Rock star</span></p>
 								</div>
@@ -256,7 +256,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<img src="images/22.jpg" class="img-responsive" alt="">
 								</div>
 								<div class="banner-info">
-									<a class="trend" href="single.html">TRENDING</a>
+									<a class="trend" href="single">TRENDING</a>
 									<h3>Charis Brown feet</h3>
 									<p>Album by <span>Rock star</span></p>
 								</div>
@@ -266,7 +266,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<img src="images/33.jpg" class="img-responsive" alt="">
 								</div>
 								<div class="banner-info">
-									<a class="trend" href="single.html">TRENDING</a>
+									<a class="trend" href="single">TRENDING</a>
 									<h3>Let Your Home</h3>
 									<p>Album by <span>Rock star</span></p>
 								</div>
@@ -293,7 +293,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							$('.events').append("<li>after event fired.</li>");
 							}
 						});
-					
+
 						});
 					</script>
 					<div class="clearfix"> </div>
@@ -332,7 +332,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div id="small-dialog" class="mfp-hide">
 					<iframe src="https://player.vimeo.com/video/12985622"></iframe>
-					
+
 				</div>
 				<div class="col-md-3 content-grid">
 					<a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="images/v2.jpg" title="allbum-name"></a>
@@ -344,7 +344,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="col-md-3 content-grid last-grid">
 					<a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="images/v4.jpg" title="allbum-name"></a>
-					
+
 					<a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
 				</div>
 				<div class="col-md-3 content-grid">
@@ -353,11 +353,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div id="small-dialog" class="mfp-hide">
 					<iframe src="https://player.vimeo.com/video/12985622"></iframe>
-					
+
 				</div>
 				<div class="col-md-3 content-grid">
 					<a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="images/v6.jpg" title="allbum-name"></a>
-					
+
 					<a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
 				</div>
 				<div class="col-md-3 content-grid">
@@ -372,7 +372,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 			<!--//End-albums-->
 			<!--//discover-view-->
-			
+
 			<div class="albums second">
 				<div class="tittle-head">
 					<h3 class="tittle">Discover <span class="new">View</span></h3>
@@ -380,36 +380,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="clearfix"> </div>
 				</div>
 				<div class="col-md-3 content-grid">
-					<a href="single.html"><img src="images/v11.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single.html"><h5>Pop</h5></a></div>
+					<a href="single"><img src="images/v11.jpg" title="allbum-name"></a>
+					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
 				</div>
 				<div class="col-md-3 content-grid">
-					<a href="single.html"><img src="images/v22.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single.html"><h5>Pop</h5></a></div>
+					<a href="single"><img src="images/v22.jpg" title="allbum-name"></a>
+					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
 				</div>
 				<div class="col-md-3 content-grid">
-					<a href="single.html"><img src="images/v33.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single.html"><h5>Pop</h5></a></div>
+					<a href="single"><img src="images/v33.jpg" title="allbum-name"></a>
+					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
 				</div>
 				<div class="col-md-3 content-grid last-grid">
-					<a href="single.html"><img src="images/v44.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single.html"><h5>Pop</h5></a></div>
+					<a href="single"><img src="images/v44.jpg" title="allbum-name"></a>
+					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
 				</div>
 				<div class="col-md-3 content-grid">
-					<a href="single.html"><img src="images/v55.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single.html"><h5>Pop</h5></a></div>
+					<a href="single"><img src="images/v55.jpg" title="allbum-name"></a>
+					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
 				</div>
 				<div class="col-md-3 content-grid">
-					<a href="single.html"><img src="images/v66.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single.html"><h5>Pop</h5></a></div>
+					<a href="single"><img src="images/v66.jpg" title="allbum-name"></a>
+					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
 				</div>
 				<div class="col-md-3 content-grid">
-					<a href="single.html"><img src="images/v11.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single.html"><h5>Pop</h5></a></div>
+					<a href="single"><img src="images/v11.jpg" title="allbum-name"></a>
+					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
 				</div>
 				<div class="col-md-3 content-grid last-grid">
-					<a href="single.html"><img src="images/v22.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single.html"><h5>Pop</h5></a></div>
+					<a href="single"><img src="images/v22.jpg" title="allbum-name"></a>
+					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -449,7 +449,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											</div>
 										</div>
 										<div class="jp-toggles">
-											
+
 											<button class="jp-full-screen" role="button" tabindex="0">full screen</button>
 										</div>
 									</div>
@@ -480,7 +480,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					jPlayer: "#jquery_jplayer_1",
 					cssSelectorAncestor: "#jp_container_1"
 				}, [
-					
+
 					{
 						title:"1. Ellie-Goulding",
 						artist:"",
@@ -578,7 +578,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">No ads unlimited Devices</a><div class="clearfix"></div></li>
 								<li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Stream songs in High Definition</a><div class="clearfix"></div></li>
 							</ul>
-							<a href="single.html" class="price">Upgrade</a>
+							<a href="single" class="price">Upgrade</a>
 						</div>
 					</div>
 					<div class="pricing two">
@@ -593,7 +593,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">No ads unlimited Devices</a><div class="clearfix"></div></li>
 								<li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Stream songs in High Definition</a><div class="clearfix"></div></li>
 							</ul>
-							<a href="single.html" class="price">Upgrade</a>
+							<a href="single" class="price">Upgrade</a>
 						</div>
 					</div>
 					<div class="clearfix"></div>
@@ -606,7 +606,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- /w3l-agile-its -->
 	</div>
 	<!--body wrapper start-->
-	
+
 	<div class="review-slider">
 		<div class="tittle-head">
 			<h3 class="tittle">Featured Albums <span class="new"> New</span></h3>
@@ -614,79 +614,79 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<ul id="flexiselDemo1">
 			<li>
-				<a href="single.html"><img src="images/v1.jpg" alt=""/></a>
+				<a href="single"><img src="images/v1.jpg" alt=""/></a>
 				<div class="slide-title"><h4>Adele21 </div>
 				<div class="date-city">
 					<h5>Jan-02-16</h5>
 					<div class="buy-tickets">
-						<a href="single.html">READ MORE</a>
+						<a href="single">READ MORE</a>
 					</div>
 				</div>
 			</li>
 			<li>
-				<a href="single.html"><img src="images/v2.jpg" alt=""/></a>
+				<a href="single"><img src="images/v2.jpg" alt=""/></a>
 				<div class="slide-title"><h4>Adele21</h4></div>
 				<div class="date-city">
 					<h5>Jan-02-16</h5>
 					<div class="buy-tickets">
-						<a href="single.html">READ MORE</a>
+						<a href="single">READ MORE</a>
 					</div>
 				</div>
 			</li>
 			<li>
-				<a href="single.html"><img src="images/v3.jpg" alt=""/></a>
+				<a href="single"><img src="images/v3.jpg" alt=""/></a>
 				<div class="slide-title"><h4>Shomlock</h4></div>
 				<div class="date-city">
 					<h5>Jan-02-16</h5>
 					<div class="buy-tickets">
-						<a href="single.html">READ MORE</a>
+						<a href="single">READ MORE</a>
 					</div>
 				</div>
 			</li>
 			<li>
-				<a href="single.html"><img src="images/v4.jpg" alt=""/></a>
+				<a href="single"><img src="images/v4.jpg" alt=""/></a>
 				<div class="slide-title"><h4>Stuck on a feeling</h4></div>
 				<div class="date-city">
 					<h5>Jan-02-16</h5>
 					<div class="buy-tickets">
-						<a href="single.html">READ MORE</a>
+						<a href="single">READ MORE</a>
 					</div>
 				</div>
 			</li>
 			<li>
-				<a href="single.html"><img src="images/v5.jpg" alt=""/></a>
+				<a href="single"><img src="images/v5.jpg" alt=""/></a>
 				<div class="slide-title"><h4>Ricky Martine </h4></div>
 				<div class="date-city">
 					<h5>Jan-02-16</h5>
 					<div class="buy-tickets">
-						<a href="single.html">READ MORE</a>
+						<a href="single">READ MORE</a>
 					</div>
 				</div>
 			</li>
 			<li>
-				<a href="single.html"><img src="images/v6.jpg" alt=""/></a>
+				<a href="single"><img src="images/v6.jpg" alt=""/></a>
 				<div class="slide-title"><h4>Ellie Goluding </h4></div>
 				<div class="date-city">
 					<h5>Jan-02-16</h5>
 					<div class="buy-tickets">
-						<a href="single.html">READ MORE</a>
+						<a href="single">READ MORE</a>
 					</div>
 				</div>
 			</li>
 			<li>
-				<a href="single.html"><img src="images/v6.jpeg" alt=""/></a>
+				<a href="single"><img src="images/v6.jpeg" alt=""/></a>
 				<div class="slide-title"><h4>Fifty Shades </h4></div>
 				<div class="date-city">
 					<h5>Jan-02-16</h5>
 					<div class="buy-tickets">
-						<a href="single.html">READ MORE</a>
+						<a href="single">READ MORE</a>
 					</div>
 				</div>
 			</li>
 		</ul>
 		<script type="text/javascript">
 		$(window).load(function() {
-		
+
 		$("#flexiselDemo1").flexisel({
 			visibleItems: 5,
 			animationSpeed: 1000,
@@ -724,11 +724,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<h3>Navigation</h3>
 	<ul class="list1">
 		<li><a href="index.html">Home</a></li>
-		<li><a href="radio.html">All Songs</a></li>
-		<li><a href="browse.html">Albums</a></li>
-		<li><a href="radio.html">New Collections</a></li>
-		<li><a href="blog.html">Blog</a></li>
-		<li><a href="contact.html">Contact</a></li>
+		<li><a href="radio">All Songs</a></li>
+		<li><a href="browse">Albums</a></li>
+		<li><a href="radio">New Collections</a></li>
+		<li><a href="blog">Blog</a></li>
+		<li><a href="contact">Contact</a></li>
 	</ul>
 </div>
 <div class="footer-grid">
@@ -746,11 +746,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="footer-grid">
 	<h3>Our Support</h3>
 	<ul class="list1">
-		<li><a href="contact.html">Site Map</a></li>
+		<li><a href="contact">Site Map</a></li>
 		<li><a href="#">Search Terms</a></li>
 		<li><a href="#">Advanced Search</a></li>
 		<li><a href="#">Mobile</a></li>
-		<li><a href="contact.html">Contact Us</a></li>
+		<li><a href="contact">Contact Us</a></li>
 		<li><a href="#">Mobile</a></li>
 		<li><a href="#">Addresses</a></li>
 	</ul>

@@ -11,7 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <title>Mosaic a Entertainment Category Flat Bootstrap Responsive Website Template | Browse :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Mosaic Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+<meta name="keywords" content="Mosaic Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
  <!-- Bootstrap Core CSS -->
@@ -19,7 +19,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- Custom CSS -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <!-- Graph CSS -->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link href="css/font-awesome.css" rel="stylesheet">
 <!-- jQuery -->
 <!-- lined-icons -->
 <link rel="stylesheet" href="css/icon-font.css" type='text/css' />
@@ -28,7 +28,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery-2.1.4.js"></script>
 
 
-</head> 
+</head>
     	 <!-- /w3layouts-agile -->
  <body class="sticky-header left-side-collapsed"  onload="initMap()">
     <section>
@@ -49,29 +49,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!--sidebar nav start-->
 					<ul class="nav nav-pills nav-stacked custom-nav">
 						<li class="active"><a href="index.html"><i class="lnr lnr-home"></i><span>Home</span></a></li>
-						
-						<li><a href="radio.html"><i class="camera"></i> <span>Radio</span></a></li>
+
+						<li><a href="radio"><i class="camera"></i> <span>Radio</span></a></li>
 						<li><a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-th"></i><span>Apps</span></a></li>
-						<li><a href="radio.html"><i class="lnr lnr-users"></i> <span>Artists</span></a></li> 
-						<li><a href="browse.html"><i class="lnr lnr-music-note"></i> <span>Albums</span></a></li>						
-						<li class="menu-list"><a href="browse.html"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>  
+						<li><a href="radio"><i class="lnr lnr-users"></i> <span>Artists</span></a></li>
+						<li><a href="browse"><i class="lnr lnr-music-note"></i> <span>Albums</span></a></li>
+						<li class="menu-list"><a href="browse"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>
 							<ul class="sub-menu-list">
-								<li><a href="browse.html">Artists</a> </li>
+								<li><a href="browse">Artists</a> </li>
 								<li><a href="404.html">Services</a> </li>
 							</ul>
 						</li>
-						<li><a href="blog.html"><i class="lnr lnr-book"></i><span>Blog</span></a></li>
-						<li><a href="typography.html"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>
-						<li class="menu-list"><a href="#"><i class="lnr lnr-heart"></i>  <span>My Favourities</span></a> 
+						<li><a href="blog"><i class="lnr lnr-book"></i><span>Blog</span></a></li>
+						<li><a href="typography"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>
+						<li class="menu-list"><a href="#"><i class="lnr lnr-heart"></i>  <span>My Favourities</span></a>
 							<ul class="sub-menu-list">
-								<li><a href="radio.html">All Songs</a></li>
+								<li><a href="radio">All Songs</a></li>
 							</ul>
 						</li>
-						<li class="menu-list"><a href="contact.html"><i class="fa fa-thumb-tack"></i><span>Contact</span></a>
+						<li class="menu-list"><a href="contact"><i class="fa fa-thumb-tack"></i><span>Contact</span></a>
 							<ul class="sub-menu-list">
-								<li><a href="contact.html">Location</a> </li>
+								<li><a href="contact">Location</a> </li>
 							</ul>
-						</li>     
+						</li>
 					</ul>
 				<!--sidebar nav end-->
 			</div>
@@ -82,7 +82,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="modal-dialog facebook" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
 						<div class="modal-body">
 							<div class="app-grids">
@@ -114,7 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="modal-dialog" role="document">
 					<div class="modal-content modal-info">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
 						<div class="modal-body modal-spa">
 							<div class="sign-grids">
@@ -131,13 +131,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h3>Create your account </h3>
 											<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
 											<input type="text" value="Mobile number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile number';}" required="">
-											<input type="text" value="Email id" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email id';}" required="">	
-											<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">	
-											
+											<input type="text" value="Email id" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email id';}" required="">
+											<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+
 											<input type="submit" value="CREATE ACCOUNT" >
 										</form>
 									</div>
-									<div class="clearfix"></div>								
+									<div class="clearfix"></div>
 								</div>
 								<p>By logging in you agree to our <span>Terms and Conditions</span> and <span>Privacy Policy</span></p>
 							</div>
@@ -156,7 +156,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--toggle button end-->
 			<!--notification menu start -->
 				<div class="menu-right">
-					<div class="profile_details">		
+					<div class="profile_details">
 						  <div class="col-md-4 serch-part">
 								<div id="sb-search" class="sb-search">
 									<form>
@@ -205,12 +205,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<ul class="next-top">
 													<li><a class="ar" href="#"> <img src="images/arrow.png" alt=""/></a></li>
 													<li><a class="ar2" href="#"><img src="images/arrow2.png" alt=""/></i></a></li>
-														
-											 </ul>	
+
+											 </ul>
 											</div>
 											<div class="col-md-4 login-pop">
 												<div id="loginpop"><a href="#" id="loginButton"><span>Login <i class="arrow glyphicon glyphicon-chevron-right"></i></span></a><a class="top-sign" href="#" data-toggle="modal" data-target="#myModal5"><i class="fa fa-sign-in"></i></a>
-														<div id="loginBox">                
+														<div id="loginBox">
 														<form action="#" method="post" id="loginForm">
 																	<fieldset id="body">
 																		<fieldset>
@@ -244,7 +244,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="inner-content">
 				      <div class="music-browse">
 					<!--albums-->
-					<!-- pop-up-box --> 
+					<!-- pop-up-box -->
 							<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all">
 							<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
 							 <script>
@@ -261,140 +261,140 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										mainClass: 'my-mfp-zoom-in'
 									});
 									});
-							</script>		
+							</script>
 					<!--//pop-up-box -->
-					
+
 						<div class="browse">
 								<div class="tittle-head two">
 									<h3 class="tittle">New Releses <span class="new">New</span></h3>
-									<a href="browse.html"><h4 class="tittle third">See all</h4></a>
+									<a href="browse"><h4 class="tittle third">See all</h4></a>
 									<div class="clearfix"> </div>
 								</div>
 
 								<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v11.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-									<a class="sing" href="single.html">Lootera</a>
+									<a  href="single"><img src="images/v11.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+									<a class="sing" href="single">Lootera</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v22.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Jaremy Cam</a>
+									<a  href="single"><img src="images/v22.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Jaremy Cam</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-								<a  href="single.html"><img src="images/v33.jpg" title="allbum-name"></a>
-								 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Selah</a>
+								<a  href="single"><img src="images/v33.jpg" title="allbum-name"></a>
+								 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Selah</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v44.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Jim Brickman</a>
+									<a  href="single"><img src="images/v44.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Jim Brickman</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v1.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Adele21</a>
+									<a  href="single"><img src="images/v1.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Adele21</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v55.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Party Night</a>
+									<a  href="single"><img src="images/v55.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Party Night</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v6.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Ellie Goluding</a>
+									<a  href="single"><img src="images/v6.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Ellie Goluding</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v66.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-									<a class="sing" href="single.html">Diana</a>
+									<a  href="single"><img src="images/v66.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+									<a class="sing" href="single">Diana</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v6.jpeg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Fifty Shades</a>
+									<a  href="single"><img src="images/v6.jpeg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Fifty Shades</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v2.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Shomlock</a>
+									<a  href="single"><img src="images/v2.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Shomlock</a>
 								</div>
 								<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v3.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Lootera</a>
+									<a  href="single"><img src="images/v3.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Lootera</a>
 								</div>
 								<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v4.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Stuck on a feeling</a>
+									<a  href="single"><img src="images/v4.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Stuck on a feeling</a>
 								</div>
 											<div class="clearfix"> </div>
 									</div>
 					<!--//End-albums-->
-					
+
 					<div class="browse">
 								<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v10.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-									<a class="sing" href="single.html">Fifty Shades</a>
+									<a  href="single"><img src="images/v10.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+									<a class="sing" href="single">Fifty Shades</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v9.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Alan Jackson</a>
+									<a  href="single"><img src="images/v9.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Alan Jackson</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-								<a  href="single.html"><img src="images/v77.jpg" title="allbum-name"></a>
-								 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Cheristina aguilera</a>
+								<a  href="single"><img src="images/v77.jpg" title="allbum-name"></a>
+								 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Cheristina aguilera</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v88.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Samsmith</a>
+									<a  href="single"><img src="images/v88.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Samsmith</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v1.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Adele21</a>
+									<a  href="single"><img src="images/v1.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Adele21</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v99.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Big Duty</a>
+									<a  href="single"><img src="images/v99.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Big Duty</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v6.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Ellie Goluding</a>
+									<a  href="single"><img src="images/v6.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Ellie Goluding</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v66.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-									<a class="sing" href="single.html">Diana</a>
+									<a  href="single"><img src="images/v66.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+									<a class="sing" href="single">Diana</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v6.jpeg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Fifty Shades</a>
+									<a  href="single"><img src="images/v6.jpeg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Fifty Shades</a>
 								</div>
 							<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v21.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Joe</a>
+									<a  href="single"><img src="images/v21.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Joe</a>
 								</div>
 								<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v3.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Lootera</a>
+									<a  href="single"><img src="images/v3.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Lootera</a>
 								</div>
 								<div class="col-md-3 browse-grid">
-									<a  href="single.html"><img src="images/v4.jpg" title="allbum-name"></a>
-									 <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-										<a class="sing" href="single.html">Stuck on a feeling</a>
+									<a  href="single"><img src="images/v4.jpg" title="allbum-name"></a>
+									 <a href="single"><i class="glyphicon glyphicon-play-circle"></i></a>
+										<a class="sing" href="single">Stuck on a feeling</a>
 								</div>
 											<div class="clearfix"> </div>
 									</div>
@@ -402,7 +402,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!--//discover-view-->
 							<!--//music-left-->
 							</div>
-							
+
 						<!--body wrapper start-->
 						<div class="review-slider">
 								<div class="tittle-head">
@@ -411,96 +411,96 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 								 <ul id="flexiselDemo1">
 								<li>
-									<a href="single.html"><img src="images/v1.jpg" alt=""/></a>
+									<a href="single"><img src="images/v1.jpg" alt=""/></a>
 									<div class="slide-title"><h4>Adele21 </div>
 									<div class="date-city">
 										<h5>Jan-02-16</h5>
 										<div class="buy-tickets">
-											<a href="single.html">READ MORE</a>
+											<a href="single">READ MORE</a>
 										</div>
 									</div>
 								</li>
 								<li>
-									<a href="single.html"><img src="images/v2.jpg" alt=""/></a>
+									<a href="single"><img src="images/v2.jpg" alt=""/></a>
 									<div class="slide-title"><h4>Adele21</h4></div>
 									<div class="date-city">
 										<h5>Jan-02-16</h5>
 										<div class="buy-tickets">
-											<a href="single.html">READ MORE</a>
+											<a href="single">READ MORE</a>
 										</div>
 									</div>
 								</li>
 								<li>
-									<a href="single.html"><img src="images/v21.jpg" alt=""/></a>
+									<a href="single"><img src="images/v21.jpg" alt=""/></a>
 									<div class="slide-title"><h4>Joe</h4></div>
 									<div class="date-city">
 										<h5>Jan-02-16</h5>
 										<div class="buy-tickets">
-											<a href="single.html">READ MORE</a>
+											<a href="single">READ MORE</a>
 										</div>
 									</div>
 								</li>
 								<li>
-									<a href="single.html"><img src="images/v4.jpg" alt=""/></a>
+									<a href="single"><img src="images/v4.jpg" alt=""/></a>
 									<div class="slide-title"><h4>Stuck on a feeling</h4></div>
 									<div class="date-city">
 										<h5>Jan-02-16</h5>
 										<div class="buy-tickets">
-											<a href="single.html">READ MORE</a>
+											<a href="single">READ MORE</a>
 										</div>
 									</div>
 								</li>
 								<li>
-									<a href="single.html"><img src="images/v5.jpg" alt=""/></a>
+									<a href="single"><img src="images/v5.jpg" alt=""/></a>
 									<div class="slide-title"><h4>Ricky Martine </h4></div>
 									<div class="date-city">
 										<h5>Jan-02-16</h5>
 										<div class="buy-tickets">
-											<a href="single.html">READ MORE</a>
+											<a href="single">READ MORE</a>
 										</div>
 									</div>
 								</li>
 								<li>
-									<a href="single.html"><img src="images/v6.jpg" alt=""/></a>
+									<a href="single"><img src="images/v6.jpg" alt=""/></a>
 									<div class="slide-title"><h4>Ellie Goluding</h4></div>
 									<div class="date-city">
 										<h5>Jan-02-16</h5>
 										<div class="buy-tickets">
-											<a href="single.html">READ MORE</a>
+											<a href="single">READ MORE</a>
 										</div>
 									</div>
 								</li>
 								<li>
-									<a href="single.html"><img src="images/v6.jpeg" alt=""/></a>
+									<a href="single"><img src="images/v6.jpeg" alt=""/></a>
 									<div class="slide-title"><h4>Fifty Shades </h4></div>
 									<div class="date-city">
 										<h5>Jan-02-16</h5>
 										<div class="buy-tickets">
-											<a href="single.html">READ MORE</a>
+											<a href="single">READ MORE</a>
 										</div>
 									</div>
 								</li>
 							</ul>
 							<script type="text/javascript">
 						$(window).load(function() {
-							
+
 						  $("#flexiselDemo1").flexisel({
 								visibleItems: 5,
 								animationSpeed: 1000,
 								autoPlay: true,
-								autoPlaySpeed: 3000,    		
+								autoPlaySpeed: 3000,
 								pauseOnHover: false,
 								enableResponsiveBreakpoints: true,
-								responsiveBreakpoints: { 
-									portrait: { 
+								responsiveBreakpoints: {
+									portrait: {
 										changePoint:480,
 										visibleItems: 2
-									}, 
-									landscape: { 
+									},
+									landscape: {
 										changePoint:640,
 										visibleItems: 3
 									},
-									tablet: { 
+									tablet: {
 										changePoint:800,
 										visibleItems: 4
 									}
@@ -508,7 +508,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							});
 							});
 						</script>
-						<script type="text/javascript" src="js/jquery.flexisel.js"></script>	
+						<script type="text/javascript" src="js/jquery.flexisel.js"></script>
 						</div>
 								</div>
 							<div class="clearfix"></div>
@@ -521,11 +521,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h3>Navigation</h3>
 					<ul class="list1">
 					  <li><a href="index.html">Home</a></li>
-					  <li><a href="radio.html">All Songs</a></li>
-					  <li><a href="browse.html">Albums</a></li>
-					  <li><a href="radio.html">New Collections</a></li>
-					  <li><a href="blog.html">Blog</a></li>
-					  <li><a href="contact.html">Contact</a></li>
+					  <li><a href="radio">All Songs</a></li>
+					  <li><a href="browse">Albums</a></li>
+					  <li><a href="radio">New Collections</a></li>
+					  <li><a href="blog">Blog</a></li>
+					  <li><a href="contact">Contact</a></li>
 				    </ul>
 				</div>
 				<div class="footer-grid">
@@ -543,11 +543,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="footer-grid">
 					<h3>Our Support</h3>
 					<ul class="list1">
-					  <li><a href="contact.html">Site Map</a></li>
+					  <li><a href="contact">Site Map</a></li>
 					  <li><a href="#">Search Terms</a></li>
 					  <li><a href="#">Advanced Search</a></li>
 					  <li><a href="#">Mobile</a></li>
-					  <li><a href="contact.html">Contact Us</a></li>
+					  <li><a href="contact">Contact Us</a></li>
 					  <li><a href="#">Mobile</a></li>
 					  <li><a href="#">Addresses</a></li>
 				    </ul>
@@ -566,7 +566,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<h3>About Us</h3>
 						<p class="footer_desc">Diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat enim ad minim veniam,.</p>
 						<p class="f_text">Phone:  &nbsp;&nbsp;&nbsp;00-250-2131</p>
-						<p class="email">Email : &nbsp;<span><a href="mailto:mail@example.com">info(at)mailing.com</a></span></p>	
+						<p class="email">Email : &nbsp;<span><a href="mailto:mail@example.com">info(at)mailing.com</a></span></p>
 					 </div>
 					 <div class="clearfix"> </div>
 				</div>

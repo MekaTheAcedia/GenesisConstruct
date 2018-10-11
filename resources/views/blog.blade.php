@@ -11,7 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <title>Mosaic a Entertainment Category Flat Bootstrap Responsive Website Template | Blogs :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Mosaic Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+<meta name="keywords" content="Mosaic Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
  <!-- Bootstrap Core CSS -->
@@ -19,7 +19,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- Custom CSS -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <!-- Graph CSS -->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link href="css/font-awesome.css" rel="stylesheet">
 <!-- jQuery -->
 <!-- lined-icons -->
 <link rel="stylesheet" href="css/icon-font.css" type='text/css' />
@@ -27,7 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  <!-- Meters graphs -->
 <script src="js/jquery-2.1.4.js"></script>
 
-</head> 
+</head>
    <!-- /w3layouts -->
  <body class="sticky-header left-side-collapsed"  onload="initMap()">
     <section>
@@ -48,29 +48,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!--sidebar nav start-->
 					<ul class="nav nav-pills nav-stacked custom-nav">
 						<li class="active"><a href="index.html"><i class="lnr lnr-home"></i><span>Home</span></a></li>
-						
-						<li><a href="radio.html"><i class="camera"></i> <span>Radio</span></a></li>
+
+						<li><a href="radio"><i class="camera"></i> <span>Radio</span></a></li>
 						<li><a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-th"></i><span>Apps</span></a></li>
-						<li><a href="radio.html"><i class="lnr lnr-users"></i> <span>Artists</span></a></li> 
-						<li><a href="browse.html"><i class="lnr lnr-music-note"></i> <span>Albums</span></a></li>						
-						<li class="menu-list"><a href="browse.html"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>  
+						<li><a href="radio"><i class="lnr lnr-users"></i> <span>Artists</span></a></li>
+						<li><a href="browse"><i class="lnr lnr-music-note"></i> <span>Albums</span></a></li>
+						<li class="menu-list"><a href="browse"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>
 							<ul class="sub-menu-list">
-								<li><a href="browse.html">Artists</a> </li>
+								<li><a href="browse">Artists</a> </li>
 								<li><a href="404.html">Services</a> </li>
 							</ul>
 						</li>
-						<li><a href="blog.html"><i class="lnr lnr-book"></i><span>Blog</span></a></li>
-						<li><a href="typography.html"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>
-						<li class="menu-list"><a href="#"><i class="lnr lnr-heart"></i>  <span>My Favourities</span></a> 
+						<li><a href="blog"><i class="lnr lnr-book"></i><span>Blog</span></a></li>
+						<li><a href="typography"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>
+						<li class="menu-list"><a href="#"><i class="lnr lnr-heart"></i>  <span>My Favourities</span></a>
 							<ul class="sub-menu-list">
-								<li><a href="radio.html">All Songs</a></li>
+								<li><a href="radio">All Songs</a></li>
 							</ul>
 						</li>
-						<li class="menu-list"><a href="contact.html"><i class="fa fa-thumb-tack"></i><span>Contact</span></a>
+						<li class="menu-list"><a href="contact"><i class="fa fa-thumb-tack"></i><span>Contact</span></a>
 							<ul class="sub-menu-list">
-								<li><a href="contact.html">Location</a> </li>
+								<li><a href="contact">Location</a> </li>
 							</ul>
-						</li>     
+						</li>
 					</ul>
 				<!--sidebar nav end-->
 			</div>
@@ -82,7 +82,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="modal-dialog facebook" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
 						<div class="modal-body">
 							<div class="app-grids">
@@ -114,7 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="modal-dialog" role="document">
 					<div class="modal-content modal-info">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
 						<div class="modal-body modal-spa">
 							<div class="sign-grids">
@@ -131,13 +131,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h3>Create your account </h3>
 											<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
 											<input type="text" value="Mobile number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile number';}" required="">
-											<input type="text" value="Email id" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email id';}" required="">	
-											<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">	
-											
+											<input type="text" value="Email id" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email id';}" required="">
+											<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+
 											<input type="submit" value="CREATE ACCOUNT" >
 										</form>
 									</div>
-									<div class="clearfix"></div>								
+									<div class="clearfix"></div>
 								</div>
 								<p>By logging in you agree to our <span>Terms and Conditions</span> and <span>Privacy Policy</span></p>
 							</div>
@@ -156,7 +156,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--toggle button end-->
 			<!--notification menu start -->
 				<div class="menu-right">
-					<div class="profile_details">		
+					<div class="profile_details">
 						  <div class="col-md-4 serch-part">
 								<div id="sb-search" class="sb-search">
 									<form action="#" method="post">
@@ -205,12 +205,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<ul class="next-top">
 													<li><a class="ar" href="#"> <img src="images/arrow.png" alt=""/></a></li>
 													<li><a class="ar2" href="#"><img src="images/arrow2.png" alt=""/></i></a></li>
-														
-											 </ul>	
+
+											 </ul>
 											</div>
 											<div class="col-md-4 login-pop">
 												<div id="loginpop"><a href="#" id="loginButton"><span>Login <i class="arrow glyphicon glyphicon-chevron-right"></i></span></a><a class="top-sign" href="#" data-toggle="modal" data-target="#myModal5"><i class="fa fa-sign-in"></i></a>
-														<div id="loginBox">                
+														<div id="loginBox">
 															<form action="#" method="post" id="loginForm">
 																	<fieldset id="body">
 																		<fieldset>
@@ -242,7 +242,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div id="page-wrapper">
 								<div class="inner-content">
 									<!-- /blog -->
-									
+
 										<div class="tittle-head">
 											<h3 class="tittle">Our Blogs </h3>
 											<div class="clearfix"> </div>
@@ -250,9 +250,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<!-- /music-left -->
 										<div class="music-left">
 											<div class="post-media">
-												  <a href="single.html"><img src="images/33.jpg" class="img-responsive" alt="" /></a>
+												  <a href="single"><img src="images/33.jpg" class="img-responsive" alt="" /></a>
 												  <div class="blog-text">
-														<a href="single.html"><h3 class="h-t">Lorem Ipsum is simply dummy text</h3></a>
+														<a href="single"><h3 class="h-t">Lorem Ipsum is simply dummy text</h3></a>
 												      <div class="entry-meta">
 															<h6 class="blg"><i class="fa fa-clock-o"></i> Jan 25, 2016</h6>
 															<div class="icons">
@@ -266,11 +266,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													  </div>
 												  </div>
 											</div>
-											
+
 											<div class="post-media second">
-												  <a href="single.html"><img src="images/11.jpg" class="img-responsive" alt="" /></a>
+												  <a href="single"><img src="images/11.jpg" class="img-responsive" alt="" /></a>
 												  <div class="blog-text">
-														<a href="single.html"><h3 class="h-t">Lorem Ipsum is simply dummy text</h3></a>
+														<a href="single"><h3 class="h-t">Lorem Ipsum is simply dummy text</h3></a>
 												      <div class="entry-meta">
 															<h6 class="blg"><i class="fa fa-clock-o"></i> Feb 13, 2016</h6>
 															<div class="icons">
@@ -284,11 +284,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													  </div>
 												  </div>
 											</div>
-											
+
 											<div class="post-media">
-												  <a href="single.html"><img src="images/22.jpg" class="img-responsive" alt="" /></a>
+												  <a href="single"><img src="images/22.jpg" class="img-responsive" alt="" /></a>
 												  <div class="blog-text">
-														<a href="single.html"><h3 class="h-t">Lorem Ipsum is simply dummy text</h3></a>
+														<a href="single"><h3 class="h-t">Lorem Ipsum is simply dummy text</h3></a>
 												      <div class="entry-meta">
 															<h6 class="blg"><i class="fa fa-clock-o"></i> Mach 30, 2016</h6>
 															<div class="icons">
@@ -326,23 +326,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<h4 class="widget-title">Recent Posts</h4>
 													<ul>
 														<li>
-															<a href="single.html">Taylor Swift – Shake It Off</a>
+															<a href="single">Taylor Swift – Shake It Off</a>
 															<span class="post-date">Feb 13, 2016</span>
 														</li>
 														<li>
-															<a href="single.html">Love Me Like You Do – Ellie Goulding (Fifty Shades of Grey Soundtrack) HQ</a>
+															<a href="single">Love Me Like You Do – Ellie Goulding (Fifty Shades of Grey Soundtrack) HQ</a>
 															<span class="post-date">Feb 14, 2016</span>
 														</li>
 														<li>
-															<a href="single.html">Jessie J – Flashlight (from Pitch Perfect 2)</a>
+															<a href="single">Jessie J – Flashlight (from Pitch Perfect 2)</a>
 															<span class="post-date">Feb 16, 2016</span>
 														</li>
 														<li>
-															<a href="single.html">Sol – “Ain’t Gon’ Stop”</a>
+															<a href="single">Sol – “Ain’t Gon’ Stop”</a>
 															<span class="post-date">Feb 18, 2016</span>
 														</li>
 														<li>
-															<a href="single.html">Eminem – No Love (Explicit Version) ft. Lil Wayne</a>
+															<a href="single">Eminem – No Love (Explicit Version) ft. Lil Wayne</a>
 															<span class="post-date">Feb 19, 2016</span>
 														</li>
 													</ul>
@@ -352,45 +352,45 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<ul>
 														<li>
 															<div class="song-img">
-															  <a href="single.html"><img src="images/play1.png" class="img-responsive" alt="" /></a>
+															  <a href="single"><img src="images/play1.png" class="img-responsive" alt="" /></a>
 															</div>
 															<div class="song-text">
-																<a href="single.html">Ellie-Goulding</a>
+																<a href="single">Ellie-Goulding</a>
 																<span class="post-date">Feb 13, 2016</span>
 															</div>
 															<div class="clearfix"></div>
 														</li>
 														<li>
 															<div class="song-img">
-															  <a href="single.html"><img src="images/play2.png" class="img-responsive" alt="" /></a>
+															  <a href="single"><img src="images/play2.png" class="img-responsive" alt="" /></a>
 															</div>
 															<div class="song-text">
-																<a href="single.html">Mark-Ronson-Uptown</a>
+																<a href="single">Mark-Ronson-Uptown</a>
 																<span class="post-date">Feb 14, 2016</span>
 															</div>
 															<div class="clearfix"></div>
 														</li>
 														<li>
 															<div class="song-img">
-															  <a href="single.html"><img src="images/play4.png" class="img-responsive" alt="" /></a>
+															  <a href="single"><img src="images/play4.png" class="img-responsive" alt="" /></a>
 															</div>
 															<div class="song-text">
-																<a href="single.html">Pharrell-Williams</a>
+																<a href="single">Pharrell-Williams</a>
 																<span class="post-date">Feb 16, 2016</span>
 															</div>
 															<div class="clearfix"></div>
 														</li>
 														<li>
 															<div class="song-img">
-															  <a href="single.html"><img src="images/play5.png" class="img-responsive" alt="" /></a>
+															  <a href="single"><img src="images/play5.png" class="img-responsive" alt="" /></a>
 															</div>
 															<div class="song-text">
-																<a href="single.html">Taylor Swift – Shake It Off</a>
+																<a href="single">Taylor Swift – Shake It Off</a>
 																<span class="post-date">Feb 18, 2016</span>
 															</div>
 															<div class="clearfix"></div>
 														</li>
-														
+
 													</ul>
 												 </div>
 											  <!-- //widget -->
@@ -408,11 +408,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h3>Navigation</h3>
 					<ul class="list1">
 					  <li><a href="index.html">Home</a></li>
-					  <li><a href="radio.html">All Songs</a></li>
-					  <li><a href="browse.html">Albums</a></li>
-					  <li><a href="radio.html">New Collections</a></li>
-					  <li><a href="blog.html">Blog</a></li>
-					  <li><a href="contact.html">Contact</a></li>
+					  <li><a href="radio">All Songs</a></li>
+					  <li><a href="browse">Albums</a></li>
+					  <li><a href="radio">New Collections</a></li>
+					  <li><a href="blog">Blog</a></li>
+					  <li><a href="contact">Contact</a></li>
 				    </ul>
 				</div>
 				<div class="footer-grid">
@@ -430,11 +430,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="footer-grid">
 					<h3>Our Support</h3>
 					<ul class="list1">
-					  <li><a href="contact.html">Site Map</a></li>
+					  <li><a href="contact">Site Map</a></li>
 					  <li><a href="#">Search Terms</a></li>
 					  <li><a href="#">Advanced Search</a></li>
 					  <li><a href="#">Mobile</a></li>
-					  <li><a href="contact.html">Contact Us</a></li>
+					  <li><a href="contact">Contact Us</a></li>
 					  <li><a href="#">Mobile</a></li>
 					  <li><a href="#">Addresses</a></li>
 				    </ul>
@@ -453,7 +453,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<h3>About Us</h3>
 						<p class="footer_desc">Diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat enim ad minim veniam,.</p>
 						<p class="f_text">Phone:  &nbsp;&nbsp;&nbsp;00-250-2131</p>
-						<p class="email">Email : &nbsp;<span><a href="mailto:mail@example.com">info(at)mailing.com</a></span></p>	
+						<p class="email">Email : &nbsp;<span><a href="mailto:mail@example.com">info(at)mailing.com</a></span></p>
 					 </div>
 					 <div class="clearfix"> </div>
 				</div>
@@ -467,7 +467,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
       <!-- main content end-->
    </section>
-  
+
 <script src="js/jquery.nicescroll.js"></script>
 <script src="js/scripts.js"></script>
 <!-- Bootstrap Core JavaScript -->
