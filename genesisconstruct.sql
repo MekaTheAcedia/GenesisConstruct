@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2018 at 05:37 AM
+-- Generation Time: Oct 16, 2018 at 07:16 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -148,13 +148,20 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `dob` date DEFAULT NULL,
-  `gender` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `about` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `level` int(1) NOT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `favorite` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `level` int(1) DEFAULT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `favorite` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `dob`, `gender`, `location`, `about`, `level`, `avatar`, `favorite`) VALUES
+(1, 'Ly Trong', 'trongdaigia19955@gmail.com', NULL, '$2y$10$nYIaHY26PX5wEQYEuAmZmeeAuq0M9sMcjGju0bsDmMl5uNYFG5iIW', NULL, '2018-10-15 22:14:48', '2018-10-15 22:14:48', NULL, NULL, NULL, NULL, 3, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -248,7 +255,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
