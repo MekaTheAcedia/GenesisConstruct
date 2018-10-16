@@ -39,6 +39,10 @@ Route::get('/typography', function () {
 	return view('typography');
 });
 
+Route::get('/search', function () {
+	return view('search');
+});
+
 Route::group(['middleware' => 'auth'], function () {
 	//    Route::get('/link1', function ()    {
 	//        // Uses Auth Middleware

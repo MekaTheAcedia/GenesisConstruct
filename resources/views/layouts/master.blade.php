@@ -50,7 +50,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li class="menu-list"><a href="browse"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>
 						<ul class="sub-menu-list">
 							<li><a href="browse">Artists</a> </li>
-							<li><a href="404.html">Services</a> </li>
+							<li><a href="404">Services</a> </li>
 						</ul>
 					</li>
 					<li><a href="blog"><i class="lnr lnr-book"></i><span>Blog</span></a></li>
