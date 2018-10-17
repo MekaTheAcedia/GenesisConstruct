@@ -27,7 +27,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<script src="js/jquery-2.1.4.js"></script>
 	</head>
 	<!-- /w3layouts-agile -->
-	<body class="sticky-header left-side-collapsed"  onload="initMap()">
+	<body class="sticky-header left-side-collapsed" onload="initMap()">
 		<section>
 			<!-- left side start-->
 			<div class="left-side sticky-left-side">
@@ -103,42 +103,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 <!-- //app-->
 <!-- /w3l-agile -->
-<!-- signup -->
-<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content modal-info">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			</div>
-			<div class="modal-body modal-spa">
-				<div class="sign-grids">
-					<div class="sign">
-						<div class="sign-left">
-							<ul>
-								<li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>
-								<li><a class="goog" href="#"><i></i>Sign in with Google</a></li>
-								<li><a class="linkin" href="#"><i></i>Sign in with Linkedin</a></li>
-							</ul>
-						</div>
-						<div class="sign-right">
-							<form action="#" method="post">
-								<h3>Create your account </h3>
-								<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-								<input type="text" value="Mobile number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile number';}" required="">
-								<input type="text" value="Email id" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email id';}" required="">
-								<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-								<input type="submit" value="CREATE ACCOUNT" >
-							</form>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<p>By logging in you agree to our <span>Terms and Conditions</span> and <span>Privacy Policy</span></p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- //signup -->
 <!-- /w3layouts-agile -->
 <!-- main content start-->
 <div class="main-content">
@@ -200,26 +164,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</ul>
 				</div>
 				<div class="col-md-4 login-pop">
-					<div id="loginpop"><a href="#" id="loginButton"><span>Login <i class="arrow glyphicon glyphicon-chevron-right"></i></span></a><a class="top-sign" href="#" data-toggle="modal" data-target="#myModal5"><i class="fa fa-sign-in"></i></a>
-					<div id="loginBox">
-						<form action="#" method="post" id="loginForm">
-							<fieldset id="body">
-								<fieldset>
-									<label for="email">Email Address</label>
-									<input type="text" name="email" id="email">
-								</fieldset>
-								<fieldset>
-									<label for="password">Password</label>
-									<input type="password" name="password" id="password">
-								</fieldset>
-								<input type="submit" id="login" value="Sign in">
-								<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
-							</fieldset>
-							<span><a href="#">Forgot your password?</a></span>
-						</form>
+					<div id="loginpop">
+						<a href="{{route('login')}}" id="loginButton">
+							<span>Login<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
+						</a>
+						<a href="{{route('register')}}" id="loginButton">
+							<span>Register<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
+						</a>
 					</div>
 				</div>
-			</div>
 			<div class="clearfix"> </div>
 		</div>
 		<!-------->
@@ -286,11 +239,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="clearfix"> </div>
 </div>
 </div>
-<!--footer section start-->
-<footer>
-<p>&copy 2016 Mosaic. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts.</a></p>
-</footer>
-<!--footer section end-->
 <!-- /w3l-agile -->
 <!-- main content end-->
 </section>
