@@ -43,6 +43,8 @@ Route::get('/search', function () {
 	return view('search');
 });
 
+Route::get('/logout', 'Auth\LogoutController@getLogout');
+
 Route::group(['middleware' => 'auth'], function () {
 	//    Route::get('/link1', function ()    {
 	//        // Uses Auth Middleware

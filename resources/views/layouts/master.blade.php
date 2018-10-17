@@ -163,6 +163,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a class="ar2" href="#"><img src="images/arrow2.png" alt=""/></i></a></li>
 					</ul>
 				</div>
+				@if (Auth::check())
+				<div class="col-md-4 login-pop">
+					<div id="loginpop">
+						<a href="logout" id="loginButton">
+							<span>Logout<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
+						</a>
+					</div>
+				</div>
+				@else
 				<div class="col-md-4 login-pop">
 					<div id="loginpop">
 						<a href="{{route('login')}}" id="loginButton">
@@ -173,6 +182,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</a>
 					</div>
 				</div>
+				@endif
 			<div class="clearfix"> </div>
 		</div>
 		<!-------->
