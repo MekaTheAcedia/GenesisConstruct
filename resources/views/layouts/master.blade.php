@@ -133,34 +133,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!---->
 				<div class="col-md-4 player">
 					<div class="audio-player">
-						<audio id="audio-player"  controls="controls">
-							<source src="media/Blue Browne.ogg" type="audio/ogg"></source>
-							<source src="media/Blue Browne.mp3" type="audio/mpeg"></source>
-							<source src="media/Georgia.ogg" type="audio/ogg"></source>
-						<source src="media/Georgia.mp3" type="audio/mpeg"></source></audio>
 					</div>
-					<!---->
-					<script type="text/javascript">
-						$(function(){
-						$('#audio-player').mediaelementplayer({
-							alwaysShowControls: true,
-							features: ['playpause','progress','volume'],
-							audioVolume: 'horizontal',
-							iPadUseNativeControls: true,
-							iPhoneUseNativeControls: true,
-							AndroidUseNativeControls: true
-						});
-					});
-					</script>
-					<!--audio-->
 					<link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
-					<script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
-					<!---->
-					<!-- /w3l-agile -->
-					<!--//-->
 					<ul class="next-top">
-						<li><a class="ar" href="#"> <img src="images/arrow.png" alt=""/></a></li>
-						<li><a class="ar2" href="#"><img src="images/arrow2.png" alt=""/></i></a></li>
+						<li></li>
 					</ul>
 				</div>
 				@if (Auth::check())
