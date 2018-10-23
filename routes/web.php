@@ -11,37 +11,25 @@
 |
  */
 
-Route::get('/', 'MasterController@indexSongs');
+Route::get('/', ['as' => 'index', 'uses' => 'MasterController@indexSongs']);
 
-Route::get('/blog', function () {
-	return view('blog');
-});
+Route::get('/blog', ['as' => 'blog', 'uses' => 'MasterController@blog']);
 
-Route::get('/browse', function () {
-	return view('browse');
-});
+Route::get('/browse', ['as' => 'browse', 'uses' => 'MasterController@browse']);
 
-Route::get('/contact', function () {
-	return view('contact');
-});
+Route::get('/contact', ['as' => 'contact', 'uses' => 'MasterController@contact']);
 
-Route::get('/radio', function () {
-	return view('radio');
-});
+Route::get('/radio', ['as' => 'radio', 'uses' => 'MasterController@radio']);
 
-Route::get('/single', function () {
-	return view('single');
-});
+Route::get('/single', ['as' => 'single', 'uses' => 'MasterController@single']);
 
 Route::get('/typography', function () {
 	return view('typography');
 });
 
-Route::get('/search', function () {
-	return view('search');
-});
+Route::get('/search', ['as' => 'search', 'uses' => 'MasterController@search']);
 
-Route::get('/logout', 'Auth\LogoutController@getLogout');
+Route::get('/logout', ['as' => 'logout', 'uses' => 'Auth\LogoutController@getLogout']);
 
 Route::group(['middleware' => 'auth'], function () {
 	//    Route::get('/link1', function ()    {

@@ -90,12 +90,10 @@
 				@endif
 				<?php $songCount++?>
 				@endforeach
-				{!!$songs->links()!!}
 				<div class="clearfix"> </div>
 			</div>
 			<!--//End-albums-->
 			<!--//discover-view-->
-
 			<div class="albums second">
 				<div class="tittle-head">
 					<h3 class="tittle">Discover <span class="new">View</span></h3>

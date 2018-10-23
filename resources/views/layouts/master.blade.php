@@ -33,36 +33,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="left-side sticky-left-side">
 				<!--logo and iconic logo start-->
 				<div class="logo">
-					<h1><a href="../public">Mosai<span>c</span></a></h1>
+					<h1><a href="{{URL::route('index')}}">Mosai<span>c</span></a></h1>
 				</div>
 				<div class="logo-icon text-center">
-					<a href="../public">M </a>
+					<a href="{{URL::route('index')}}">M </a>
 				</div>
 				<!--logo and iconic logo end-->
 				<div class="left-side-inner">
 					<!--sidebar nav start-->
 					<ul class="nav nav-pills nav-stacked custom-nav">
-						<li class="active"><a href="../public"><i class="lnr lnr-home"></i><span>Home</span></a></li>
-						<li><a href="radio"><i class="camera"></i> <span>Radio</span></a></li>
+						<li class="active"><a href="{{URL::route('index')}}"><i class="lnr lnr-home"></i><span>Home</span></a></li>
+						<li><a href="{{URL::route('radio')}}"><i class="camera"></i> <span>Radio</span></a></li>
 						<li><a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-th"></i><span>Apps</span></a></li>
-						<li><a href="radio"><i class="lnr lnr-users"></i> <span>Artists</span></a></li>
-						<li><a href="browse"><i class="lnr lnr-music-note"></i> <span>Albums</span></a></li>
-						<li class="menu-list"><a href="browse"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>
+						<li><a href="{{URL::route('radio')}}"><i class="lnr lnr-users"></i> <span>Artists</span></a></li>
+						<li><a href="{{URL::route('browse')}}"><i class="lnr lnr-music-note"></i> <span>Albums</span></a></li>
+						<li class="menu-list"><a href="{{URL::route('browse')}}"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>
 						<ul class="sub-menu-list">
-							<li><a href="browse">Artists</a> </li>
+							<li><a href="{{URL::route('browse')}}">Artists</a> </li>
 							<li><a href="404">Services</a> </li>
 						</ul>
 					</li>
-					<li><a href="blog"><i class="lnr lnr-book"></i><span>Blog</span></a></li>
+					<li><a href="{{URL::route('blog')}}"><i class="lnr lnr-book"></i><span>Blog</span></a></li>
 					<li><a href="typography"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>
 					<li class="menu-list"><a href="#"><i class="lnr lnr-heart"></i>  <span>My Favourities</span></a>
 					<ul class="sub-menu-list">
-						<li><a href="radio">All Songs</a></li>
+						<li><a href="{{URL::route('radio')}}">All Songs</a></li>
 					</ul>
 				</li>
-				<li class="menu-list"><a href="contact"><i class="fa fa-thumb-tack"></i><span>Contact</span></a>
+				<li class="menu-list"><a href="{{URL::route('contact')}}"><i class="fa fa-thumb-tack"></i><span>Contact</span></a>
 				<ul class="sub-menu-list">
-					<li><a href="contact">Location</a> </li>
+					<li><a href="{{URL::route('contact')}}">Location</a> </li>
 				</ul>
 			</li>
 		</ul>
@@ -143,11 +143,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-md-4 login-pop">
 					<div>
 						@if( Auth::user()->level == 1)
-							{{ "SuperAdmin" }}
-						@elseif( Auth::user()->level == 2)
 							{{ "Admin" }}
+						@elseif( Auth::user()->level == 2)
+							{{ "Paid User" }}
 						@elseif( Auth::user()->level == 3)
-							{{ "Thành viên" }}
+							{{ "User" }}
 						@endif
 					</div>
 					<div id="loginpop">
@@ -183,12 +183,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="footer-grid">
 		<h3>Navigation</h3>
 		<ul class="list1">
-			<li><a href="../public">Home</a></li>
-			<li><a href="radio">All Songs</a></li>
-			<li><a href="browse">Albums</a></li>
-			<li><a href="radio">New Collections</a></li>
-			<li><a href="blog">Blog</a></li>
-			<li><a href="contact">Contact</a></li>
+			<li><a href="{{URL::route('index')}}">Home</a></li>
+			<li><a href="{{URL::route('radio')}}">All Songs</a></li>
+			<li><a href="{{URL::route('browse')}}">Albums</a></li>
+			<li><a href="{{URL::route('radio')}}">New Collections</a></li>
+			<li><a href="{{URL::route('blog')}}">Blog</a></li>
+			<li><a href="{{URL::route('contact')}}">Contact</a></li>
 		</ul>
 	</div>
 	<div class="footer-grid">
@@ -206,11 +206,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="footer-grid">
 		<h3>Our Support</h3>
 		<ul class="list1">
-			<li><a href="contact">Site Map</a></li>
+			<li><a href="{{URL::route('contact')}}">Site Map</a></li>
 			<li><a href="#">Search Terms</a></li>
 			<li><a href="#">Advanced Search</a></li>
 			<li><a href="#">Mobile</a></li>
-			<li><a href="contact">Contact Us</a></li>
+			<li><a href="{{URL::route('contact')}}">Contact Us</a></li>
 			<li><a href="#">Mobile</a></li>
 			<li><a href="#">Addresses</a></li>
 		</ul>
