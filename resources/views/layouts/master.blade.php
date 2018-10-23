@@ -14,17 +14,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<!-- Bootstrap Core CSS -->
-		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<link href="{{asset('css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
 		<!-- Custom CSS -->
-		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<link href="{{asset('css/style.css')}}" rel='stylesheet' type='text/css' />
 		<!-- Graph CSS -->
-		<link href="css/font-awesome.css" rel="stylesheet">
+		<link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
 		<!-- jQuery -->
 		<!-- lined-icons -->
-		<link rel="stylesheet" href="css/icon-font.css" type='text/css' />
+		<link rel="stylesheet" href="{{asset('css/icon-font.css')}}" type='text/css' />
 		<!-- //lined-icons -->
 		<!-- Meters graphs -->
-		<script src="js/jquery-2.1.4.js"></script>
+		<script src="{{asset('js/jquery-2.1.4.js')}}"></script>
 	</head>
 	<!-- /w3layouts-agile -->
 	<body class="sticky-header left-side-collapsed" onload="initMap()">
@@ -124,8 +124,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</div>
 				<!-- search-scripts -->
-				<script src="js/classie.js"></script>
-				<script src="js/uisearch.js"></script>
+				<script src="{{asset('js/classie.js')}}"></script>
+				<script src="{{asset('js/uisearch.js')}}"></script>
 				<script>
 					new UISearch( document.getElementById( 'sb-search' ) );
 				</script>
@@ -134,7 +134,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-md-4 player">
 					<div class="audio-player">
 					</div>
-					<link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
+					<link rel="stylesheet" type="text/css" media="all" href="{{asset('css/audio.css')}}">
 					<ul class="next-top">
 						<li></li>
 					</ul>
@@ -228,9 +228,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- /w3l-agile -->
 <!-- main content end-->
 </section>
-<script src="js/jquery.nicescroll.js"></script>
-<script src="js/scripts.js"></script>
+<script src="{{asset('js/jquery.nicescroll.js')}}"></script>
+<script src="{{asset('js/scripts.js')}}"></script>
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.js"></script>
+<script src="{{asset('js/bootstrap.js')}}"></script>
 </body>
 </html>
