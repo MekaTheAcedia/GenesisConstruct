@@ -141,6 +141,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				@if (Auth::check())
 				<div class="col-md-4 login-pop">
+					<div>
+						@if( Auth::user()->level == 1)
+							{{ "SuperAdmin" }}
+						@elseif( Auth::user()->level == 2)
+							{{ "Admin" }}
+						@elseif( Auth::user()->level == 3)
+							{{ "Thành viên" }}
+						@endif
+					</div>
 					<div id="loginpop">
 						<a href="logout" id="loginButton">
 							<span>Logout<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
