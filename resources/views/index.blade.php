@@ -73,19 +73,18 @@
 				<?php $songCount = 1?>
 				<div class="tittle-head">
 					<h3 class="tittle">New Releases <span class="new">New</span></h3>
-					<a href="index.html"><h4 class="tittle">See all</h4></a>
 					<div class="clearfix"> </div>
 				</div>
-				@foreach($songs as $item)
+				@foreach($newsongs as $item)
 				@if ($songCount % 4 != 0)
 				<div class="col-md-3 content-grid">
 					<a class="play-icon popup-with-zoom-anim" href="songs/{{$item->songid}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
-					<a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
+					<a class="button play-icon popup-with-zoom-anim" href="songs/{{$item->songid}}">Listen now</a>
 				</div>
 				@else
 				<div class="col-md-3 content-grid last-grid">
 					<a class="play-icon popup-with-zoom-anim" href="songs/{{$item->songid}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
-					<a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
+					<a class="button play-icon popup-with-zoom-anim" href="songs/{{$item->songid}}">Listen now</a>
 				</div>
 				@endif
 				<?php $songCount++?>
@@ -95,43 +94,23 @@
 			<!--//End-albums-->
 			<!--//discover-view-->
 			<div class="albums second">
+				<?php $songCount = 1?>
 				<div class="tittle-head">
 					<h3 class="tittle">Discover <span class="new">View</span></h3>
-					<a href="index.html"><h4 class="tittle two">See all</h4></a>
 					<div class="clearfix"> </div>
 				</div>
+				@foreach($discover as $item)
+				@if ($songCount % 4 != 0)
 				<div class="col-md-3 content-grid">
-					<a href="single"><img src="images/v11.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
+					<a href="songs/{{$item->songid}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
 				</div>
-				<div class="col-md-3 content-grid">
-					<a href="single"><img src="images/v22.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
-				</div>
-				<div class="col-md-3 content-grid">
-					<a href="single"><img src="images/v33.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
-				</div>
+				@else
 				<div class="col-md-3 content-grid last-grid">
-					<a href="single"><img src="images/v44.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
+					<a href="songs/{{$item->songid}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
 				</div>
-				<div class="col-md-3 content-grid">
-					<a href="single"><img src="images/v55.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
-				</div>
-				<div class="col-md-3 content-grid">
-					<a href="single"><img src="images/v66.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
-				</div>
-				<div class="col-md-3 content-grid">
-					<a href="single"><img src="images/v11.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
-				</div>
-				<div class="col-md-3 content-grid last-grid">
-					<a href="single"><img src="images/v22.jpg" title="allbum-name"></a>
-					<div class="inner-info"><a href="single"><h5>Pop</h5></a></div>
-				</div>
+				@endif
+				<?php $songCount++?>
+				@endforeach
 				<div class="clearfix"> </div>
 			</div>
 			<!--//discover-view-->
@@ -334,76 +313,18 @@
 			<div class="clearfix"> </div>
 		</div>
 		<ul id="flexiselDemo1">
+			@foreach($newalbums as $item)
 			<li>
-				<a href="single"><img src="images/v1.jpg" alt=""/></a>
-				<div class="slide-title"><h4>Adele21 </div>
+				<a href="albums/{{$item->albumid}}"><img src="{{$item->thumbnail}}" alt=""/></a>
+				<div class="slide-title"><h4>{{$item->title}}</h4></div>
 				<div class="date-city">
-					<h5>Jan-02-16</h5>
+					<h5>{{$item->releasedate}}</h5>
 					<div class="buy-tickets">
 						<a href="single">READ MORE</a>
 					</div>
 				</div>
 			</li>
-			<li>
-				<a href="single"><img src="images/v2.jpg" alt=""/></a>
-				<div class="slide-title"><h4>Adele21</h4></div>
-				<div class="date-city">
-					<h5>Jan-02-16</h5>
-					<div class="buy-tickets">
-						<a href="single">READ MORE</a>
-					</div>
-				</div>
-			</li>
-			<li>
-				<a href="single"><img src="images/v3.jpg" alt=""/></a>
-				<div class="slide-title"><h4>Shomlock</h4></div>
-				<div class="date-city">
-					<h5>Jan-02-16</h5>
-					<div class="buy-tickets">
-						<a href="single">READ MORE</a>
-					</div>
-				</div>
-			</li>
-			<li>
-				<a href="single"><img src="images/v4.jpg" alt=""/></a>
-				<div class="slide-title"><h4>Stuck on a feeling</h4></div>
-				<div class="date-city">
-					<h5>Jan-02-16</h5>
-					<div class="buy-tickets">
-						<a href="single">READ MORE</a>
-					</div>
-				</div>
-			</li>
-			<li>
-				<a href="single"><img src="images/v5.jpg" alt=""/></a>
-				<div class="slide-title"><h4>Ricky Martine </h4></div>
-				<div class="date-city">
-					<h5>Jan-02-16</h5>
-					<div class="buy-tickets">
-						<a href="single">READ MORE</a>
-					</div>
-				</div>
-			</li>
-			<li>
-				<a href="single"><img src="images/v6.jpg" alt=""/></a>
-				<div class="slide-title"><h4>Ellie Goluding </h4></div>
-				<div class="date-city">
-					<h5>Jan-02-16</h5>
-					<div class="buy-tickets">
-						<a href="single">READ MORE</a>
-					</div>
-				</div>
-			</li>
-			<li>
-				<a href="single"><img src="images/v6.jpeg" alt=""/></a>
-				<div class="slide-title"><h4>Fifty Shades </h4></div>
-				<div class="date-city">
-					<h5>Jan-02-16</h5>
-					<div class="buy-tickets">
-						<a href="single">READ MORE</a>
-					</div>
-				</div>
-			</li>
+			@endforeach
 		</ul>
 		<script type="text/javascript">
 		$(window).load(function() {

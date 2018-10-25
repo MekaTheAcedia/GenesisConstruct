@@ -108,9 +108,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="main-content">
 	<!-- header-starts -->
 	<div class="header-section">
-		<!--toggle button start-->
-		<a class="toggle-btn  menu-collapsed"><i class="fa fa-bars"></i></a>
-		<!--toggle button end-->
 		<!--notification menu start -->
 		<div class="menu-right">
 			<div class="profile_details">

@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\albums;
 use App\Models\songs;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller {
 	public function indexSongs(Request $request) {
-		$songs = songs::orderBy('uploaddate', '')->paginate(8);
+		$newsongs = songs::orderBy('uploaddate', '')->paginate(8);
+		$discover = songs::inRandomOrder()->paginate(8);
+		$newalbums = albums::orderBy('releasedate', '')->paginate(7);
 
 		return view('index')->with([
-			'songs' => $songs,
+			'newsongs' => $newsongs,
+			'discover' => $discover,
+			'newalbums' => $newalbums,
 		]);
 	}
 
