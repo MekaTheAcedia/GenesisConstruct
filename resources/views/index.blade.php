@@ -320,7 +320,7 @@
 				<div class="date-city">
 					<h5>{{$item->releasedate}}</h5>
 					<div class="buy-tickets">
-						<a href="single">READ MORE</a>
+						<a href="albums/{{$item->albumid}}">READ MORE</a>
 					</div>
 				</div>
 			</li>
