@@ -138,17 +138,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				@if (Auth::check())
 				<div class="col-md-4 login-pop">
-					<div>
-						@if( Auth::user()->level == 1)
-							{{ "Admin" }}
-						@elseif( Auth::user()->level == 2)
-							{{ "Paid User" }}
-						@elseif( Auth::user()->level == 3)
-							{{ "User" }}
-						@endif
-					</div>
 					<div id="loginpop">
-						<a href="logout" id="loginButton">
+						<a href="{{URL::route(logout)}}" id="loginButton">
 							<span>Logout<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
 						</a>
 					</div>
