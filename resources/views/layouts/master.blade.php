@@ -139,7 +139,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				@if (Auth::check())
 				<div class="col-md-4 login-pop">
 					<div id="loginpop">
-						<a href="{{URL::route(logout)}}" id="loginButton">
+						<a href="{{URL::route('logout')}}" id="loginButton">
 							<span>Logout<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
 						</a>
 					</div>
