@@ -44,4 +44,18 @@ class MasterController extends Controller {
 
 		return view('search');
 	}
+
+	public function songsDetail(Request $request) {
+		return view('single');
+	}
+
+	public function profile(Request $request) {
+
+		return view('profile');
+	}
+
+	public function profiledetails(Request $request) {
+
+		return view('profiledetails');
+	}
 }

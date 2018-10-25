@@ -143,6 +143,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<span>Logout<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
 						</a>
 					</div>
+					<div id="loginpop">
+						<a href="{{URL::route('profiledetails')}}" id="loginButton">
+							<span>Profile<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
+						</a>
+					</div>
 				</div>
 				@else
 				<div class="col-md-4 login-pop">

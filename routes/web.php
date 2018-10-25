@@ -31,6 +31,10 @@ Route::get('/search', ['as' => 'search', 'uses' => 'MasterController@search']);
 
 Route::get('/logout', ['as' => 'logout', 'uses' => 'Auth\LogoutController@getLogout']);
 
+Route::get('/profile', ['as' => 'profile', 'uses' => 'MasterController@profile']);
+
+Route::get('/profiledetails', ['as' => 'profiledetails', 'uses' => 'MasterController@profiledetails']);
+
 Route::group(['middleware' => 'auth'], function () {
 	//    Route::get('/link1', function ()    {
 	//        // Uses Auth Middleware
