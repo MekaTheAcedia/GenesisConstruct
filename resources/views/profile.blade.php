@@ -66,7 +66,7 @@
 							<div class="col-xs-6">
 								<label for="gender"><h4>Gender</h4></label>
 								<select class="form-control" name="gender">
-									<option value=""></option>
+									<option value="" selected="" disabled="">Choose</option>
 									<option value="Other">Other</option>
 									<option value="Male" >Male</option>
 									<option value="Female">Female</option>
