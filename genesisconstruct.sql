@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2018 at 09:13 AM
+-- Generation Time: Oct 26, 2018 at 04:42 AM
 -- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- PHP Version: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,16 +31,30 @@ SET time_zone = "+00:00";
 CREATE TABLE `albums` (
   `albumid` int(15) NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `releasedate` date NOT NULL,
   `producer` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` int(20) NOT NULL,
-  `illust` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `illust` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `label` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `thumbnail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `songs` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `producerid` int(11) DEFAULT NULL
+  `producerid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `albums`
+--
+
+INSERT INTO `albums` (`albumid`, `title`, `description`, `releasedate`, `producer`, `price`, `illust`, `label`, `thumbnail`, `songs`, `producerid`) VALUES
+(2, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, NULL, 'images/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
+(3, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, NULL, 'images/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
+(4, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, NULL, 'images/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
+(5, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, NULL, 'images/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
+(6, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, NULL, 'images/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
+(7, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, NULL, 'images/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
+(8, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, NULL, 'images/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
+(9, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, NULL, 'images/v1.jpg', 'sdfas, sdfas, asdfasd', 1);
 
 -- --------------------------------------------------------
 
@@ -111,6 +125,13 @@ CREATE TABLE `producer` (
   `discography` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `producer`
+--
+
+INSERT INTO `producer` (`producerid`, `name`, `gender`, `dob`, `status`, `genre`, `associations`, `sites`, `works`, `avatar`, `discography`) VALUES
+(1, 'adf', NULL, NULL, 'asd', 'asd', NULL, NULL, 'asd', 'asds', 'asdasf');
+
 -- --------------------------------------------------------
 
 --
@@ -122,7 +143,7 @@ CREATE TABLE `songs` (
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `genre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `producer` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `vocal` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `vocal` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `album` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -134,6 +155,20 @@ CREATE TABLE `songs` (
   `albumid` int(11) DEFAULT NULL,
   `songaddress` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `songs`
+--
+
+INSERT INTO `songs` (`songid`, `title`, `genre`, `producer`, `vocal`, `album`, `country`, `description`, `lyric`, `uploaddate`, `avatar`, `vocalid`, `producerid`, `albumid`, `songaddress`) VALUES
+(1, 'asd', 'sda', '', NULL, NULL, NULL, NULL, NULL, '2017-12-12', 'images/v1.jpg', NULL, NULL, NULL, 'sadfas'),
+(2, 'asd', 'sda', '', NULL, NULL, NULL, NULL, NULL, '2017-12-12', 'images/v1.jpg', NULL, NULL, NULL, 'sadfas'),
+(3, 'asd', 'sda', '', NULL, NULL, NULL, NULL, NULL, '2017-12-12', 'images/v1.jpg', NULL, NULL, NULL, 'sadfas'),
+(4, 'asd', 'sda', '', NULL, NULL, NULL, NULL, NULL, '2017-12-12', 'images/v1.jpg', NULL, NULL, NULL, 'sadfas'),
+(5, 'asd', 'sda', '', NULL, NULL, NULL, NULL, NULL, '2017-12-12', 'images/v1.jpg', NULL, NULL, NULL, 'sadfas'),
+(6, 'asd', 'sda', '', NULL, NULL, NULL, NULL, NULL, '2017-12-12', 'images/v1.jpg', NULL, NULL, NULL, 'sadfas'),
+(7, 'asd', 'sda', '', NULL, NULL, NULL, NULL, NULL, '2017-12-12', 'images/v1.jpg', NULL, NULL, NULL, 'sadfas'),
+(8, 'asd', 'sda', '', NULL, NULL, NULL, NULL, NULL, '2017-12-12', 'images/v1.jpg', NULL, NULL, NULL, 'sadfas');
 
 -- --------------------------------------------------------
 
@@ -155,7 +190,7 @@ CREATE TABLE `users` (
   `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `about` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `level` int(1) DEFAULT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png',
   `favorite` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -164,7 +199,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `dob`, `gender`, `location`, `about`, `level`, `avatar`, `favorite`) VALUES
-(3, 'Lý Quốc Trọng', 'trongdaigia19955@gmail.com', NULL, '$2y$10$QOcDzOpejqMgHmKLP4agF.lvG6o.nFoPv1BzwbycqUIXmQJuuWoDC', NULL, '2018-10-22 20:17:43', '2018-10-22 20:17:43', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(3, 'Lý Quốc Trọng', 'trongdaigia19955@gmail.com', NULL, '$2y$10$QOcDzOpejqMgHmKLP4agF.lvG6o.nFoPv1BzwbycqUIXmQJuuWoDC', NULL, '2018-10-22 20:17:43', '2018-10-22 20:17:43', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'Acedia', '1234@gmail.com', NULL, '$2y$10$19q2tXbnuEfhSMVRAEQ48uuKoZzIl57gBp5/i..mYt2ORUWu6b4j2', 'lVuTBb6dxoqL7c0XERXfmAHZnkG21plrVBCag4T2YbmE4RjpVc8Spw41XNhw', '2018-10-24 19:35:09', '2018-10-24 19:35:09', NULL, NULL, NULL, NULL, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -252,7 +288,7 @@ ALTER TABLE `vocals`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `albumid` int(15) NOT NULL AUTO_INCREMENT;
+  MODIFY `albumid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `comments`
@@ -270,19 +306,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `producer`
 --
 ALTER TABLE `producer`
-  MODIFY `producerid` int(15) NOT NULL AUTO_INCREMENT;
+  MODIFY `producerid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `songid` int(15) NOT NULL AUTO_INCREMENT;
+  MODIFY `songid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `vocals`

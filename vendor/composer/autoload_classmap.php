@@ -72,6 +72,7 @@ return array(
     'App\\Models\\comments' => $baseDir . '/app/Models/comments.php',
     'App\\Models\\producer' => $baseDir . '/app/Models/producer.php',
     'App\\Models\\songs' => $baseDir . '/app/Models/songs.php',
+    'App\\Models\\user' => $baseDir . '/app/Models/user.php',
     'App\\Models\\vocals' => $baseDir . '/app/Models/vocals.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

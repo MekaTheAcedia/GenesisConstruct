@@ -113,10 +113,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="profile_details">
 				<div class="col-md-4 serch-part">
 					<div id="sb-search" class="sb-search">
-						<form action="#" method="post">
-							<input class="sb-search-input" placeholder="Search" type="search" name="search" id="search">
+						<form method="post" action="{{route('search')}}">
+							{{ csrf_field() }}
+							<input class="sb-search-input" placeholder="Search" type="text" name="search" id="search">
 							<input class="sb-search-submit" type="submit" value="">
-							<span class="sb-icon-search"> </span>
+							<span class="sb-icon-search"><button type="submit" style="opacity: 0"></button></span>
 						</form>
 					</div>
 				</div>

@@ -443,6 +443,7 @@ class ComposerStaticInite76585eae2ab58c6eb203f24a33c834f
         'App\\Models\\comments' => __DIR__ . '/../..' . '/app/Models/comments.php',
         'App\\Models\\producer' => __DIR__ . '/../..' . '/app/Models/producer.php',
         'App\\Models\\songs' => __DIR__ . '/../..' . '/app/Models/songs.php',
+        'App\\Models\\user' => __DIR__ . '/../..' . '/app/Models/user.php',
         'App\\Models\\vocals' => __DIR__ . '/../..' . '/app/Models/vocals.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
