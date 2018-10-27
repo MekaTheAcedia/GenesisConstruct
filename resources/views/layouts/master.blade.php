@@ -117,7 +117,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							{{ csrf_field() }}
 							<input class="sb-search-input" placeholder="Search" type="text" name="search" id="search">
 							<input class="sb-search-submit" type="submit" value="">
-							<span class="sb-icon-search"><button type="submit" style="opacity: 0"></button></span>
+							<span class="sb-icon-search"><button type="submit" style="opacity: 0; align-self: center;height: inherit;width: inherit;"></button></span>
 						</form>
 					</div>
 				</div>
