@@ -95,6 +95,13 @@ class MasterController extends Controller {
 		} else {
 			$about = $request->input('about');
 		};
+		if (is_null($request->avatar)) {
+			$avatar = Auth::user()->avatar;
+		} else {
+			$avatar = $request->avatar->getClientOriginalName();
+			$request->avatar->move('img', $avatar);
+		}
+
 		user::where('id', Auth::id())->update([
 			'name' => $name,
 			'email' => $email,
@@ -103,6 +110,7 @@ class MasterController extends Controller {
 			'dob' => $dob,
 			'gender' => $gender,
 			'about' => $about,
+			'avatar' => $avatar,
 		]);
 		return redirect('profiledetails');
 	}
