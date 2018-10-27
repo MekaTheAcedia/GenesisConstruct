@@ -37,8 +37,6 @@ Route::get('/profiledetails', ['as' => 'profiledetails', 'uses' => 'MasterContro
 
 Route::post('/updateprofile', ['as' => 'updateprofile', 'uses' => 'MasterController@updateprofile']);
 
-Route::post('/updateavatar', ['as' => 'updateavatar', 'uses' => 'MasterController@updateavatar']);
-
 Route::group(['middleware' => 'auth'], function () {
 	//    Route::get('/link1', function ()    {
 	//        // Uses Auth Middleware
