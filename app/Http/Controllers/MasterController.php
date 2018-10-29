@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\albums;
+use App\Models\producer;
 use App\Models\songs;
 use App\Models\user;
 use Illuminate\Http\Request;
@@ -43,12 +44,29 @@ class MasterController extends Controller {
 	}
 
 	public function search(Request $request) {
+		$song = songs::where('title', 'like', '%' . $request->input('search') . '%')
+			->orWhere('genre', 'like', '%' . $request->input('search') . '%')
+			->orWhere('producer', 'like', '%' . $request->input('search') . '%')
+			->orWhere('vocal', 'like', '%' . $request->input('search') . '%')
+			->orWhere('album', 'like', '%' . $request->input('search') . '%')
+			->orWhere('country', 'like', '%' . $request->input('search') . '%')->get();
+		$producer = producer::where('name', 'like', '%' . $request->input('search') . '%')
+			->orWhere('genre', 'like', '%' . $request->input('search') . '%')
+			->orWhere('works', 'like', '%' . $request->input('search') . '%')
+			->orWhere('associations', 'like', '%' . $request->input('search') . '%')
+			->orWhere('discography', 'like', '%' . $request->input('search') . '%')->get();
+		$user = user::where('name', 'like', '%' . $request->input('search') . '%')->get();
+		$album = albums::where('title', 'like', '%' . $request->input('search') . '%')
+			->orWhere('producer', 'like', '%' . $request->input('search') . '%')
+			->orWhere('songs', 'like', '%' . $request->input('search') . '%')->get();
 
-		return view('search');
-	}
-
-	public function songsDetail(Request $request) {
-		return view('single');
+		return view('search')->with([
+			'songs' => $song,
+			'producer' => $producer,
+			'user' => $user,
+			'album' => $album,
+			'search' => $request->input('search'),
+		]);
 	}
 
 	public function profile(Request $request) {
@@ -113,5 +131,33 @@ class MasterController extends Controller {
 			'avatar' => $avatar,
 		]);
 		return redirect('profiledetails');
+	}
+
+	public function songs(Request $request, $songid) {
+		$song = songs::where('songid', $songid);
+		return view('single')->with([
+			'song' => $song,
+		]);
+	}
+
+	public function albums(Request $request, $albumid) {
+		$album = albums::where('albumid', $albumid);
+		return view('single')->with([
+			'album' => $album,
+		]);
+	}
+
+	public function viewprofile(Request $request, $userid) {
+		$user = user::where('id', $userid)->get();
+		return view('viewprofile')->with([
+			'user' => $user,
+		]);
+	}
+
+	public function viewproducer(Request $request, $producerid) {
+		$producer = producer::where('producerid', $producerid)->get();
+		return view('viewproducer')->with([
+			'producer' => $producer,
+		]);
 	}
 }

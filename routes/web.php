@@ -37,6 +37,14 @@ Route::get('/profiledetails', ['as' => 'profiledetails', 'uses' => 'MasterContro
 
 Route::post('/updateprofile', ['as' => 'updateprofile', 'uses' => 'MasterController@updateprofile']);
 
+Route::get('/songs/{songid}', ['as' => 'songs', 'uses' => 'MasterController@songs']);
+
+Route::get('/user/{userid}', ['as' => 'user', 'uses' => 'MasterController@viewprofile']);
+
+Route::get('producer/{producerid}', ['as' => 'producer', 'uses' => 'MasterController@viewproducer']);
+
+Route::get('/albums/{albumid}', ['as' => 'albums', 'uses' => 'MasterController@albums']);
+
 Route::group(['middleware' => 'auth'], function () {
 	//    Route::get('/link1', function ()    {
 	//        // Uses Auth Middleware

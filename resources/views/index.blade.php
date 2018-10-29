@@ -78,13 +78,13 @@
 				@foreach($newsongs as $item)
 				@if ($songCount % 4 != 0)
 				<div class="col-md-3 content-grid">
-					<a class="play-icon popup-with-zoom-anim" href="songs/{{$item->songid}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
-					<a class="button play-icon popup-with-zoom-anim" href="songs/{{$item->songid}}">Listen now</a>
+					<a class="play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
+					<a class="button play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}">Listen now</a>
 				</div>
 				@else
 				<div class="col-md-3 content-grid last-grid">
-					<a class="play-icon popup-with-zoom-anim" href="songs/{{$item->songid}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
-					<a class="button play-icon popup-with-zoom-anim" href="songs/{{$item->songid}}">Listen now</a>
+					<a class="play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
+					<a class="button play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}">Listen now</a>
 				</div>
 				@endif
 				<?php $songCount++?>
