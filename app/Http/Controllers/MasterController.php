@@ -78,42 +78,42 @@ class MasterController extends Controller {
 	}
 
 	public function updateprofile(Request $request) {
-		if (is_null($request->input('username'))) {
+		if ((is_null($request->input('username'))) || ($request->input('username') == Auth::user()->name)) {
 			$name = Auth::user()->name;
 		} else {
 			$name = $request->input('username');
 		};
-		if (is_null($request->input('email'))) {
+		if ((is_null($request->input('email'))) || ($request->input('email') == Auth::user()->email)) {
 			$email = Auth::user()->email;
 		} else {
 			$email = $request->input('email');
 		};
-		if (is_null($request->input('location'))) {
+		if ((is_null($request->input('location'))) || ($request->input('location') == Auth::user()->location)) {
 			$location = Auth::user()->location;
 		} else {
 			$location = $request->input('location');
 		};
-		if (is_null($request->input('password'))) {
+		if ((is_null($request->input('password'))) || ($request->input('password') == Auth::user()->password)) {
 			$password = Auth::user()->password;
 		} else {
 			$password = $request->input('password');
 		};
-		if (is_null($request->input('dob'))) {
+		if ((is_null($request->input('dob'))) || ($request->input('dob') == Auth::user()->dob)) {
 			$dob = Auth::user()->dob;
 		} else {
 			$dob = $request->input('dob');
 		};
-		if (is_null($request->input('gender'))) {
+		if ((is_null($request->input('gender'))) || ($request->input('gender') == Auth::user()->gender)) {
 			$gender = Auth::user()->gender;
 		} else {
 			$gender = $request->input('gender');
 		};
-		if (is_null($request->input('about'))) {
+		if ((is_null($request->input('about'))) || ($request->input('about') == Auth::user()->about)) {
 			$about = Auth::user()->about;
 		} else {
 			$about = $request->input('about');
 		};
-		if (is_null($request->avatar)) {
+		if ((is_null($request->avatar)) || ($request->input('avatar') == Auth::user()->avatar)) {
 			$avatar = Auth::user()->avatar;
 		} else {
 			$avatar = $request->avatar->getClientOriginalName();
