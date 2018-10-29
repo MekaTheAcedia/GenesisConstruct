@@ -2,7 +2,6 @@
 @section('content')
 <div id="page-wrapper">
 	<div class="inner-content">
-
 		<div class="music-left">
 			<!--banner-section-->
 			<div class="banner-section">
@@ -43,7 +42,7 @@
 						</ul>
 					</div>
 					<!--banner-->
-					<script src="js/responsiveslides.min.js"></script>
+					<script src="{{asset('js/responsiveslides.min.js')}}"></script>
 					<script>
 						// You can also use "$(window).load(function() {"
 						$(function () {
@@ -78,12 +77,12 @@
 				@foreach($newsongs as $item)
 				@if ($songCount % 4 != 0)
 				<div class="col-md-3 content-grid">
-					<a class="play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
+					<a class="play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}"><img src="{{asset($item->avatar)}}" title="{{$item->title}}"></a>
 					<a class="button play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}">Listen now</a>
 				</div>
 				@else
 				<div class="col-md-3 content-grid last-grid">
-					<a class="play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
+					<a class="play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}"><img src="{{asset($item->avatar)}}" title="{{$item->title}}"></a>
 					<a class="button play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}">Listen now</a>
 				</div>
 				@endif
@@ -102,11 +101,11 @@
 				@foreach($discover as $item)
 				@if ($songCount % 4 != 0)
 				<div class="col-md-3 content-grid">
-					<a href="songs/{{$item->songid}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
+					<a href="songs/{{$item->songid}}"><img src="{{asset($item->avatar)}}" title="{{$item->title}}"></a>
 				</div>
 				@else
 				<div class="col-md-3 content-grid last-grid">
-					<a href="songs/{{$item->songid}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
+					<a href="songs/{{$item->songid}}"><img src="{{asset($item->avatar)}}" title="{{$item->title}}"></a>
 				</div>
 				@endif
 				<?php $songCount++?>
@@ -149,7 +148,6 @@
 											</div>
 										</div>
 										<div class="jp-toggles">
-
 											<button class="jp-full-screen" role="button" tabindex="0">full screen</button>
 										</div>
 									</div>
@@ -159,7 +157,71 @@
 								</div>
 							</div>
 							<div class="jp-playlist">
-								<ul style="display: block;"><li class="jp-playlist-current"><div><a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a><a href="javascript:;" class="jp-playlist-item jp-playlist-current" tabindex="0">1. Ellie-Goulding <span class="jp-artist">by Pixar</span></a></div></li><li><div><a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a><a href="javascript:;" class="jp-playlist-item" tabindex="0">2. Mark-Ronson-Uptown <span class="jp-artist">by Pixar</span></a></div></li><li><div><a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a><a href="javascript:;" class="jp-playlist-item" tabindex="0">3. Ellie-Goulding <span class="jp-artist">by Pixar</span></a></div></li><li><div><a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a><a href="javascript:;" class="jp-playlist-item" tabindex="0">4. Maroon-Sugar <span class="jp-artist">by Pixar</span></a></div></li><li><div><a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a><a href="javascript:;" class="jp-playlist-item" tabindex="0">5. Pharrell-Williams <span class="jp-artist">by Pixar</span></a></div></li><li><div><a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a><a href="javascript:;" class="jp-playlist-item" tabindex="0">6. Ellie-Goulding <span class="jp-artist">by Pixar</span></a></div></li><li><div><a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a><a href="javascript:;" class="jp-playlist-item" tabindex="0">7. Pharrell-Williams <span class="jp-artist">by Pixar</span></a></div></li></ul>
+								<ul style="display: block;">
+									<li class="jp-playlist-current">
+										<div>
+											<a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>
+											<a href="javascript:;" class="jp-playlist-item jp-playlist-current" tabindex="0">
+												1. Ellie-Goulding
+												<span class="jp-artist">by Pixar</span>
+											</a>
+										</div>
+									</li>
+									<li>
+										<div>
+											<a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>
+											<a href="javascript:;" class="jp-playlist-item" tabindex="0">
+												2. Mark-Ronson-Uptown
+												<span class="jp-artist">by Pixar</span>
+											</a>
+										</div>
+									</li>
+									<li>
+										<div>
+											<a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>
+											<a href="javascript:;" class="jp-playlist-item" tabindex="0">
+												3. Ellie-Goulding
+												<span class="jp-artist">by Pixar</span>
+											</a>
+										</div>
+									</li>
+									<li>
+										<div>
+											<a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>
+											<a href="javascript:;" class="jp-playlist-item" tabindex="0">
+												4. Maroon-Sugar
+												<span class="jp-artist">by Pixar</span>
+											</a>
+										</div>
+									</li>
+									<li>
+										<div>
+											<a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>
+											<a href="javascript:;" class="jp-playlist-item" tabindex="0">
+												5. Pharrell-Williams
+												<span class="jp-artist">by Pixar</span>
+											</a>
+										</div>
+									</li>
+									<li>
+										<div>
+											<a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>
+											<a href="javascript:;" class="jp-playlist-item" tabindex="0">
+												6. Ellie-Goulding
+												<span class="jp-artist">by Pixar</span>
+											</a>
+										</div>
+									</li>
+									<li>
+										<div>
+											<a href="javascript:;" class="jp-playlist-item-remove" style="display: none;">×</a>
+											<a href="javascript:;" class="jp-playlist-item" tabindex="0">
+												7. Pharrell-Williams
+												<span class="jp-artist">by Pixar</span>
+											</a>
+										</div>
+									</li>
+								</ul>
 							</div>
 							<div class="jp-no-solution" style="display: none;">
 								<span>Update Required</span>
@@ -170,9 +232,9 @@
 				</div>
 			</div>
 			<!-- script for play-list -->
-			<link href="css/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css">
-			<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
-			<script type="text/javascript" src="js/jplayer.playlist.min.js"></script>
+			<link href="{{asset('css/jplayer.blue.monday.min.css')}}" rel="stylesheet" type="text/css">
+			<script type="text/javascript" src="{{asset('js/jquery.jplayer.min.js')}}"></script>
+			<script type="text/javascript" src="{{asset('js/jplayer.playlist.min.js')}}"></script>
 			<script type="text/javascript">
 			//<![CDATA[
 			$(document).ready(function(){
@@ -273,10 +335,34 @@
 						</div>
 						<div class="price-bottom">
 							<ul>
-								<li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Download unlimited songs</a><div class="clearfix"></div></li>
-								<li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Stream songs in High Definition</a><div class="clearfix"></div></li>
-								<li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">No ads unlimited Devices</a><div class="clearfix"></div></li>
-								<li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Stream songs in High Definition</a><div class="clearfix"></div></li>
+								<li>
+									<a class="icon" href="#">
+										<i class="glyphicon glyphicon-ok"></i>
+									</a>
+									<a class="text" href="#">Download unlimited songs</a>
+									<div class="clearfix"></div>
+								</li>
+								<li>
+									<a class="icon" href="#">
+										<i class="glyphicon glyphicon-ok"></i>
+									</a>
+									<a class="text" href="#">Stream songs in High Definition</a>
+									<div class="clearfix"></div>
+								</li>
+								<li>
+									<a class="icon" href="#">
+										<i class="glyphicon glyphicon-ok"></i>
+									</a>
+									<a class="text" href="#">No ads unlimited Devices</a>
+									<div class="clearfix"></div>
+								</li>
+								<li>
+									<a class="icon" href="#">
+										<i class="glyphicon glyphicon-ok"></i>
+									</a>
+									<a class="text" href="#">Stream songs in High Definition</a>
+									<div class="clearfix"></div>
+								</li>
 							</ul>
 							<a href="single" class="price">Upgrade</a>
 						</div>
@@ -288,10 +374,31 @@
 						</div>
 						<div class="price-bottom">
 							<ul>
-								<li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Download unlimited songs</a><div class="clearfix"></div></li>
-								<li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Stream songs in High Definition</a><div class="clearfix"></div></li>
-								<li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">No ads unlimited Devices</a><div class="clearfix"></div></li>
-								<li><a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Stream songs in High Definition</a><div class="clearfix"></div></li>
+								<li>
+									<a class="icon" href="#">
+										<i class="glyphicon glyphicon-ok"></i>
+									</a>
+									<a class="text" href="#">Download unlimited songs</a>
+									<div class="clearfix"></div>
+								</li>
+								<li>
+									<a class="icon" href="#">
+										<i class="glyphicon glyphicon-ok"></i>
+									</a>
+									<a class="text" href="#">Stream songs in High Definition</a>
+									<div class="clearfix"></div>
+								</li>
+								<li>
+									<a class="icon" href="#">
+										<i class="glyphicon glyphicon-ok"></i>
+									</a>
+									<a class="text" href="#">No ads unlimited Devices</a>
+									<div class="clearfix"></div>
+								</li>
+								<li>
+									<a class="icon" href="#"><i class="glyphicon glyphicon-ok"></i></a><a class="text" href="#">Stream songs in High Definition</a>
+									<div class="clearfix"></div>
+								</li>
 							</ul>
 							<a href="single" class="price">Upgrade</a>
 						</div>
@@ -306,21 +413,20 @@
 		<!-- /w3l-agile-its -->
 	</div>
 	<!--body wrapper start-->
-
 	<div class="review-slider">
 		<div class="tittle-head">
-			<h3 class="tittle">Featured Albums <span class="new"> New</span></h3>
-			<div class="clearfix"> </div>
+			<h3 class="tittle">Featured Albums<span class="new">New</span></h3>
+			<div class="clearfix"></div>
 		</div>
 		<ul id="flexiselDemo1">
 			@foreach($newalbums as $item)
 			<li>
-				<a href="albums/{{$item->albumid}}"><img src="{{$item->thumbnail}}" alt=""/></a>
+				<a href="{{URL::route('albums', $item->albumid)}}"><img src="{{asset($item->thumbnail)}}" alt=""/></a>
 				<div class="slide-title"><h4>{{$item->title}}</h4></div>
 				<div class="date-city">
 					<h5>{{$item->releasedate}}</h5>
 					<div class="buy-tickets">
-						<a href="albums/{{$item->albumid}}">READ MORE</a>
+						<a href="{{URL::route('albums', $item->albumid)}}">READ MORE</a>
 					</div>
 				</div>
 			</li>
@@ -353,7 +459,7 @@
 		});
 		});
 		</script>
-		<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+		<script type="text/javascript" src="{{asset('js/jquery.flexisel.js')}}"></script>
 	</div>
 </div>
 <div class="clearfix"></div>

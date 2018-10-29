@@ -47,8 +47,7 @@
 						</ul>
 					</li>
 					<li><a href="{{URL::route('blog')}}"><i class="lnr lnr-book"></i><span>Blog</span></a></li>
-					<li><a href="typography"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>
-					<li class="menu-list"><a href="#"><i class="lnr lnr-heart"></i>  <span>My Favourities</span></a>
+					<li class="menu-list"><a href="#"><i class="lnr lnr-heart"></i><span>My Favourities</span></a>
 					<ul class="sub-menu-list">
 						<li><a href="{{URL::route('radio')}}">All Songs</a></li>
 					</ul>

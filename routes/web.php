@@ -23,10 +23,6 @@ Route::get('/radio', ['as' => 'radio', 'uses' => 'MasterController@radio']);
 
 Route::get('/single', ['as' => 'single', 'uses' => 'MasterController@single']);
 
-Route::get('/typography', function () {
-	return view('typography');
-});
-
 Route::post('/search', ['as' => 'search', 'uses' => 'MasterController@search']);
 
 Route::get('/logout', ['as' => 'logout', 'uses' => 'Auth\LogoutController@getLogout']);

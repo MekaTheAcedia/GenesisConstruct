@@ -36,7 +36,12 @@ class MasterController extends Controller {
 	}
 
 	public function radio(Request $request) {
-		return view('radio');
+		$songs = songs::orderBy('uploaddate', '')->paginate(24);
+		$discover = songs::inRandomOrder()->paginate(12);
+		return view('radio')->with([
+			'songs' => $songs,
+			'discover' => $discover,
+		]);
 	}
 
 	public function single(Request $request) {
