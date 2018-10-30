@@ -31,7 +31,7 @@
 				@foreach ($album as $item)
 				<div class="col-md-3 browse-grid">
 					<a  href="{{URL::route('albums', $item->albumid)}}"><img src="{{asset($item->thumbnail)}}" title="{{$item->title}}"></a>
-					<a href="{{URL::route('albums', $item->albumid)}}"><i class="glyphicon glyphicon-play-circle"></i></a>
+					<a href="{{URL::route('albums', $item->albumid)}}"></a>
 					<a class="sing" href="{{URL::route('albums', $item->albumid)}}">{{$item->title}}</a>
 				</div>
 				@endforeach

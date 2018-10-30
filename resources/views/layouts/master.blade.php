@@ -31,7 +31,7 @@
 					<h1><a href="{{URL::route('index')}}">Mosai<span>c</span></a></h1>
 				</div>
 				<div class="logo-icon text-center">
-					<a href="{{URL::route('index')}}">M </a>
+					<a href="{{URL::route('index')}}" style="height: inherit; width: inherit;"><img src="{{asset('img/Guilty Crown.ico')}}" style="height: inherit; width: inherit;"></a>
 				</div>
 				<!--logo and iconic logo end-->
 				<div class="left-side-inner">
@@ -138,23 +138,24 @@
 							<span>Logout<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
 						</a>
 						<a href="{{URL::route('profiledetails')}}" id="loginButton">
-							<span>Profile<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
+							<span><i class="arrow glyphicon glyphicon-user"></i></span>
 						</a>
 					</div>
 				</div>
 				@else
 				<div class="col-md-4 login-pop">
 					<div id="loginpop">
-						<a href="{{route('login')}}" id="loginButton">
-							<span>Login<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
-						</a>
 						<a href="{{route('register')}}" id="loginButton">
 							<span>Register<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
 						</a>
+						<a href="{{route('login')}}" id="loginButton">
+							<span><i class="arrow glyphicon glyphicon-log-in"></i></span>
+						</a>
+
 					</div>
 				</div>
 				@endif
-				<div class="clearfix"> </div>
+				<div class="clearfix"></div>
 			</div>
 			<!-------->
 		</div>

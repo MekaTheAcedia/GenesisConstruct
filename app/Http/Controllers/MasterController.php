@@ -144,7 +144,7 @@ class MasterController extends Controller {
 			return redirect('profiledetails');
 		} catch (\Exception $e) {
 			return redirect('profile')->with([
-				'error' => $error,
+				'e' => $error,
 			]);
 		}
 	}
