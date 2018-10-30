@@ -10,24 +10,28 @@
 		<form class="form" action="{{route('updateprofile')}}" method="post" enctype="multipart/form-data">
 			{{csrf_field()}}
 			<div class="col-sm-3"><!--left col-->
-				<div class="text-center">
-					<img src="{{asset('img/'.Auth::user()->avatar)}}" class="avatar img-circle img-thumbnail img-fluid">
-					<h6>Upload a different photo...</h6>
-					<input type="file" class="text-center center-block file-upload" name="avatar">
+			<div class="text-center">
+				<img src="{{asset('img/'.Auth::user()->avatar)}}" class="avatar img-circle img-thumbnail img-fluid">
+				<h6>Upload a different photo...</h6>
+				<input type="file" class="text-center center-block file-upload" name="avatar">
+			</div>
+			<hr>
+			<br>
+			<div class="panel panel-default">
+				<div class="panel-heading">Social Media</div>
+				<div class="panel-body">
+					<i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
 				</div>
-				<hr>
-				<br>
-				<div class="panel panel-default">
-					<div class="panel-heading">Social Media</div>
-					<div class="panel-body">
-						<i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
-					</div>
-				</div>
-				<div class="panel panel-default" style="opacity: 0;">
-					<div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
-					<div class="panel-body"><a>bootnipets.com</a></div>
-				</div>
+			</div>
+			<div class="panel panel-default" style="opacity: 0;">
+				<div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+				<div class="panel-body"><a>bootnipets.com</a></div>
+			</div>
 			</div><!--/col-3-->
+			@if (isset($e))
+			{!!$e!!}
+			@endif
+			<div></div>
 			<div class="col-sm-9">
 				<div class="tab-content">
 					<div class="tab-pane active" id="home">
@@ -35,19 +39,19 @@
 						<div class="form-group">
 							<div class="col-xs-6">
 								<label for="username"><h4>Username</h4></label>
-								<input type="text" class="form-control" name="username" id="username">
+								<input type="text" class="form-control" name="username" id="username" placeholder="{{Auth::user()->name}}">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-xs-6">
 								<label for="email"><h4>Email</h4></label>
-								<input type="email" class="form-control" name="email" id="email">
+								<input type="email" class="form-control" name="email" id="email" placeholder="{{Auth::user()->email}}">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-xs-6">
 								<label for="location"><h4>Location</h4></label>
-								<input type="location" class="form-control" name="location" id="location">
+								<input type="location" class="form-control" name="location" id="location"placeholder="{{Auth::user()->location}}">
 							</div>
 						</div>
 						<div class="form-group">
@@ -66,7 +70,7 @@
 							<div class="col-xs-6">
 								<label for="gender"><h4>Gender</h4></label>
 								<select class="form-control" name="gender">
-									<option value="" selected="" disabled="">Choose</option>
+									<option value="" selected="" disabled="">{{Auth::user()->gender}}</option>
 									<option value="Other">Other</option>
 									<option value="Male" >Male</option>
 									<option value="Female">Female</option>
@@ -76,7 +80,12 @@
 						<div class="form-group">
 							<div class="col-xs-12">
 								<label for="about"><h4>About</h4></label>
-								<textarea type="text" class="form-control" name="about" id="about"></textarea>
+								<textarea name="about" id="summernote"></textarea>
+								<script>
+								$(document).ready(function() {
+								$('#summernote').summernote();
+								});
+								</script>
 							</div>
 						</div>
 						<div class="form-group">
@@ -87,12 +96,12 @@
 							</div>
 						</div>
 						<hr>
-					</div><!--/tab-pane-->
-				</div><!--/tab-content-->
-			</div><!--/col-9-->
-		</form>
-	</div><!--/row-->
-</div>
-<hr style="opacity: 0">
-<div class="clearfix"></div>
-@stop
+						</div><!--/tab-pane-->
+						</div><!--/tab-content-->
+						</div><!--/col-9-->
+					</form>
+					</div><!--/row-->
+				</div>
+				<hr style="opacity: 0">
+				<div class="clearfix"></div>
+				@stop

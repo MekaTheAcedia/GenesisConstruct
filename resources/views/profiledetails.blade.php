@@ -179,8 +179,8 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>About</label>
 							</div>
-							<div class="col-md-12">
-								<p>{{Auth::user()->about}}</p>
+							<div class="col-md-12" style="word-break: break-all;">
+								{!!Auth::user()->about!!}
 							</div>
 						</div>
 					</div>

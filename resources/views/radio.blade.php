@@ -39,7 +39,6 @@
 										<img src="{{asset($item->avatar)}}" title="{{$item->title}}">
 									</a>
 									<a href="{{URL::route('songs', $item->songid)}}">
-										<i class="glyphicon glyphicon-play-circle"></i>
 									</a>
 									<a class="art" href="{{URL::route('songs', $item->songid)}}">{{$item->title}}</a>
 								</div>
@@ -59,19 +58,11 @@
 					<h3 class="tittle">Discover <span class="new">View</span></h3>
 					<div class="clearfix"> </div>
 				</div>
-				<?php $songCount = 1?>
 				@foreach ($discover as $item)
-				@if ($songCount % 4 != 0)
 				<div class="col-md-3 artist-grid">
 					<a href="{{URL::route('songs', $item->songid)}}"><img src="{{asset($item->avatar)}}" title="{{$item->title}}"></a>
 					<div class="inner-info"><h5>{{$item->title}}</h5></div>
 				</div>
-				@else
-				<div class="col-md-3 artist-grid last-grid">
-					<a href="{{URL::route('songs', $item->songid)}}"><img src="{{asset($item->avatar)}}" title="{{$item->title}}"></a>
-					<div class="inner-info"><h5>{{$item->title}}</h5></div>
-				</div>
-				@endif
 				@endforeach
 				<div class="clearfix"> </div>
 			</div>

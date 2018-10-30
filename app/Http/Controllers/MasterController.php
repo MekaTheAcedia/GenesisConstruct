@@ -28,7 +28,12 @@ class MasterController extends Controller {
 	}
 
 	public function browse(Request $request) {
-		return view('browse');
+		$album = albums::orderBy('releasedate', '')->paginate(24);
+		$discover = albums::inRandomOrder()->paginate(12);
+		return view('browse')->with([
+			'album' => $album,
+			'discover' => $discover,
+		]);
 	}
 
 	public function contact(Request $request) {
@@ -83,6 +88,7 @@ class MasterController extends Controller {
 	}
 
 	public function updateprofile(Request $request) {
+		$error = '<div class="alert alert-danger alert-dismissable">Email is already taken</div>';
 		if ((is_null($request->input('username'))) || ($request->input('username') == Auth::user()->name)) {
 			$name = Auth::user()->name;
 		} else {
@@ -124,18 +130,23 @@ class MasterController extends Controller {
 			$avatar = $request->avatar->getClientOriginalName();
 			$request->avatar->move('img', $avatar);
 		}
-
-		user::where('id', Auth::id())->update([
-			'name' => $name,
-			'email' => $email,
-			'location' => $location,
-			'password' => $password,
-			'dob' => $dob,
-			'gender' => $gender,
-			'about' => $about,
-			'avatar' => $avatar,
-		]);
-		return redirect('profiledetails');
+		try {
+			user::where('id', Auth::id())->update([
+				'name' => $name,
+				'email' => $email,
+				'location' => $location,
+				'password' => $password,
+				'dob' => $dob,
+				'gender' => $gender,
+				'about' => $about,
+				'avatar' => $avatar,
+			]);
+			return redirect('profiledetails');
+		} catch (\Exception $e) {
+			return redirect('profile')->with([
+				'error' => $error,
+			]);
+		}
 	}
 
 	public function songs(Request $request, $songid) {

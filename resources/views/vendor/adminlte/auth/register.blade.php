@@ -10,7 +10,7 @@
     <div id="app">
         <div class="register-box">
             <div class="register-logo">
-                <a href="{{ url('/home') }}"><b>Genesis</b>Construct</a>
+                <a href="{{URL::route('index')}}"><b>Genesis</b>Construct</a>
             </div>
 
             @if (count($errors) > 0)

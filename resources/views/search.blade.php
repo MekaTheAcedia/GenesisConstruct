@@ -48,9 +48,9 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 					<li><i class="glyphicon glyphicon-tags"></i> <span>{{$item->genre}}</span></li>
 				</ul>
 			</div>
-			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet" style="word-break: break-all;">
 				<h3><a href="{{URL::route('songs', $item->songid)}}" title="">{{$item->title}}</a></h3>
-				<p>{{$item->description}}</p>
+				<p>{!!$item->description!!}</p>
 			</div>
 			<span class="clearfix borda"></span>
 		</article>
@@ -77,38 +77,9 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 					<li><i class="glyphicon glyphicon-tags"></i> <span>{{$item->genre}}</span></li>
 				</ul>
 			</div>
-			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet" style="word-break: break-all;">
 				<h3><a href="{{URL::route('producer', $item->producerid)}}" title="">{{$item->name}}</a></h3>
-				<p>{{$item->about}}</p>
-			</div>
-			<span class="clearfix borda"></span>
-		</article>
-		@endforeach
-	</section>
-	@foreach ($user as $item)
-	<hgroup class="mb20">
-	<h1>Users</h1>
-	</hgroup>
-	@php
-		break
-	@endphp
-	@endforeach
-	<section class="col-xs-12 col-sm-6 col-md-12">
-		@foreach ($user as $item)
-		<article class="search-result row">
-			<div class="col-xs-12 col-sm-12 col-md-2">
-				<a href="{{URL::route('user', $item->id)}}" title="{{$item->name}}" class="thumbnail"><img src="{{asset($item->avatar)}}"/></a>
-			</div>
-			<div class="col-xs-12 col-sm-12 col-md-2">
-				<ul class="meta-search">
-					<li><i class="glyphicon glyphicon-calendar"></i><span>{{$item->dob}}</span></li>
-					<li><i class="glyphicon glyphicon-home"></i> <span>{{$item->location}}</span></li>
-					<li><i class="glyphicon glyphicon-tag"></i> <span>{{$item->email}}</span></li>
-				</ul>
-			</div>
-			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
-				<h3><a href="{{URL::route('user', $item->id)}}" title="">{{$item->name}}</a></h3>
-				<p>{{$item->about}}</p>
+				<p>{!!$item->about!!}</p>
 			</div>
 			<span class="clearfix borda"></span>
 		</article>
@@ -135,9 +106,38 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 					<li><i class="glyphicon glyphicon-tag"></i> <span>{{$item->price}}</span></li>
 				</ul>
 			</div>
-			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet" style="word-break: break-all;">
 				<h3><a href="{{URL::route('albums', $item->albumid)}}" title="">{{$item->title}}</a></h3>
-				<p>{{$item->description}}</p>
+				<p>{!!$item->description!!}</p>
+			</div>
+			<span class="clearfix borda"></span>
+		</article>
+		@endforeach
+	</section>
+	@foreach ($user as $item)
+	<hgroup class="mb20">
+	<h1>Users</h1>
+	</hgroup>
+	@php
+		break
+	@endphp
+	@endforeach
+	<section class="col-xs-12 col-sm-6 col-md-12">
+		@foreach ($user as $item)
+		<article class="search-result row">
+			<div class="col-xs-12 col-sm-12 col-md-2">
+				<a href="{{URL::route('user', $item->id)}}" title="{{$item->name}}" class="thumbnail"><img src="{{asset('img/'.$item->avatar)}}"/></a>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-2">
+				<ul class="meta-search">
+					<li><i class="glyphicon glyphicon-calendar"></i><span>{{$item->dob}}</span></li>
+					<li><i class="glyphicon glyphicon-home"></i> <span>{{$item->location}}</span></li>
+					<li><i class="glyphicon glyphicon-tag"></i> <span>{{$item->email}}</span></li>
+				</ul>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet" style="word-break: break-all;">
+				<h3><a href="{{URL::route('user', $item->id)}}" title="">{{$item->name}}</a></h3>
+				<p>{!!$item->about!!}</p>
 			</div>
 			<span class="clearfix borda"></span>
 		</article>

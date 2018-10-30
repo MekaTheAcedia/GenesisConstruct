@@ -171,8 +171,8 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>About</label>
 							</div>
-							<div class="col-md-12">
-								<p>{{$item->about}}</p>
+							<div class="col-md-12" style="word-break: break-all;">
+								<p>{!!$item->about!!}</p>
 							</div>
 						</div>
 					</div>

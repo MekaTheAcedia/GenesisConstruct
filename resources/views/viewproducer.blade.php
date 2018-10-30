@@ -119,7 +119,7 @@ color: #0062cc;
 				<div class="profile-work">
 					<p>Sites</p>
 					@foreach ($producer as $item)
-					<a href="#">{{$item->sites}}</a>
+					<a href="#" style="word-break: break-all;">{{$item->sites}}</a>
 					@endforeach
 				</div>
 			</div>
@@ -195,8 +195,8 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>About</label>
 							</div>
-							<div class="col-md-12">
-								<p>{{$item->about}}</p>
+							<div class="col-md-12" style="word-break: break-all;">
+								<p>{!!$item->about!!}</p>
 							</div>
 						</div>
 					</div>
