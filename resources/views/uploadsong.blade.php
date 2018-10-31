@@ -1,8 +1,5 @@
 @extends('layouts.master')
 @section('content')
-<style type="text/css">
-	.btn-fullscreen,.btn-codeview,.note-table,.note-insert{display: none;}
-</style>
 <hr>
 <div class="container bootstrap snippet">
 	<div class="row">
@@ -15,13 +12,13 @@
 			<div class="col-sm-3">
 				<!--left col-->
 				<div class="text-center">
-					<img src="{{asset('img/'.Auth::user()->avatar)}}" class="avatar img-circle img-thumbnail img-fluid">
-					<h6>Upload a different photo...</h6>
+					<img src="https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg" class="avatar img-thumbnail img-fluid">
+					<h6>Upload a song photo...</h6>
 					<input type="file" class="text-center center-block file-upload" name="avatar">
 				</div>
 				<hr>
 				<br>
-				<div class="panel panel-default">
+				<div class="panel panel-default" style="opacity: 0;">
 					<div class="panel-heading">Social Media</div>
 					<div class="panel-body">
 						<i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
@@ -34,9 +31,6 @@
 			</div>
 			<!--/col-3-->
 			<div class="col-sm-9">
-			@if (session('error'))
-			{!!session('error')!!}
-			@endif
 				<div class="tab-content">
 					<div class="tab-pane active" id="home">
 						<hr>

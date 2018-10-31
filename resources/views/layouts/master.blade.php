@@ -22,7 +22,7 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
 	</head>
 	<!-- /w3layouts-agile -->
-	<body class="sticky-header left-side-collapsed" onload="initMap()">
+	<body class="sticky-header left-side-collapsed">
 		<section>
 			<!-- left side start-->
 			<div class="left-side sticky-left-side">

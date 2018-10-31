@@ -7,6 +7,7 @@ use App\Models\albums;
 use App\Models\producer;
 use App\Models\songs;
 use App\Models\user;
+use App\Services\PayUService\Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -88,7 +89,6 @@ class MasterController extends Controller {
 	}
 
 	public function updateprofile(Request $request) {
-		$error = '<div class="alert alert-danger alert-dismissable">Email is already taken</div>';
 		if ((is_null($request->input('username'))) || ($request->input('username') == Auth::user()->name)) {
 			$name = Auth::user()->name;
 		} else {
@@ -144,7 +144,7 @@ class MasterController extends Controller {
 			return redirect('profiledetails');
 		} catch (\Exception $e) {
 			return redirect('profile')->with([
-				'e' => $error,
+				'error' => '<div class="alert alert-danger alert-dismissable">Email is already taken</div>',
 			]);
 		}
 	}
@@ -175,5 +175,9 @@ class MasterController extends Controller {
 		return view('viewproducer')->with([
 			'producer' => $producer,
 		]);
+	}
+
+	public function uploadsong(Request $request) {
+		return view('uploadsong');
 	}
 }

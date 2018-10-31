@@ -41,6 +41,8 @@ Route::get('producer/{producerid}', ['as' => 'producer', 'uses' => 'MasterContro
 
 Route::get('/albums/{albumid}', ['as' => 'albums', 'uses' => 'MasterController@albums']);
 
+Route::get('/uploadsong', ['as' => 'uploadsong', 'uses' => 'MasterController@uploadsong']);
+
 Route::group(['middleware' => 'auth'], function () {
 	//    Route::get('/link1', function ()    {
 	//        // Uses Auth Middleware
