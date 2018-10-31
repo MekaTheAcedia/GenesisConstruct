@@ -1,6 +1,10 @@
 @extends('layouts.master')
 @section('content')
 <style type="text/css">
+	.note-toolbar{
+		position: relative !important;
+		z-index: 1;
+	}
 	.btn-fullscreen,.btn-codeview,.note-table,.note-insert{display: none;}
 </style>
 <hr>
