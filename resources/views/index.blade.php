@@ -439,7 +439,7 @@
 			visibleItems: 5,
 			animationSpeed: 1000,
 			autoPlay: true,
-					autoPlaySpeed: 3000,
+					autoPlaySpeed: 5000,
 			pauseOnHover: false,
 			enableResponsiveBreakpoints: true,
 			responsiveBreakpoints: {

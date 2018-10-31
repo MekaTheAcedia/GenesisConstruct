@@ -27,9 +27,6 @@
 			<!-- left side start-->
 			<div class="left-side sticky-left-side">
 				<!--logo and iconic logo start-->
-				<div class="logo">
-					<h1><a href="{{URL::route('index')}}">Mosai<span>c</span></a></h1>
-				</div>
 				<div class="logo-icon text-center">
 					<a href="{{URL::route('index')}}" style="height: inherit; width: inherit;"><img src="{{asset('img/Guilty Crown.ico')}}" style="height: inherit; width: inherit;"></a>
 				</div>
@@ -37,24 +34,59 @@
 				<div class="left-side-inner">
 					<!--sidebar nav start-->
 					<ul class="nav nav-pills nav-stacked custom-nav">
-						<li class="active"><a href="{{URL::route('index')}}"><i class="lnr lnr-home"></i><span>Home</span></a></li>
-						<li><a href="{{URL::route('radio')}}"><i class="camera"></i> <span>Radio</span></a></li>
-						<li><a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-th"></i><span>Apps</span></a></li>
-						<li><a href="{{URL::route('radio')}}"><i class="lnr lnr-users"></i> <span>Artists</span></a></li>
-						<li><a href="{{URL::route('browse')}}"><i class="lnr lnr-music-note"></i> <span>Albums</span></a></li>
-						<li class="menu-list"><a href="{{URL::route('browse')}}"><i class="lnr lnr-indent-increase"></i> <span>Browser</span></a>
-						<ul class="sub-menu-list">
-							<li><a href="{{URL::route('browse')}}">Artists</a> </li>
-							<li><a href="404">Services</a> </li>
-						</ul>
+						<li class="active">
+							<a href="{{URL::route('index')}}">
+								<i class="lnr lnr-home"></i>
+								<span>Home</span>
+							</a>
+						</li>
+						<li>
+							<a href="{{URL::route('radio')}}">
+								<i class="camera"></i>
+								<span>Radio</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" data-toggle="modal" data-target="#myModal1">
+								<i class="fa fa-th"></i>
+								<span>Apps</span>
+							</a>
+						</li>
+						<li>
+							<a href="{{URL::route('radio')}}">
+								<i class="lnr lnr-users"></i>
+								<span>Artists</span>
+							</a>
+						</li>
+						<li>
+							<a href="{{URL::route('browse')}}">
+								<i class="lnr lnr-music-note"></i>
+								<span>Albums</span>
+							</a>
+						</li>
 					</li>
-					<li><a href="{{URL::route('blog')}}"><i class="lnr lnr-book"></i><span>Blog</span></a></li>
-					<li class="menu-list"><a href="#"><i class="lnr lnr-heart"></i><span>My Favourities</span></a>
+					<li>
+						<a href="{{URL::route('blog')}}">
+							<i class="lnr lnr-book"></i>
+							<span>Blog</span>
+						</a>
+					</li>
+					<li class="menu-list">
+						<a href="#">
+							<i class="lnr lnr-heart"></i>
+							<span>My Favourities</span>
+						</a>
 					<ul class="sub-menu-list">
-						<li><a href="{{URL::route('radio')}}">All Songs</a></li>
+						<li>
+							<a href="{{URL::route('radio')}}">All Songs</a>
+						</li>
 					</ul>
 				</li>
-				<li class="menu-list"><a href="{{URL::route('contact')}}"><i class="fa fa-thumb-tack"></i><span>Contact</span></a>
+				<li class="menu-list">
+					<a href="{{URL::route('contact')}}">
+						<i class="fa fa-thumb-tack"></i>
+						<span>Contact</span>
+					</a>
 				<ul class="sub-menu-list">
 					<li><a href="{{URL::route('contact')}}">Location</a> </li>
 				</ul>
