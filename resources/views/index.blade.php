@@ -10,7 +10,7 @@
 						<ul class="rslides callbacks callbacks1" id="slider4">
 							<li>
 								<div class="banner-img">
-									<img src="images/11.jpg" class="img-responsive" alt="">
+									<img src="img/11.jpg" class="img-responsive" alt="">
 								</div>
 								<div class="banner-info">
 									<a class="trend" href="single">TRENDING</a>
@@ -20,7 +20,7 @@
 							</li>
 							<li>
 								<div class="banner-img">
-									<img src="images/22.jpg" class="img-responsive" alt="">
+									<img src="img/22.jpg" class="img-responsive" alt="">
 								</div>
 								<div class="banner-info">
 									<a class="trend" href="single">TRENDING</a>
@@ -30,7 +30,7 @@
 							</li>
 							<li>
 								<div class="banner-img">
-									<img src="images/33.jpg" class="img-responsive" alt="">
+									<img src="img/33.jpg" class="img-responsive" alt="">
 								</div>
 								<div class="banner-info">
 									<a class="trend" href="single">TRENDING</a>
@@ -316,10 +316,10 @@
 			<div class="apps">
 				<h3 class="hd-tittle">Mosaic now available in</h3>
 				<div class="banner-button">
-					<a href="#"><img src="images/1.png" alt=""></a>
+					<a href="#"><img src="img/1.png" alt=""></a>
 				</div>
 				<div class="banner-button green-button">
-					<a href="#"><img src="images/2.png" alt=""></a>
+					<a href="#"><img src="img/2.png" alt=""></a>
 				</div>
 				<div class="clearfix"></div>
 			</div>
