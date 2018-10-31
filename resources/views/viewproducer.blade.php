@@ -100,7 +100,7 @@ color: #0062cc;
 			<div class="col-md-4">
 				@foreach ($producer as $item)
 				<div class="profile-img">
-					<img src="{{asset('img/'.$item->avatar)}}">
+					<img src="{{asset($item->avatar)}}">
 				</div>
 				@endforeach
 			</div>
@@ -131,7 +131,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Name</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{$item->name}}</p>
 							</div>
 						</div>
@@ -139,7 +139,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Date of Birth</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{$item->dob}}</p>
 							</div>
 						</div>
@@ -147,7 +147,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Gender</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{$item->gender}}</p>
 							</div>
 						</div>
@@ -155,7 +155,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Status</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{$item->status}}</p>
 							</div>
 						</div>
@@ -163,7 +163,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Genre</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{$item->genre}}</p>
 							</div>
 						</div>
@@ -171,7 +171,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Associations</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{$item->associations}}</p>
 							</div>
 						</div>
@@ -179,7 +179,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Works</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{$item->works}}</p>
 							</div>
 						</div>
@@ -187,7 +187,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Discography</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{$item->discography}}</p>
 							</div>
 						</div>

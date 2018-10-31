@@ -7,6 +7,7 @@ use App\Models\albums;
 use App\Models\producer;
 use App\Models\songs;
 use App\Models\user;
+use App\Models\vocals;
 use App\Services\PayUService\Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -127,7 +128,7 @@ class MasterController extends Controller {
 		if ((is_null($request->avatar)) || ($request->input('avatar') == Auth::user()->avatar)) {
 			$avatar = Auth::user()->avatar;
 		} else {
-			$avatar = $request->avatar->getClientOriginalName();
+			$avatar = 'img/' . $request->avatar->getClientOriginalName();
 			$request->avatar->move('img', $avatar);
 		}
 		try {
@@ -178,6 +179,11 @@ class MasterController extends Controller {
 	}
 
 	public function uploadsong(Request $request) {
-		return view('uploadsong');
+		$producer = producer::orderBy('name')->get();
+		$vocal = vocals::orderBy('name')->get();
+		return view('uploadsong')->with([
+			'producer' => $producer,
+			'vocal' => $vocal,
+		]);
 	}
 }

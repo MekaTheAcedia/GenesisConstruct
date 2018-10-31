@@ -1,5 +1,12 @@
 @extends('layouts.master')
 @section('content')
+<style type="text/css">
+	.note-toolbar{
+		position: relative !important;
+		z-index: 1;
+	}
+	.btn-fullscreen,.btn-codeview,.note-table,.note-insert{display: none;}
+</style>
 <hr>
 <div class="container bootstrap snippet">
 	<div class="row">
@@ -18,11 +25,9 @@
 				</div>
 				<hr>
 				<br>
-				<div class="panel panel-default" style="opacity: 0;">
-					<div class="panel-heading">Social Media</div>
-					<div class="panel-body">
-						<i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
-					</div>
+				<div class="panel panel-default">
+					<div class="panel-heading"><a href="#" class="glyphicon glyphicon-plus" style="text-decoration: none;"></a><a href="#">  Add a Producer</a></div>
+					<div class="panel-heading"><a href="#" class="glyphicon glyphicon-plus" style="text-decoration: none;"></a><a href="#">  Add a Singer</a></div>
 				</div>
 				<div class="panel panel-default" style="opacity: 0;">
 					<div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
@@ -36,54 +41,54 @@
 						<hr>
 						<div class="form-group">
 							<div class="col-xs-6">
-								<label for="username"><h4>Username</h4></label>
-								<input type="text" class="form-control" name="username" id="username" placeholder="{{Auth::user()->name}}">
+								<label for="title"><h4>Title</h4></label>
+								<input type="text" class="form-control" name="title" id="title">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-xs-6">
-								<label for="email"><h4>Email</h4></label>
-								<input type="email" class="form-control" name="email" id="email" placeholder="{{Auth::user()->email}}">
+								<label for="genre"><h4>Genre</h4></label>
+								<input type="text" class="form-control" name="genre" id="genre" placeholder="Multiple genres should be seperated with a '/'">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-xs-6">
-								<label for="location"><h4>Location</h4></label>
-								<input type="location" class="form-control" name="location" id="location"placeholder="{{Auth::user()->location}}">
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-xs-6">
-								<label for="password"><h4>Password</h4></label>
-								<input type="password" class="form-control" name="password" id="password">
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-xs-6">
-								<label for="dob"><h4>Date of Birth</h4></label>
-								<input type="date" class="form-control" name="dob" id="dob">
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-xs-6">
-								<label for="gender"><h4>Gender</h4></label>
-								<select class="form-control" name="gender">
-									<option value="" selected="" disabled="">{{Auth::user()->gender}}</option>
-									<option value="Other">Other</option>
-									<option value="Male" >Male</option>
-									<option value="Female">Female</option>
+								<label for="producer"><h4>Producer</h4></label>
+								<select class="form-control" name="producer" id="producer">
+									<option value="" disabled="" selected="">Can't find your producer? Try adding one.</option>
+									@foreach ($producer as $item)
+									<option value="{{$item->producerid}}">{{$item->name}}</option>
+									@endforeach
 								</select>
 							</div>
 						</div>
 						<div class="form-group">
+							<div class="col-xs-6">
+								<label for="vocal"><h4>Vocal</h4></label>
+								<select class="form-control" name="vocal" id="vocal">
+									<option value="" disabled="" selected="">Can't find your singer? Try adding one.</option>
+									@foreach ($vocal as $item)
+									<option value="{{$item->vocalid}}">{{$item->name}}</option>
+									@endforeach
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-6">
+								<label for="country"><h4>Country</h4></label>
+								<input type="text" class="form-control" name="country" id="country">
+							</div>
+						</div>
+						<div class="form-group">
 							<div class="col-xs-12">
-								<label for="about"><h4>About</h4></label>
-								<textarea name="about" id="summernote"></textarea>
-								<script>
-								$(document).ready(function() {
-								$('#summernote').summernote();
-								});
-								</script>
+								<label for="description"><h4>Description</h4></label>
+								<textarea name="description" class="summernote" style=""></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-12">
+								<label for="lyric"><h4>Lyrics</h4></label>
+								<textarea name="lyric" class="summernote"></textarea>
 							</div>
 						</div>
 						<div class="form-group">

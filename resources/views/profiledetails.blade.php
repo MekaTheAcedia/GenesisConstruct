@@ -99,7 +99,7 @@ color: #0062cc;
 		<div class="row">
 			<div class="col-md-4">
 				<div class="profile-img">
-					<img src="{{asset('img/'.Auth::user()->avatar)}}">
+					<img src="{{asset(Auth::user()->avatar)}}">
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -139,7 +139,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Name</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{Auth::user()->name}}</p>
 							</div>
 						</div>
@@ -147,7 +147,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Email</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{Auth::user()->email}}</p>
 							</div>
 						</div>
@@ -155,7 +155,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Date of Birth</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{Auth::user()->dob}}</p>
 							</div>
 						</div>
@@ -163,7 +163,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Gender</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{Auth::user()->gender}}</p>
 							</div>
 						</div>
@@ -171,7 +171,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Location</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{Auth::user()->location}}</p>
 							</div>
 						</div>

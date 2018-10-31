@@ -15,7 +15,7 @@
 			<div class="col-sm-3">
 				<!--left col-->
 				<div class="text-center">
-					<img src="{{asset('img/'.Auth::user()->avatar)}}" class="avatar img-circle img-thumbnail img-fluid">
+					<img src="{{asset(Auth::user()->avatar)}}" class="avatar img-circle img-thumbnail img-fluid">
 					<h6>Upload a different photo...</h6>
 					<input type="file" class="text-center center-block file-upload" name="avatar">
 				</div>
@@ -84,12 +84,7 @@
 						<div class="form-group">
 							<div class="col-xs-12">
 								<label for="about"><h4>About</h4></label>
-								<textarea name="about" id="summernote"></textarea>
-								<script>
-								$(document).ready(function() {
-								$('#summernote').summernote();
-								});
-								</script>
+								<textarea name="about" class="summernote"></textarea>
 							</div>
 						</div>
 						<div class="form-group">

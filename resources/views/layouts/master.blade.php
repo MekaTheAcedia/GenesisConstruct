@@ -250,5 +250,12 @@
 		<script src="{{asset('js/scripts.js')}}"></script>
 		<!-- Bootstrap Core JavaScript -->
 		<script src="{{asset('js/bootstrap.js')}}"></script>
+		<script>
+		$(document).ready(function() {
+			$('.summernote').summernote({
+				height: '150',
+			});
+		});
+		</script>
 	</body>
 </html>

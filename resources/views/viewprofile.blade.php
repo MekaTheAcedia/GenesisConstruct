@@ -100,7 +100,7 @@ color: #0062cc;
 			<div class="col-md-4">
 				@foreach ($user as $item)
 				<div class="profile-img">
-					<img src="{{asset('img/'.$item->avatar)}}">
+					<img src="{{asset($item->avatar)}}">
 				</div>
 				@endforeach
 			</div>
@@ -131,7 +131,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Name</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{$item->name}}</p>
 							</div>
 						</div>
@@ -139,7 +139,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Email</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{$item->email}}</p>
 							</div>
 						</div>
@@ -147,7 +147,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Date of Birth</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{$item->dob}}</p>
 							</div>
 						</div>
@@ -155,7 +155,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Gender</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{$item->gender}}</p>
 							</div>
 						</div>
@@ -163,7 +163,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Location</label>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="word-break: break-all;">
 								<p>{{$item->location}}</p>
 							</div>
 						</div>
