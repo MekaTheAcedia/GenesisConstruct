@@ -36,7 +36,7 @@
 			</div>
 			<!--/col-3-->
 			<div class="col-sm-9">
-				@if (isset(session('error')))
+				@if (session('error'))
 					{!!session('error')!!}
 				@endif
 				<div class="tab-content">
