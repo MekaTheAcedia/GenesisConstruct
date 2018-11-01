@@ -203,10 +203,10 @@
 							@else
 							<div class="col-md-4 login-pop">
 								<div id="loginpop">
-									<a href="{{route('login')}}" id="loginButton">
+									<a href="{{route('register')}}" id="loginButton">
 										<span>Register<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
 									</a>
-									<a href="{{route('register')}}" id="loginButton">
+									<a href="{{route('login')}}" id="loginButton">
 										<span><i class="arrow glyphicon glyphicon-log-in"></i></span>
 									</a>
 								</div>
