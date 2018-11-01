@@ -122,7 +122,10 @@
 				<div class="video-record-list">
 					<div id="jp_container_1" class="jp-video jp-video-270p" role="application" aria-label="media player">
 						<div class="jp-type-playlist">
-							<div id="jquery_jplayer_1" class="jp-jplayer" style="width: 480px; height: 270px;"><img id="jp_poster_0" src="video/play1.png" style="width: 480px; height: 270px; display: inline;"><video id="jp_video_0" preload="metadata" src="http://192.168.30.9/vijayaa/2015/Dec/mosaic/web/video/Ellie-Goulding.webm" title="1. Ellie-Goulding" style="width: 0px; height: 0px;"></video></div>
+							<div id="jquery_jplayer_1" class="jp-jplayer" style="width: 480px; height: 270px;">
+								<img id="jp_poster_0" src="video/play1.png" style="width: 480px; height: 270px; display: inline;">
+								<video id="jp_video_0" preload="metadata" src="http://192.168.30.9/vijayaa/2015/Dec/mosaic/web/video/Ellie-Goulding.webm" title="1. Ellie-Goulding" style="width: 0px; height: 0px;"></video>
+							</div>
 							<div class="jp-gui">
 								<div class="jp-video-play" style="display: block;">
 									<button class="jp-video-play-icon" role="button" tabindex="0">play</button>

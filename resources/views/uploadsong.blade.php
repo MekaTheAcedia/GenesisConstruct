@@ -21,7 +21,7 @@
 				<div class="text-center">
 					<img src="https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg" class="avatar img-thumbnail img-fluid">
 					<h6>Upload a song photo...</h6>
-					<input type="file" class="text-center center-block file-upload" name="avatar" required="">
+					<input type="file" class="text-center center-block file-upload" name="avatar">
 				</div>
 				<hr>
 				<br>
@@ -54,7 +54,7 @@
 						<div class="form-group">
 							<div class="col-xs-6">
 								<label for="producer"><h4>Producer</h4></label>
-								<select class="form-control" name="producer" id="producer" required="">
+								<select class="form-control" name="producer" id="producer">
 									<option value="" disabled="" selected="">Can't find your producer? Try adding one.</option>
 									<option value="">N/A</option>
 									@foreach ($producer as $item)
@@ -79,6 +79,12 @@
 							<div class="col-xs-6">
 								<label for="country"><h4>Country</h4></label>
 								<input type="text" class="form-control" name="country" id="country">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-6">
+								<label for="songaddress"><h4>Song</h4></label>
+								<input type="file" class="text-center center-block file-upload" name="songaddress" required="">
 							</div>
 						</div>
 						<div class="form-group">

@@ -125,7 +125,7 @@ class MasterController extends Controller {
 		} else {
 			$about = $request->input('about');
 		};
-		if ((is_null($request->avatar)) || ($request->input('avatar') == Auth::user()->avatar)) {
+		if (is_null($request->avatar)) {
 			$avatar = Auth::user()->avatar;
 		} else {
 			$avatar = 'img/' . $request->avatar->getClientOriginalName();
@@ -189,21 +189,64 @@ class MasterController extends Controller {
 
 	public function songUploader(Request $request) {
 		$title = $request->input('title');
-		$genre = $request->input('genre');
-		$producer = producer::where('producerid', $request->input('producer'))->get('name');
-		$vocal = vocals::where('vocalid', $request->input('vocal'))->get('name');
-		$country = $request->input('country');
-		$description = $request->input('description');
-		$lyric = $request->input('lyric');
-		$uploaddate = date('Y-m-d');
-		$avatar = 'img/' . $request->avatar->getClientOriginalName();
-		$request->avatar->move('img', $avatar);
-		try {
-			songs::insert([
-			]);
-			return redirect('uploadsong');
-		} catch (\Exception $e) {
-			return redirect('uploadsong');
+		if (is_null($request->input('genre'))) {
+			$genre = 'N/A';
+		} else {
+			$genre = $request->input('genre');
 		}
+		if (!is_null($request->input('producer'))) {
+			$producername = producer::select('name')->where('producerid', $request->input('producer'))->get();
+			$producerid = producer::select('producerid')->where('producerid', $request->input('producer'))->get();
+		} else {
+			$producername = 'N/A';
+			$producerid = null;
+		}
+		if (is_null($request->input('vocal'))) {
+			$vocalname = 'N/A';
+			$vocalid = null;
+		} else {
+			$vocalname = vocals::select('name')->where('vocalid', $request->input('vocal'))->get();
+			$vocalid = vocals::select('vocalid')->where('vocalid', $request->input('vocal'))->get();
+		}
+		if (is_null($request->input('country'))) {
+			$country = 'N/A';
+		} else {
+			$country = $request->input('country');
+		}
+		if (is_null($request->input('description'))) {
+			$description = 'N/A';
+		} else {
+			$description = $request->input('description');
+		}
+
+		if (is_null($request->input('lyric'))) {
+			$lyric = 'N/A';
+		} else {
+			$lyric = $request->input('lyric');
+		}
+		$uploaddate = date("Y-m-d H:i:s");
+		if (is_null($request->avatar)) {
+			$avatar = 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg';
+		} else {
+			$avatar = 'img/' . $request->avatar->getClientOriginalName();
+			$request->avatar->move('img', $avatar);
+		}
+		$songaddress = 'video/' . $request->songaddress->getClientOriginalName();
+		$request->songaddress->move('video', $songaddress);
+		songs::insert([
+			'title' => $title,
+			'genre' => $genre,
+			'producer' => $producername,
+			'vocal' => $vocalname,
+			'country' => $country,
+			'description' => $description,
+			'lyric' => $lyric,
+			'uploaddate' => $uploaddate,
+			'avatar' => $avatar,
+			'vocalid' => $vocalid,
+			'producerid' => $producerid,
+			'songaddress' => $songaddress,
+		]);
+		return redirect('profiledetails');
 	}
 }
