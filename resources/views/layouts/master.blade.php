@@ -157,21 +157,56 @@
 							@if (Auth::check())
 							<div class="col-md-4 login-pop">
 								<div id="loginpop">
+									<a href="#" id="loginButton">
+										<span><i class="arrow glyphicon glyphicon-user"></i></span>
+									</a>
+									<div id="loginBox">
+										<div id="loginForm">
+											<fieldset id="body" style="padding: 0">
+												<div class="col-xs-5" style="height: inherit; padding-right: 0">
+													<br>
+													<a href="{{URL::route('profiledetails')}}"><img src="{{asset(Auth::user()->avatar)}}" class="col-xs-12" style="padding: 0"></a>
+												</div>
+												<div class="col-xs-7" style="height: inherit; padding-right: 0">
+													<br>
+													<fieldset>
+														<a href="{{URL::route('profiledetails')}}">
+															<i class="glyphicon glyphicon-tag"></i>
+															{{Auth::user()->name}}
+														</a>
+													</fieldset>
+													<fieldset>
+														<a href="{{route('logout')}}">
+															<i class="glyphicon glyphicon-log-out"></i>
+															Logout
+														</a>
+													</fieldset>
+													<hr>
+													<fieldset>
+														<a href="{{URL::route('uploadsong')}}">
+															<button class="btn btn-info" >
+																<i class="glyphicon glyphicon-music"></i>
+																Upload songs
+															</button>
+														</a>
+													</fieldset>
+												</div>
+											</fieldset>
+											<br>
+										</div>
+									</div>
 									<a href="{{URL::route('logout')}}" id="loginButton">
 										<span>Logout<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
-									</a>
-									<a href="{{URL::route('profiledetails')}}" id="loginButton">
-										<span><i class="arrow glyphicon glyphicon-user"></i></span>
 									</a>
 								</div>
 							</div>
 							@else
 							<div class="col-md-4 login-pop">
 								<div id="loginpop">
-									<a href="{{route('register')}}" id="loginButton">
+									<a href="{{route('login')}}" id="loginButton">
 										<span>Register<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
 									</a>
-									<a href="{{route('login')}}" id="loginButton">
+									<a href="{{route('register')}}" id="loginButton">
 										<span><i class="arrow glyphicon glyphicon-log-in"></i></span>
 									</a>
 								</div>

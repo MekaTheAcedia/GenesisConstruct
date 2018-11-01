@@ -1147,7 +1147,7 @@ i.arrow {
 	  width: 300px;
   background: #fff;
   border: 1px solid #d6d6d6;
-  height: 251px;
+  height: auto;
 }
 #loginForm fieldset {
     margin:0 0 15px 0;
