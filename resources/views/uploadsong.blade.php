@@ -14,14 +14,14 @@
 		<div class="col-sm-2"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100" style="opacity: 0;"></a></div>
 	</div>
 	<div class="row">
-		<form class="form" action="{{route('updateprofile')}}" method="post" enctype="multipart/form-data">
+		<form class="form" action="{{route('songuploader')}}" method="post" enctype="multipart/form-data">
 			{{csrf_field()}}
 			<div class="col-sm-3">
 				<!--left col-->
 				<div class="text-center">
 					<img src="https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg" class="avatar img-thumbnail img-fluid">
 					<h6>Upload a song photo...</h6>
-					<input type="file" class="text-center center-block file-upload" name="avatar">
+					<input type="file" class="text-center center-block file-upload" name="avatar" required="">
 				</div>
 				<hr>
 				<br>
@@ -42,7 +42,7 @@
 						<div class="form-group">
 							<div class="col-xs-6">
 								<label for="title"><h4>Title</h4></label>
-								<input type="text" class="form-control" name="title" id="title">
+								<input type="text" class="form-control" name="title" id="title" required="">
 							</div>
 						</div>
 						<div class="form-group">
@@ -54,8 +54,9 @@
 						<div class="form-group">
 							<div class="col-xs-6">
 								<label for="producer"><h4>Producer</h4></label>
-								<select class="form-control" name="producer" id="producer">
+								<select class="form-control" name="producer" id="producer" required="">
 									<option value="" disabled="" selected="">Can't find your producer? Try adding one.</option>
+									<option value="">N/A</option>
 									@foreach ($producer as $item)
 									<option value="{{$item->producerid}}">{{$item->name}}</option>
 									@endforeach
@@ -67,6 +68,7 @@
 								<label for="vocal"><h4>Vocal</h4></label>
 								<select class="form-control" name="vocal" id="vocal">
 									<option value="" disabled="" selected="">Can't find your singer? Try adding one.</option>
+									<option value="">N/A</option>
 									@foreach ($vocal as $item)
 									<option value="{{$item->vocalid}}">{{$item->name}}</option>
 									@endforeach

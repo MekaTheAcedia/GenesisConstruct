@@ -43,6 +43,8 @@ Route::get('/albums/{albumid}', ['as' => 'albums', 'uses' => 'MasterController@a
 
 Route::get('/uploadsong', ['as' => 'uploadsong', 'uses' => 'MasterController@uploadsong']);
 
+Route::post('/songuploader', ['as' => 'songuploader', 'uses' => 'MasterController@songuploader']);
+
 Route::group(['middleware' => 'auth'], function () {
 	//    Route::get('/link1', function ()    {
 	//        // Uses Auth Middleware

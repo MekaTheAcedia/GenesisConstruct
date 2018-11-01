@@ -186,4 +186,24 @@ class MasterController extends Controller {
 			'vocal' => $vocal,
 		]);
 	}
+
+	public function songUploader(Request $request) {
+		$title = $request->input('title');
+		$genre = $request->input('genre');
+		$producer = producer::where('producerid', $request->input('producer'))->get('name');
+		$vocal = vocals::where('vocalid', $request->input('vocal'))->get('name');
+		$country = $request->input('country');
+		$description = $request->input('description');
+		$lyric = $request->input('lyric');
+		$uploaddate = date('Y-m-d');
+		$avatar = 'img/' . $request->avatar->getClientOriginalName();
+		$request->avatar->move('img', $avatar);
+		try {
+			songs::insert([
+			]);
+			return redirect('uploadsong');
+		} catch (\Exception $e) {
+			return redirect('uploadsong');
+		}
+	}
 }

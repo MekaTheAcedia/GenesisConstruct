@@ -157,7 +157,7 @@
 							@if (Auth::check())
 							<div class="col-md-4 login-pop">
 								<div id="loginpop">
-									<a href="#" id="loginButton">
+									<a href="#" id="loginButton" class="profileButton">
 										<span><i class="arrow glyphicon glyphicon-user"></i></span>
 									</a>
 									<div id="loginBox">
@@ -195,8 +195,8 @@
 											<br>
 										</div>
 									</div>
-									<a href="{{URL::route('logout')}}" id="loginButton">
-										<span>Logout<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
+									<a href="#" id="loginButton">
+										<span>Upgrade<i class="arrow glyphicon glyphicon-chevron-right"></i></span>
 									</a>
 								</div>
 							</div>
