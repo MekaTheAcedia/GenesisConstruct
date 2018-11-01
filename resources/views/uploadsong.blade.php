@@ -36,6 +36,9 @@
 			</div>
 			<!--/col-3-->
 			<div class="col-sm-9">
+				@if (isset(session('error')))
+					{!!session('error')!!}
+				@endif
 				<div class="tab-content">
 					<div class="tab-pane active" id="home">
 						<hr>

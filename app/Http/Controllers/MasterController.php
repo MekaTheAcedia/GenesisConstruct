@@ -233,20 +233,27 @@ class MasterController extends Controller {
 		}
 		$songaddress = 'video/' . $request->songaddress->getClientOriginalName();
 		$request->songaddress->move('video', $songaddress);
-		songs::insert([
-			'title' => $title,
-			'genre' => $genre,
-			'producer' => $producername,
-			'vocal' => $vocalname,
-			'country' => $country,
-			'description' => $description,
-			'lyric' => $lyric,
-			'uploaddate' => $uploaddate,
-			'avatar' => $avatar,
-			'vocalid' => $vocalid,
-			'producerid' => $producerid,
-			'songaddress' => $songaddress,
-		]);
-		return redirect('profiledetails');
+		try {
+			songs::insert([
+				'title' => $title,
+				'genre' => $genre,
+				'producer' => $producername,
+				'vocal' => $vocalname,
+				'country' => $country,
+				'description' => $description,
+				'lyric' => $lyric,
+				'uploaddate' => $uploaddate,
+				'avatar' => $avatar,
+				'vocalid' => $vocalid,
+				'producerid' => $producerid,
+				'songaddress' => $songaddress,
+			]);
+			return redirect('profiledetails');
+		} catch (\Exception $e) {
+			return redirect('uploadsong')->with([
+				'error' => '<div class="alert alert-danger alert-dismissable">Error</div>',
+			]);
+		}
+
 	}
 }
