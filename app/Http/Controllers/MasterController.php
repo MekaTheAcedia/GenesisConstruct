@@ -64,9 +64,7 @@ class MasterController extends Controller {
 			->orWhere('country', 'like', '%' . $request->input('search') . '%')->get();
 		$producer = producer::where('name', 'like', '%' . $request->input('search') . '%')
 			->orWhere('genre', 'like', '%' . $request->input('search') . '%')
-			->orWhere('works', 'like', '%' . $request->input('search') . '%')
-			->orWhere('associations', 'like', '%' . $request->input('search') . '%')
-			->orWhere('discography', 'like', '%' . $request->input('search') . '%')->get();
+			->orWhere('associations', 'like', '%' . $request->input('search') . '%')->get();
 		$user = user::where('name', 'like', '%' . $request->input('search') . '%')->get();
 		$album = albums::where('title', 'like', '%' . $request->input('search') . '%')
 			->orWhere('producer', 'like', '%' . $request->input('search') . '%')
@@ -173,8 +171,13 @@ class MasterController extends Controller {
 
 	public function viewproducer(Request $request, $producerid) {
 		$producer = producer::where('producerid', $producerid)->get();
+		$works = songs::orderBy('songid', '')->where('producerid', $producerid)->get();
+		$discography = albums::orderBy('albumid', '')->where('producerid', $producerid)->get();
+
 		return view('viewproducer')->with([
 			'producer' => $producer,
+			'works' => $works,
+			'discography' => $discography,
 		]);
 	}
 
@@ -247,6 +250,7 @@ class MasterController extends Controller {
 				'vocalid' => $vocalid,
 				'producerid' => $producerid,
 				'songaddress' => $songaddress,
+				'userid' => Auth::id(),
 			]);
 			return redirect('profiledetails');
 		} catch (\Exception $e) {
@@ -254,6 +258,72 @@ class MasterController extends Controller {
 				'error' => '<div class="alert alert-danger alert-dismissable">Error</div>',
 			]);
 		}
+	}
 
+	public function addproducer(Request $request) {
+		return view('addproducer');
+	}
+
+	public function produceruploader(Request $request) {
+		$name = $request->input('name');
+		if (is_null($request->input('about'))) {
+			$about = 'N/A';
+		} else {
+			$about = $request->input('about');
+		}
+		if (is_null($request->input('sites'))) {
+			$sites = 'N/A';
+		} else {
+			$sites = '<a href="' . $request->input('sites') . '">' . $request->input('sites') . '</a><br>';
+		}
+		if (is_null($request->input('associations'))) {
+			$associations = 'N/A';
+		} else {
+			$associations = $request->input('associations');
+		}
+		if (is_null($request->input('genre'))) {
+			$genre = 'N/A';
+		} else {
+			$genre = $request->input('genre');
+		}
+		if (is_null($request->input('status'))) {
+			$status = 'N/A';
+		} else {
+			$status = $request->input('status');
+		}
+		if (is_null($request->input('dob'))) {
+			$dob = null;
+		} else {
+			$dob = $request->input('dob');
+		}
+		if (is_null($request->input('gender'))) {
+			$gender = 'N/A';
+		} else {
+			$gender = $request->input('gender');
+		}
+		if (is_null($request->avatar)) {
+			$avatar = 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png';
+		} else {
+			$avatar = 'img/' . $request->avatar->getClientOriginalName();
+			$request->avatar->move('img', $avatar);
+		}
+		try {
+			producer::insert([
+				'name' => $name,
+				'gender' => $gender,
+				'dob' => $dob,
+				'status' => $status,
+				'genre' => $genre,
+				'associations' => $associations,
+				'sites' => $sites,
+				'about' => $about,
+				'avatar' => $avatar,
+			]);
+			return redirect('profiledetails');
+		} catch (Exception $e) {
+			return redirect('uploadsong')->with([
+				'error' => '<div class="alert alert-danger alert-dismissable">Error</div>',
+			]);
+		}
 	}
 }

@@ -26,8 +26,14 @@
 				<hr>
 				<br>
 				<div class="panel panel-default">
-					<div class="panel-heading"><a href="#" class="glyphicon glyphicon-plus" style="text-decoration: none;"></a><a href="#">  Add a Producer</a></div>
-					<div class="panel-heading"><a href="#" class="glyphicon glyphicon-plus" style="text-decoration: none;"></a><a href="#">  Add a Singer</a></div>
+					<div class="panel-heading">
+						<a href="{{URL::route('addproducer')}}" class="glyphicon glyphicon-plus" style="text-decoration: none;"></a>
+						<a href="{{URL::route('addproducer')}}">  Add a Producer</a>
+					</div>
+					<div class="panel-heading">
+						<a href="#" class="glyphicon glyphicon-plus" style="text-decoration: none;"></a>
+						<a href="#">  Add a Singer</a>
+					</div>
 				</div>
 				<div class="panel panel-default" style="opacity: 0;">
 					<div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>

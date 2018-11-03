@@ -103,19 +103,6 @@ color: #0062cc;
 					<img src="{{asset($item->avatar)}}">
 				</div>
 				@endforeach
-			</div>
-			<div class="col-md-6">
-				<div class="profile-head">
-					<ul class="nav nav-tabs" id="myTab" role="tablist">
-						<li class="nav-item">
-							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" >General</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
 				<div class="profile-work">
 					<p>Sites</p>
 					@foreach ($producer as $item)
@@ -123,10 +110,21 @@ color: #0062cc;
 					@endforeach
 				</div>
 			</div>
-			@foreach ($producer as $item)
 			<div class="col-md-8">
+				<div class="profile-head">
+					@foreach ($producer as $item)
+					<h2>{{$item->name}}</h2>
+					<h4>Producer</h4>
+					@endforeach
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" >General</a>
+						</li>
+					</ul>
+				</div>
+				@foreach ($producer as $item)
 				<div class="tab-content profile-tab" id="myTabContent">
-					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 						<div class="row">
 							<div class="col-md-6">
 								<label>Name</label>
@@ -176,19 +174,23 @@ color: #0062cc;
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-12">
 								<label>Works</label>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{$item->works}}</p>
+							<div class="col-md-12" style="word-break: break-all; overflow-y: scroll; max-height: 100px">
+								@foreach ($works as $item)
+								<a href="{{URL::route('songs', $item->songid)}}"><p>{{$item->title}}</p></a>
+								@endforeach
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-12">
 								<label>Discography</label>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{$item->discography}}</p>
+							<div class="col-md-12" style="word-break: break-all; overflow-y: scroll; max-height: 100px">
+								@foreach ($discography as $item)
+								<a href="{{URL::route('albums', $item->albumid)}}"><p>{{$item->title}}</p></a>
+								@endforeach
 							</div>
 						</div>
 						<div class="row">
@@ -201,8 +203,8 @@ color: #0062cc;
 						</div>
 					</div>
 				</div>
+				@endforeach
 			</div>
-			@endforeach
 		</div>
 	</form>
 </div>

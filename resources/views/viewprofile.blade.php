@@ -103,19 +103,6 @@ color: #0062cc;
 					<img src="{{asset($item->avatar)}}">
 				</div>
 				@endforeach
-			</div>
-			<div class="col-md-6">
-				<div class="profile-head">
-					<ul class="nav nav-tabs" id="myTab" role="tablist">
-						<li class="nav-item">
-							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" >General</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
 				<div class="profile-work">
 					<p>Social</p>
 					<a href="">Facebook Profile</a><br/>
@@ -123,62 +110,81 @@ color: #0062cc;
 					<a href="">Youtube Profile</a>
 				</div>
 			</div>
-			@foreach ($user as $item)
-			<div class="col-md-8">
-				<div class="tab-content profile-tab" id="myTabContent">
-					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-						<div class="row">
-							<div class="col-md-6">
-								<label>Name</label>
+			<div class="col-md-6">
+				@foreach ($user as $item)
+				<div class="profile-head">
+					<h2>{{$item->name}}</h2>
+					@if ($item->level == 1)
+					<h4>Admin</h4>
+					@elseif ($item->level == 2)
+					<h4>Paid User</h4>
+					@elseif ($item->level == 3)
+					<h4>User</h4>
+					@endif
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" >General</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-8">
+					<div class="tab-content profile-tab" id="myTabContent">
+						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+							<div class="row">
+								<div class="col-md-6">
+									<label>Name</label>
+								</div>
+								<div class="col-md-6" style="word-break: break-all;">
+									<p>{{$item->name}}</p>
+								</div>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{$item->name}}</p>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Email</label>
+								</div>
+								<div class="col-md-6" style="word-break: break-all;">
+									<p>{{$item->email}}</p>
+								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>Email</label>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Date of Birth</label>
+								</div>
+								<div class="col-md-6" style="word-break: break-all;">
+									<p>{{$item->dob}}</p>
+								</div>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{$item->email}}</p>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Gender</label>
+								</div>
+								<div class="col-md-6" style="word-break: break-all;">
+									<p>{{$item->gender}}</p>
+								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>Date of Birth</label>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Location</label>
+								</div>
+								<div class="col-md-6" style="word-break: break-all;">
+									<p>{{$item->location}}</p>
+								</div>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{$item->dob}}</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>Gender</label>
-							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{$item->gender}}</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>Location</label>
-							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{$item->location}}</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>About</label>
-							</div>
-							<div class="col-md-12" style="word-break: break-all;">
-								<p>{!!$item->about!!}</p>
+							<div class="row">
+								<div class="col-md-6">
+									<label>About</label>
+								</div>
+								<div class="col-md-12" style="word-break: break-all;">
+									<p>{!!$item->about!!}</p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				@endforeach
 			</div>
-			@endforeach
+		</div>
+		<div class="row">
 		</div>
 	</form>
 </div>

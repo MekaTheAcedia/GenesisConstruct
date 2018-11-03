@@ -45,6 +45,10 @@ Route::get('/uploadsong', ['as' => 'uploadsong', 'uses' => 'MasterController@upl
 
 Route::post('/songuploader', ['as' => 'songuploader', 'uses' => 'MasterController@songuploader']);
 
+Route::get('/addproducer', ['as' => 'addproducer', 'uses' => 'MasterController@addproducer']);
+
+Route::post('/produceruploader', ['as' => 'produceruploader', 'uses' => 'MasterController@produceruploader']);
+
 Route::group(['middleware' => 'auth'], function () {
 	//    Route::get('/link1', function ()    {
 	//        // Uses Auth Middleware

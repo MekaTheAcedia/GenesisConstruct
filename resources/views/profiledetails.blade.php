@@ -101,6 +101,12 @@ color: #0062cc;
 				<div class="profile-img">
 					<img src="{{asset(Auth::user()->avatar)}}">
 				</div>
+				<div class="profile-work">
+					<p>Social</p>
+					<a href="">Facebook Profile</a><br/>
+					<a href="">Twitter Profile</a><br/>
+					<a href="">Youtube Profile</a>
+				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="profile-head">
@@ -117,74 +123,62 @@ color: #0062cc;
 							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" >General</a>
 						</li>
 					</ul>
-				</div>
-			</div>
-			<div class="col-md-2">
-				<a href="{{URL::route('profile')}}"><input type="button" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/></a>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
-				<div class="profile-work">
-					<p>Social</p>
-					<a href="">Facebook Profile</a><br/>
-					<a href="">Twitter Profile</a><br/>
-					<a href="">Youtube Profile</a>
-				</div>
-			</div>
-			<div class="col-md-8">
-				<div class="tab-content profile-tab" id="myTabContent">
-					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-						<div class="row">
-							<div class="col-md-6">
-								<label>Name</label>
+					<div class="tab-content profile-tab" id="myTabContent">
+						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+							<div class="row">
+								<div class="col-md-6">
+									<label>Name</label>
+								</div>
+								<div class="col-md-6" style="word-break: break-all;">
+									<p>{{Auth::user()->name}}</p>
+								</div>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{Auth::user()->name}}</p>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Email</label>
+								</div>
+								<div class="col-md-6" style="word-break: break-all;">
+									<p>{{Auth::user()->email}}</p>
+								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>Email</label>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Date of Birth</label>
+								</div>
+								<div class="col-md-6" style="word-break: break-all;">
+									<p>{{Auth::user()->dob}}</p>
+								</div>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{Auth::user()->email}}</p>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Gender</label>
+								</div>
+								<div class="col-md-6" style="word-break: break-all;">
+									<p>{{Auth::user()->gender}}</p>
+								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>Date of Birth</label>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Location</label>
+								</div>
+								<div class="col-md-6" style="word-break: break-all;">
+									<p>{{Auth::user()->location}}</p>
+								</div>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{Auth::user()->dob}}</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>Gender</label>
-							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{Auth::user()->gender}}</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>Location</label>
-							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{Auth::user()->location}}</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>About</label>
-							</div>
-							<div class="col-md-12" style="word-break: break-all;">
-								{!!Auth::user()->about!!}
+							<div class="row">
+								<div class="col-md-6">
+									<label>About</label>
+								</div>
+								<div class="col-md-12" style="word-break: break-all;">
+									{!!Auth::user()->about!!}
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="col-md-2">
+				<a href="{{URL::route('profile')}}"><input type="button" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/></a>
 			</div>
 		</div>
 	</form>
