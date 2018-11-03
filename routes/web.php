@@ -33,6 +33,8 @@ Route::get('/profiledetails', ['as' => 'profiledetails', 'uses' => 'MasterContro
 
 Route::post('/updateprofile', ['as' => 'updateprofile', 'uses' => 'MasterController@updateprofile']);
 
+Route::get('/update_avatar', ['as' => 'update_avatar', 'uses' => 'MasterController@update_avatar']);
+
 Route::get('/songs/{songid}', ['as' => 'songs', 'uses' => 'MasterController@songs']);
 
 Route::get('/user/{userid}', ['as' => 'user', 'uses' => 'MasterController@viewprofile']);

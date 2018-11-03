@@ -149,10 +149,14 @@ class MasterController extends Controller {
 			]);
 		}
 	}
-
+	public function update_avatar(Request $request){
+		user::where('id', Auth::id())->update([
+				'avatar' => $request->avatar,
+			]);
+	}
 	public function songs(Request $request, $songid) {
 		$song = songs::where('songid', $songid);
-		return view('single')->with([
+		return view('player')->with([
 			'song' => $song,
 		]);
 	}

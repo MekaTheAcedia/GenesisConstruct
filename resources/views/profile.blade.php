@@ -1,11 +1,13 @@
 @extends('layouts.master')
 @section('content')
+<link rel="stylesheet" type="text/css" href="{{asset('plugins/crop/croppie.css')}}">
+<script type="text/javascript" src="{{asset('plugins/crop/croppie.min.js')}}"></script>
 <style type="text/css">
-	.note-toolbar{
-		position: relative !important;
-		z-index: 1;
-	}
-	.btn-fullscreen,.btn-codeview,.note-table,.note-insert{display: none;}
+.note-toolbar{
+	position: relative !important;
+	z-index: 1;
+}
+.btn-fullscreen,.btn-codeview,.note-table,.note-insert{display: none;}
 </style>
 <hr>
 <div class="container bootstrap snippet">
@@ -19,9 +21,10 @@
 			<div class="col-sm-3">
 				<!--left col-->
 				<div class="text-center">
-					<img src="{{asset(Auth::user()->avatar)}}" class="avatar img-circle img-thumbnail img-fluid">
+					<img src="{{Auth::user()->avatar}}" class="avatar img-circle img-thumbnail img-fluid">
 					<h6>Upload a different photo...</h6>
-					<input type="file" class="text-center center-block file-upload" name="avatar">
+					<input type="file"  id="tb_change">
+					<!-- <input type="text" style="display: none;" name="avatar" value="{{Auth::user()->avatar}}" id="change_avatar"> -->
 				</div>
 				<hr>
 				<br>
@@ -38,9 +41,9 @@
 			</div>
 			<!--/col-3-->
 			<div class="col-sm-9">
-			@if (session('error'))
-			{!!session('error')!!}
-			@endif
+				@if (session('error'))
+				{!!session('error')!!}
+				@endif
 				<div class="tab-content">
 					<div class="tab-pane active" id="home">
 						<hr>
@@ -71,7 +74,7 @@
 						<div class="form-group">
 							<div class="col-xs-6">
 								<label for="dob"><h4>Date of Birth</h4></label>
-								<input type="date" class="form-control" name="dob" id="dob">
+								<input type="date" class="form-control" name="dob" value="{{Auth::user()->dob}}" id="dob">
 							</div>
 						</div>
 						<div class="form-group">
@@ -111,4 +114,99 @@
 </div>
 <hr style="opacity: 0">
 <div class="clearfix"></div>
+<div class="modal" id="crop">
+	<div class="modal-content card" style="width: 86%;max-width: 500px;margin: 1.75rem auto;">
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Cropping Profile Picture</h5>
+			<button type="button" class="close close_crop" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="col">
+					<div id="preview"></div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal" id="close_crop">Close</button>
+			<button type="button" class="btn btn-primary mr-4" id="save_crop">Save</button>
+		</div>
+	</div>
+</div>
+@stop
+@section('js')
+<script type="text/javascript">
+	
+	$(document).ready(function(e){
+		var basic, imageName;
+		var pre = document.getElementById('preview');
+		basic =  new Croppie(pre, {
+			enableExif: true,
+			viewport: {
+				width: 200,
+				height: 200,
+				type: 'circle'
+			},
+			boundary: {
+				width: 300,
+				height: 300
+			}
+		});
+
+		$("#tb_change").change(function(e){
+			e.preventDefault();
+			if ($(this).val() != "") {
+				if (e.target.files[0].type != "image/jpeg" && e.target.files[0].type != "image/jpg" && e.target.files[0].type != "image/png" && e.target.files[0].type != "image/ico") {
+					alert('Type of image not found !!!');
+					return;
+				}
+				imageName = e.target.files[0].name;
+				imageName = imageName.substring(0, imageName.indexOf(".")) + new Date().getTime() + ".png";	
+				pathAvatar = URL.createObjectURL(e.target.files[0]);
+				basic.bind({
+					url: pathAvatar,
+				});
+				$("#crop").fadeIn();
+			}
+		})
+		$("#save_crop").click(function(){
+			basic.result({type: 'blob'}).then(function(blob) {
+				var file = new File([blob], imageName, {type: blob.type, lastModified: Date.now()});
+				console.log(file);	
+				var form_data = new FormData();
+				form_data.append('file', file);
+				form_data.append('upload_preset', 'quoc_trong');
+				$.ajax({
+					url: "https://api.cloudinary.com/v1_1/silentlove995/image/upload",
+					type: "POST",
+					data: form_data,
+					processData: false,
+					contentType: false,
+					success: function(data){
+						var url = data.secure_url;
+
+						url = url.substring(0, url.indexOf('upload/') + 7) + "c_scale,o_100,q_auto:eco,w_658,z_0.4/" 
+						+ url.substring(url.indexOf('upload/') + 7, url.length) ;
+						$(".avatar").attr('src', url);
+						$("#tb_change").val('');
+						$("#crop").fadeOut();
+						$.ajax({
+							url: "{{route('update_avatar')}}",
+							type: "GET",
+							data: {
+								avatar: url,
+							}
+						})
+					}
+				})
+			});
+		})
+		$(".close_crop, #close_crop").click(function(){
+			$("#crop").fadeOut();
+		})
+	})
+</script>
+
 @stop
