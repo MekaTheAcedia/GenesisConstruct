@@ -7,9 +7,9 @@
 		<meta name="keywords" content="Mosaic Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 		Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 		<!-- Bootstrap Core CSS -->
-		<link href="{{asset('css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
+		<link href="{{asset('css/bootstrap.css')}}" rel='stylesheet' type='text/css'/>
 		<!-- Custom CSS -->
-		<link href="{{asset('css/style.css')}}" rel='stylesheet' type='text/css' />
+		<link href="{{asset('css/style.css')}}" rel='stylesheet' type='text/css'/>
 		<!-- Graph CSS -->
 		<link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
 		<!-- jQuery -->
@@ -292,5 +292,6 @@
 			});
 		});
 		</script>
+		@yield('js')
 	</body>
 </html>
