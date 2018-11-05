@@ -287,9 +287,9 @@
 		<script src="{{asset('js/bootstrap.js')}}"></script>
 		<script>
 		$(document).ready(function() {
-			$('.summernote').summernote({
-				height: '150',
-			});
+			// $('.summernote').summernote({
+			// 	height: '150',
+			// });
 		});
 		</script>
 		@yield('js')

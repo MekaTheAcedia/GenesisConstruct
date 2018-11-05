@@ -1,5 +1,6 @@
+
 body {
-  background-color: #EDEDED;
+  background-color: #FFF;
 }
 
 h1 {
@@ -29,7 +30,7 @@ h2 {
 .playertheme {
   padding-top: 5px;
   height: 190px;
-  width: 620px;
+  width: auto;
   background-color: #1E2125;
   position: relative;
   -webkit-touch-callout: none;
@@ -59,23 +60,23 @@ h2 {
 }
 
 .info h1 {
-  margin-top: 15px;
-  margin-left: 200px;
+  margin-top: 5px;
+  margin-left: 210px;
   line-height: 0;
 }
 .info h4 {
-  margin-top: 18px;
-  margin-left: 200px;
+  margin-top:15px;
+  margin-left: 210px;
   line-height: 20px;
   color: #636367;
 }
 .info h2 {
-  margin-top: 0px;
-  margin-left: 200px;
+  margin-top: -5px;
+  margin-left: 210px;
 }
 
 .button-items {
-  margin-left: 200px;
+  margin-left: 210px;
 }
 
 #slider {
@@ -180,37 +181,10 @@ h2 {
 #pause:hover rect {
   fill: #8F4DA9;
 }
-  
 
 .step-backward g polygon:hover, .step-foreward g polygon:hover {
   fill: #EF6DBC;
   cursor: pointer;
-}
-
-.social {
-  text-align: center;
-}
-
-.twitter {
-  color: #BDBDBD;
-  font-family: sans-serif;
-  text-decoration: none;
-}
-.twitter:hover {
-  color: #ecf0f1;
-}
-
-.github {
-  color: #BDBDBD;
-  font-family: sans-serif;
-  text-decoration: none;
-}
-.github:hover {
-  color: #ecf0f1;
-}
-
-p {
-  color: #BDBDBD;
 }
 
 #skip {
