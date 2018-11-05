@@ -167,9 +167,9 @@
 													<br>
 													<a href="{{URL::route('profiledetails')}}"><img src="{{asset(Auth::user()->avatar)}}" class="col-xs-12" style="padding: 0"></a>
 												</div>
-												<div class="col-xs-7" style="height: inherit; padding-right: 0">
+												<div class="col-xs-7" style="height: inherit;">
 													<br>
-													<fieldset>
+													<fieldset  style="word-break: break-all;">
 														<a href="{{URL::route('profiledetails')}}">
 															<i class="glyphicon glyphicon-tag"></i>
 															{{Auth::user()->name}}

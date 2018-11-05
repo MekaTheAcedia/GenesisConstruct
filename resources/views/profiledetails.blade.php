@@ -65,7 +65,6 @@ border: none;
 }
 .profile-head .nav-tabs .nav-link.active{
 border: none;
-border-bottom:2px solid #0062cc;
 }
 .profile-work{
 padding: 14%;
@@ -108,7 +107,7 @@ color: #0062cc;
 					<a href="">Youtube Profile</a>
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6" style="word-break: break-all;">
 				<div class="profile-head">
 					<h2>{{Auth::user()->name}}</h2>
 					@if (Auth::user()->level == 1)
@@ -118,60 +117,58 @@ color: #0062cc;
 					@elseif (Auth::user()->level == 3)
 					<h4>User</h4>
 					@endif
-					<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<ul class="nav nav-tabs">
 						<li class="nav-item">
-							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" >General</a>
+							<a class="nav-link">General</a>
 						</li>
 					</ul>
-					<div class="tab-content profile-tab" id="myTabContent">
-						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-							<div class="row">
-								<div class="col-md-6">
-									<label>Name</label>
-								</div>
-								<div class="col-md-6" style="word-break: break-all;">
-									<p>{{Auth::user()->name}}</p>
-								</div>
+					<div class="tab-content profile-tab">
+						<div class="row">
+							<div class="col-md-6">
+								<label>Name</label>
 							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<label>Email</label>
-								</div>
-								<div class="col-md-6" style="word-break: break-all;">
-									<p>{{Auth::user()->email}}</p>
-								</div>
+							<div class="col-md-6" style="word-break: break-all;">
+								<p>{{Auth::user()->name}}</p>
 							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<label>Date of Birth</label>
-								</div>
-								<div class="col-md-6" style="word-break: break-all;">
-									<p>{{Auth::user()->dob}}</p>
-								</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<label>Email</label>
 							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<label>Gender</label>
-								</div>
-								<div class="col-md-6" style="word-break: break-all;">
-									<p>{{Auth::user()->gender}}</p>
-								</div>
+							<div class="col-md-6" style="word-break: break-all;">
+								<p>{{Auth::user()->email}}</p>
 							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<label>Location</label>
-								</div>
-								<div class="col-md-6" style="word-break: break-all;">
-									<p>{{Auth::user()->location}}</p>
-								</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<label>Date of Birth</label>
 							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<label>About</label>
-								</div>
-								<div class="col-md-12" style="word-break: break-all;">
-									{!!Auth::user()->about!!}
-								</div>
+							<div class="col-md-6" style="word-break: break-all;">
+								<p>{{Auth::user()->dob}}</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<label>Gender</label>
+							</div>
+							<div class="col-md-6" style="word-break: break-all;">
+								<p>{{Auth::user()->gender}}</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<label>Location</label>
+							</div>
+							<div class="col-md-6" style="word-break: break-all;">
+								<p>{{Auth::user()->location}}</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<label>About</label>
+							</div>
+							<div class="col-md-12" style="word-break: break-all;">
+								{!!Auth::user()->about!!}
 							</div>
 						</div>
 					</div>

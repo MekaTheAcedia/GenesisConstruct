@@ -75,13 +75,7 @@
 						<div class="form-group">
 							<div class="col-xs-6">
 								<label for="vocal"><h4>Vocal</h4></label>
-								<select class="form-control" name="vocal" id="vocal">
-									<option value="" disabled="" selected="">Can't find your singer? Try adding one.</option>
-									<option value="">N/A</option>
-									@foreach ($vocal as $item)
-									<option value="{{$item->vocalid}}">{{$item->name}}</option>
-									@endforeach
-								</select>
+								<input type="text" class="form-control" name="vocal" id="vocal">
 							</div>
 						</div>
 						<div class="form-group">

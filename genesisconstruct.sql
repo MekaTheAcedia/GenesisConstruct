@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2018 at 05:02 AM
+-- Generation Time: Nov 05, 2018 at 03:58 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -75,7 +75,7 @@ CREATE TABLE `comments` (
   `userid` int(11) UNSIGNED NOT NULL,
   `songid` int(11) NOT NULL,
   `message` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `uploadtime` date NOT NULL
+  `uploadtime` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -128,9 +128,7 @@ CREATE TABLE `producer` (
   `genre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `associations` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sites` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `works` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png',
-  `discography` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `about` longtext COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -138,8 +136,11 @@ CREATE TABLE `producer` (
 -- Dumping data for table `producer`
 --
 
-INSERT INTO `producer` (`producerid`, `name`, `gender`, `dob`, `status`, `genre`, `associations`, `sites`, `works`, `avatar`, `discography`, `about`) VALUES
-(1, 'adf', NULL, NULL, 'asd', 'asd', NULL, NULL, 'asd', 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png	', 'asdasf', '');
+INSERT INTO `producer` (`producerid`, `name`, `gender`, `dob`, `status`, `genre`, `associations`, `sites`, `avatar`, `about`) VALUES
+(1, 'adf', NULL, NULL, 'asd', 'asd', NULL, NULL, 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png	', ''),
+(2, 'Acedia', 'N/A', NULL, 'N/A', 'N/A', 'N/A', 'N/A', 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png', 'N/A'),
+(3, 'Acedia', 'N/A', NULL, 'N/A', 'N/A', 'N/A', 'N/A', 'img/7a41d06d1d08ff4d618ebda0e1adbaac.jpg', 'N/A'),
+(5, 'name', 'N/A', NULL, 'N/A', 'N/A', 'N/A', 'N/A', 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png', 'N/A');
 
 -- --------------------------------------------------------
 
@@ -150,7 +151,7 @@ INSERT INTO `producer` (`producerid`, `name`, `gender`, `dob`, `status`, `genre`
 CREATE TABLE `songs` (
   `songid` int(15) NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `genre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'N/A',
+  `genre` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'N/A',
   `producer` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'N/A',
   `vocal` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'N/A',
   `album` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -159,47 +160,21 @@ CREATE TABLE `songs` (
   `lyric` longtext COLLATE utf8mb4_unicode_ci,
   `uploaddate` date NOT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg',
-  `vocalid` int(11) DEFAULT NULL,
   `producerid` int(11) DEFAULT NULL,
   `albumid` int(11) DEFAULT NULL,
-  `songaddress` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `songaddress` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `userid` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `songs`
 --
 
-INSERT INTO `songs` (`songid`, `title`, `genre`, `producer`, `vocal`, `album`, `country`, `description`, `lyric`, `uploaddate`, `avatar`, `vocalid`, `producerid`, `albumid`, `songaddress`) VALUES
-(1, 'cã', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(2, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', NULL, NULL, NULL, 'sadfas'),
-(3, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', NULL, NULL, NULL, 'sadfas'),
-(4, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', NULL, NULL, NULL, 'sadfas'),
-(5, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', NULL, NULL, NULL, 'sadfas'),
-(6, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', NULL, NULL, NULL, 'sadfas'),
-(7, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(8, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(9, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(10, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(11, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(12, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(13, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(14, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(15, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(16, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(17, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(18, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(19, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(20, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(21, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(22, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(23, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(24, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(25, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(26, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(27, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(28, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(29, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas'),
-(30, 'asd', 'sda', '', '', NULL, NULL, NULL, NULL, '2017-12-12', 'img/v1.jpg', NULL, NULL, NULL, 'sadfas');
+INSERT INTO `songs` (`songid`, `title`, `genre`, `producer`, `vocal`, `album`, `country`, `description`, `lyric`, `uploaddate`, `avatar`, `producerid`, `albumid`, `songaddress`, `userid`) VALUES
+(34, 'title4', 'N/A', 'adf', 'N/A', NULL, 'N/A', 'N/A', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6),
+(35, 'title3', 'N/A', 'adf', 'N/A', NULL, 'N/A', 'N/A', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6),
+(36, 'title2', 'N/A', 'adf', 'N/A', NULL, 'N/A', 'N/A', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6),
+(37, 'title1', 'N/A', 'adf', 'N/A', NULL, 'N/A', 'N/A', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6);
 
 -- --------------------------------------------------------
 
@@ -232,27 +207,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `dob`, `gender`, `location`, `about`, `level`, `avatar`, `favorite`) VALUES
 (3, 'Lý Quốc Trọng', 'trongdaigia19955@gmail.com', NULL, '$2y$10$QOcDzOpejqMgHmKLP4agF.lvG6o.nFoPv1BzwbycqUIXmQJuuWoDC', NULL, '2018-10-22 20:17:43', '2018-10-22 20:17:43', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (5, '1234', '12345@gmail.com', NULL, '$2y$10$he1/UHlQUiw8.2o5XuSj6.5eT7BlmfCxg63jIn8iSv/UlhlNuo65e', 'njQ1elbHTCbyy2WSc3UVxXbY8DakWhffUwl3tusWapXOKgXMFVNpjBpeIT58', '2018-10-26 01:18:06', '2018-10-28 21:23:58', NULL, 'Female', 'dsfgsdf', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 3, 'img/6c8f071210788b56c8c2cc98ec570227.jpg', NULL),
-(6, 'Acedia', '1234@gmail.com', NULL, '$2y$10$AQXfYItG7wINPymHsLAtdue/nN4Yxnqvqhwo2xAb4TP7n6YNvE56C', 'zy8v0yEeU1HhZgHDi26PTR6DWfJSfUt6yPfBOQ8V2kz8B4kaU2QetXNY3mEP', '2018-10-29 18:48:27', '2018-10-31 20:44:22', '2018-10-30', 'Female', '123', '<p><a href=\"http://facebook.com\" target=\"_blank\">asdfa</a><br></p>', 3, 'img/00c0eeb71d65e0ec675c3ca0e0886203.jpg', NULL),
+(6, 'Acedia', '1234@gmail.com', NULL, '$2y$10$AQXfYItG7wINPymHsLAtdue/nN4Yxnqvqhwo2xAb4TP7n6YNvE56C', 'zy8v0yEeU1HhZgHDi26PTR6DWfJSfUt6yPfBOQ8V2kz8B4kaU2QetXNY3mEP', '2018-10-29 18:48:27', '2018-11-04 19:39:56', '2018-10-30', 'Female', '123', '<p><a href=\"http://facebook.com\" target=\"_blank\">asdfa</a><br></p>', 3, 'img/1b53f247a8f8174d65fe425a10f307ba.jpg', NULL),
 (7, 'Acedia', '123456@gmail.com', NULL, '$2y$10$plWnFqXt3iqaFsmz7OPDheTC/0wW.7p/U1hTY/us.Lef8qWlhuVUW', '9SLqNmJbwZVWlHp5WCnBnM1fJsHlpP08MeozihvJ5gewebKCcc2TtuGGHh6g', '2018-10-30 20:23:31', '2018-10-30 21:00:22', NULL, NULL, NULL, NULL, 3, 'img/3c13c7812b05c37375e33baef7d539df.jpg', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `vocals`
---
-
-CREATE TABLE `vocals` (
-  `vocalid` int(15) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `dob` date DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `genre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `associations` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `sites` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `works` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Indexes for dumped tables
@@ -296,9 +252,10 @@ ALTER TABLE `producer`
 --
 ALTER TABLE `songs`
   ADD PRIMARY KEY (`songid`),
-  ADD KEY `vocalid` (`vocalid`,`producerid`,`albumid`),
+  ADD KEY `vocalid` (`producerid`,`albumid`),
   ADD KEY `producer_connect_song` (`producerid`),
-  ADD KEY `album_connect` (`albumid`);
+  ADD KEY `album_connect` (`albumid`),
+  ADD KEY `user_connect` (`userid`);
 
 --
 -- Indexes for table `users`
@@ -306,12 +263,6 @@ ALTER TABLE `songs`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
-
---
--- Indexes for table `vocals`
---
-ALTER TABLE `vocals`
-  ADD PRIMARY KEY (`vocalid`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -339,25 +290,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `producer`
 --
 ALTER TABLE `producer`
-  MODIFY `producerid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `producerid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `songid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `songid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `vocals`
---
-ALTER TABLE `vocals`
-  MODIFY `vocalid` int(15) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -382,7 +327,7 @@ ALTER TABLE `comments`
 ALTER TABLE `songs`
   ADD CONSTRAINT `album_connect` FOREIGN KEY (`albumid`) REFERENCES `albums` (`albumid`),
   ADD CONSTRAINT `producer_connect_song` FOREIGN KEY (`producerid`) REFERENCES `producer` (`producerid`),
-  ADD CONSTRAINT `vocal_name` FOREIGN KEY (`vocalid`) REFERENCES `vocals` (`vocalid`);
+  ADD CONSTRAINT `user_connect` FOREIGN KEY (`userid`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

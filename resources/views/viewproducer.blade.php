@@ -65,7 +65,6 @@ border: none;
 }
 .profile-head .nav-tabs .nav-link.active{
 border: none;
-border-bottom:2px solid #0062cc;
 }
 .profile-work{
 padding: 14%;
@@ -110,96 +109,94 @@ color: #0062cc;
 					@endforeach
 				</div>
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-8" style="word-break: break-all;">
 				<div class="profile-head">
 					@foreach ($producer as $item)
 					<h2>{{$item->name}}</h2>
 					<h4>Producer</h4>
 					@endforeach
-					<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<ul class="nav nav-tabs">
 						<li class="nav-item">
-							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" >General</a>
+							<a class="nav-link">General</a>
 						</li>
 					</ul>
 				</div>
 				@foreach ($producer as $item)
-				<div class="tab-content profile-tab" id="myTabContent">
-						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-						<div class="row">
-							<div class="col-md-6">
-								<label>Name</label>
-							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{$item->name}}</p>
-							</div>
+				<div class="tab-content profile-tab">
+					<div class="row">
+						<div class="col-md-6">
+							<label>Name</label>
 						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>Date of Birth</label>
-							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{$item->dob}}</p>
-							</div>
+						<div class="col-md-6" style="word-break: break-all;">
+							<p>{{$item->name}}</p>
 						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>Gender</label>
-							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{$item->gender}}</p>
-							</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<label>Date of Birth</label>
 						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>Status</label>
-							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{$item->status}}</p>
-							</div>
+						<div class="col-md-6" style="word-break: break-all;">
+							<p>{{$item->dob}}</p>
 						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>Genre</label>
-							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{$item->genre}}</p>
-							</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<label>Gender</label>
 						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>Associations</label>
-							</div>
-							<div class="col-md-6" style="word-break: break-all;">
-								<p>{{$item->associations}}</p>
-							</div>
+						<div class="col-md-6" style="word-break: break-all;">
+							<p>{{$item->gender}}</p>
 						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<label>Works</label>
-							</div>
-							<div class="col-md-12" style="word-break: break-all; overflow-y: scroll; max-height: 100px">
-								@foreach ($works as $item)
-								<a href="{{URL::route('songs', $item->songid)}}"><p>{{$item->title}}</p></a>
-								@endforeach
-							</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<label>Status</label>
 						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<label>Discography</label>
-							</div>
-							<div class="col-md-12" style="word-break: break-all; overflow-y: scroll; max-height: 100px">
-								@foreach ($discography as $item)
-								<a href="{{URL::route('albums', $item->albumid)}}"><p>{{$item->title}}</p></a>
-								@endforeach
-							</div>
+						<div class="col-md-6" style="word-break: break-all;">
+							<p>{{$item->status}}</p>
 						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label>About</label>
-							</div>
-							<div class="col-md-12" style="word-break: break-all;">
-								<p>{!!$item->about!!}</p>
-							</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<label>Genre</label>
+						</div>
+						<div class="col-md-6" style="word-break: break-all;">
+							<p>{{$item->genre}}</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<label>Associations</label>
+						</div>
+						<div class="col-md-6" style="word-break: break-all;">
+							<p>{{$item->associations}}</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label>Works</label>
+						</div>
+						<div class="col-md-12" style="word-break: break-all; overflow-y: scroll; max-height: 100px">
+							@foreach ($works as $item)
+							<a href="{{URL::route('songs', $item->songid)}}"><p>{{$item->title}}</p></a>
+							@endforeach
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label>Discography</label>
+						</div>
+						<div class="col-md-12" style="word-break: break-all; overflow-y: scroll; max-height: 100px">
+							@foreach ($discography as $item)
+							<a href="{{URL::route('albums', $item->albumid)}}"><p>{{$item->title}}</p></a>
+							@endforeach
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<label>About</label>
+						</div>
+						<div class="col-md-12" style="word-break: break-all;">
+							<p>{!!$item->about!!}</p>
 						</div>
 					</div>
 				</div>

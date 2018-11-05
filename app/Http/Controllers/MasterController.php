@@ -206,10 +206,8 @@ class MasterController extends Controller {
 		}
 		if (is_null($request->input('vocal'))) {
 			$vocalname = 'N/A';
-			$vocalid = null;
 		} else {
-			$vocalname = vocals::select('name')->where('vocalid', $request->input('vocal'))->get();
-			$vocalid = vocals::select('vocalid')->where('vocalid', $request->input('vocal'))->get();
+			$vocalname = $request->input('vocal');
 		}
 		if (is_null($request->input('country'))) {
 			$country = 'N/A';
@@ -247,7 +245,6 @@ class MasterController extends Controller {
 				'lyric' => $lyric,
 				'uploaddate' => $uploaddate,
 				'avatar' => $avatar,
-				'vocalid' => $vocalid,
 				'producerid' => $producerid,
 				'songaddress' => $songaddress,
 				'userid' => Auth::id(),
