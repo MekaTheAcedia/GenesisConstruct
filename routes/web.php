@@ -47,6 +47,8 @@ Route::post('/songuploader', ['as' => 'songuploader', 'uses' => 'MasterControlle
 
 Route::get('/addproducer', ['as' => 'addproducer', 'uses' => 'MasterController@addproducer']);
 
+Route::get('/favorite', ['as' => 'favorite', 'uses' => 'MasterController@favorite']);
+
 Route::post('/produceruploader', ['as' => 'produceruploader', 'uses' => 'MasterController@produceruploader']);
 
 Route::group(['middleware' => 'auth'], function () {

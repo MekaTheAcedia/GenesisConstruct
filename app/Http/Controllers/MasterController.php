@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\albums;
+use App\Models\favorite;
 use App\Models\producer;
 use App\Models\songs;
 use App\Models\user;
@@ -322,5 +323,15 @@ class MasterController extends Controller {
 				'error' => '<div class="alert alert-danger alert-dismissable">Error</div>',
 			]);
 		}
+	}
+
+	public function favorite(Request $request) {
+		$favorite = favorite::where('userid', Auth::id())->get();
+		$result = songs::join('favorite', 'songs.songid', '=', 'favorite.songid')
+			->select('songs.*', 'favorite.userid')
+			->get();
+		return view('favorite')->with([
+			'favorite' => $result,
+		]);
 	}
 }

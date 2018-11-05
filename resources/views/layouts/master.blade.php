@@ -71,7 +71,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="{{URL::route('favorite')}}">
 								<i class="lnr lnr-heart"></i>
 								<span>My Favourities</span>
 							</a>

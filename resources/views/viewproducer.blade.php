@@ -175,7 +175,7 @@ color: #0062cc;
 						<div class="col-md-12">
 							<label>Works</label>
 						</div>
-						<div class="col-md-12" style="word-break: break-all; overflow-y: scroll; max-height: 100px">
+						<div class="col-md-12 pre-scrollable" style="word-break: break-all; max-height: 200px">
 							@foreach ($works as $item)
 							<a href="{{URL::route('songs', $item->songid)}}"><p>{{$item->title}}</p></a>
 							@endforeach
@@ -185,7 +185,7 @@ color: #0062cc;
 						<div class="col-md-12">
 							<label>Discography</label>
 						</div>
-						<div class="col-md-12" style="word-break: break-all; overflow-y: scroll; max-height: 100px">
+						<div class="col-md-12 pre-scrollable" style="word-break: break-all; max-height: 200px">
 							@foreach ($discography as $item)
 							<a href="{{URL::route('albums', $item->albumid)}}"><p>{{$item->title}}</p></a>
 							@endforeach
