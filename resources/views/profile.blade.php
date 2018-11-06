@@ -6,6 +6,9 @@
 		z-index: 1;
 	}
 	.btn-fullscreen,.btn-codeview,.note-table,.note-insert{display: none;}
+	::placeholder{
+		opacity: 0.8;
+	}
 </style>
 <hr>
 <div class="container bootstrap snippet">

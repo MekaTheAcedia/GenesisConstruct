@@ -6,6 +6,9 @@
 		z-index: 1;
 	}
 	.btn-fullscreen,.btn-codeview,.note-table,.note-insert{display: none;}
+	::placeholder{
+		opacity: 0.8;
+	}
 </style>
 <hr>
 <div class="container bootstrap snippet">
@@ -24,15 +27,20 @@
 					<input type="file" class="text-center center-block file-upload" name="avatar">
 				</div>
 				<hr>
+				<div class="panel-primary">
+					<label for="songaddress"><h4>Please select the song</h4></label>
+					<input type="file" class="text-center center-block file-upload" name="songaddress" required="">
+				</div>
+				<hr>
 				<br>
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<a href="{{URL::route('addproducer')}}" class="glyphicon glyphicon-plus" style="text-decoration: none;"></a>
-						<a href="{{URL::route('addproducer')}}">  Add a Producer</a>
+						<a href="{{URL::route('addproducer')}}"> Add a Producer</a>
 					</div>
 					<div class="panel-heading">
-						<a href="#" class="glyphicon glyphicon-plus" style="text-decoration: none;"></a>
-						<a href="#">  Add a Singer</a>
+						<a href="{{URL::route('createalbum')}}" class="glyphicon glyphicon-plus" style="text-decoration: none;"></a>
+						<a href="{{URL::route('createalbum')}}"> Create an Album</a>
 					</div>
 				</div>
 				<div class="panel panel-default" style="opacity: 0;">
@@ -43,7 +51,7 @@
 			<!--/col-3-->
 			<div class="col-sm-9">
 				@if (session('error'))
-					{!!session('error')!!}
+				{!!session('error')!!}
 				@endif
 				<div class="tab-content">
 					<div class="tab-pane active" id="home">
@@ -74,6 +82,18 @@
 						</div>
 						<div class="form-group">
 							<div class="col-xs-6">
+								<label for="album"><h4>Album</h4></label>
+								<select class="form-control" name="album" id="album">
+									<option value="" disabled="" selected="">Please create the album first</option>
+									<option value="">N/A</option>
+									@foreach ($album as $item)
+									<option value="{{$item->albumid}}">{{$item->title}}</option>
+									@endforeach
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-6">
 								<label for="vocal"><h4>Vocal</h4></label>
 								<input type="text" class="form-control" name="vocal" id="vocal">
 							</div>
@@ -82,12 +102,6 @@
 							<div class="col-xs-6">
 								<label for="country"><h4>Country</h4></label>
 								<input type="text" class="form-control" name="country" id="country">
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-xs-6">
-								<label for="songaddress"><h4>Song</h4></label>
-								<input type="file" class="text-center center-block file-upload" name="songaddress" required="">
 							</div>
 						</div>
 						<div class="form-group">

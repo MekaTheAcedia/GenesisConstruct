@@ -49,6 +49,10 @@ Route::get('/addproducer', ['as' => 'addproducer', 'uses' => 'MasterController@a
 
 Route::get('/favorite', ['as' => 'favorite', 'uses' => 'MasterController@favorite']);
 
+Route::get('/createalbum', ['as' => 'createalbum', 'uses' => 'MasterController@createalbum']);
+
+Route::post('/albumuploader', ['as' => 'albumuploader', 'uses' => 'MasterController@albumuploader']);
+
 Route::post('/produceruploader', ['as' => 'produceruploader', 'uses' => 'MasterController@produceruploader']);
 
 Route::group(['middleware' => 'auth'], function () {

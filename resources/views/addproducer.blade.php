@@ -6,6 +6,9 @@
 		z-index: 1;
 	}
 	.btn-fullscreen,.btn-codeview,.note-table,.note-insert{display: none;}
+	::placeholder{
+		opacity: 0.8;
+	}
 </style>
 <hr>
 <div class="container bootstrap snippet">
@@ -40,7 +43,7 @@
 						<hr>
 						<div class="form-group">
 							<div class="col-xs-6">
-								<label for="title"><h4>Name</h4></label>
+								<label for="name"><h4>Name</h4></label>
 								<input type="text" class="form-control" name="name" id="name" required="">
 							</div>
 						</div>
@@ -79,8 +82,8 @@
 						</div>
 						<div class="form-group">
 							<div class="col-xs-6">
-								<label for="songaddress"><h4>Associations</h4></label>
-								<input type="text" class="form-control" name="songaddress">
+								<label for="association"><h4>Associations</h4></label>
+								<input type="text" class="form-control" name="associations">
 							</div>
 						</div>
 						<div class="form-group">

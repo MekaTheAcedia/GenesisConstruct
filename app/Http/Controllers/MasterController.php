@@ -8,7 +8,6 @@ use App\Models\favorite;
 use App\Models\producer;
 use App\Models\songs;
 use App\Models\user;
-use App\Models\vocals;
 use App\Services\PayUService\Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -142,7 +141,7 @@ class MasterController extends Controller {
 				'avatar' => $avatar,
 			]);
 			return redirect('profiledetails');
-		} catch (\Exception $e) {
+		} catch (Exception $e) {
 			return redirect('profile')->with([
 				'error' => '<div class="alert alert-danger alert-dismissable">Email is already taken</div>',
 			]);
@@ -184,10 +183,10 @@ class MasterController extends Controller {
 
 	public function uploadsong(Request $request) {
 		$producer = producer::orderBy('name')->get();
-		$vocal = vocals::orderBy('name')->get();
+		$album = albums::orderBy('title')->get();
 		return view('uploadsong')->with([
 			'producer' => $producer,
-			'vocal' => $vocal,
+			'album' => $album,
 		]);
 	}
 
@@ -220,7 +219,6 @@ class MasterController extends Controller {
 		} else {
 			$description = $request->input('description');
 		}
-
 		if (is_null($request->input('lyric'))) {
 			$lyric = 'N/A';
 		} else {
@@ -233,25 +231,34 @@ class MasterController extends Controller {
 			$avatar = 'img/' . $request->avatar->getClientOriginalName();
 			$request->avatar->move('img', $avatar);
 		}
+		if (is_null($request->input('album'))) {
+			$albumtitle = 'N/A';
+			$albumid = null;
+		} else {
+			$albumtitle = albums::select('title')->where('albumid', $request->input('album'))->get();
+			$albumid = albums::select('albumid')->where('albumid', $request->input('album'))->get();
+		}
 		$songaddress = 'video/' . $request->songaddress->getClientOriginalName();
 		$request->songaddress->move('video', $songaddress);
 		try {
 			songs::insert([
 				'title' => $title,
 				'genre' => $genre,
-				'producer' => $producername,
+				'producer' => $producername[0]->name,
 				'vocal' => $vocalname,
+				'album' => $albumtitle[0]->title,
 				'country' => $country,
 				'description' => $description,
 				'lyric' => $lyric,
 				'uploaddate' => $uploaddate,
 				'avatar' => $avatar,
-				'producerid' => $producerid,
+				'producerid' => $producerid[0]->producerid,
+				'albumid' => $albumid[0]->albumid,
 				'songaddress' => $songaddress,
 				'userid' => Auth::id(),
 			]);
 			return redirect('profiledetails');
-		} catch (\Exception $e) {
+		} catch (Exception $e) {
 			return redirect('uploadsong')->with([
 				'error' => '<div class="alert alert-danger alert-dismissable">Error</div>',
 			]);
@@ -319,7 +326,7 @@ class MasterController extends Controller {
 			]);
 			return redirect('profiledetails');
 		} catch (Exception $e) {
-			return redirect('uploadsong')->with([
+			return redirect('addproducer')->with([
 				'error' => '<div class="alert alert-danger alert-dismissable">Error</div>',
 			]);
 		}
@@ -333,5 +340,46 @@ class MasterController extends Controller {
 		return view('favorite')->with([
 			'favorite' => $favorite,
 		]);
+	}
+
+	public function createalbum(Request $request) {
+		$producer = producer::orderBy('name')->get();
+		return view('createalbum')->with([
+			'producer' => $producer,
+		]);
+	}
+
+	public function albumuploader(Request $request) {
+		if (is_null($request->thumbnail)) {
+			$thumbnail = 'https://png.pngtree.com/element_origin_min_pic/17/04/19/f0657f5b68eb9d3c6e0076fbd897322a.jpg';
+		} else {
+			$thumbnail = 'img/' . $request->thumbnail->getClientOriginalName();
+			$request->thumbnail->move('img', $thumbnail);
+		}
+		if (is_null($request->input('description'))) {
+			$description = 'N/A';
+		} else {
+			$description = $request->input('description');
+		}
+		$producername = producer::select('name')->where('producerid', $request->input('producer'))->get();
+		$producerid = producer::select('producerid')->where('producerid', $request->input('producer'))->get();
+		$releasedate = date("Y-m-d H:i:s");
+		try {
+			albums::insert([
+				'title' => $request->input('title'),
+				'label' => $request->input('label'),
+				'price' => $request->input('price'),
+				'producer' => $producername[0]->name,
+				'thumbnail' => $thumbnail,
+				'description' => $description,
+				'producerid' => $producerid[0]->producerid,
+				'releasedate' => $releasedate,
+			]);
+			return redirect('uploadsong');
+		} catch (Exception $e) {
+			return redirect('createalbum')->with([
+				'error' => '<div class="alert alert-danger alert-dismissable">Error</div>',
+			]);
+		}
 	}
 }

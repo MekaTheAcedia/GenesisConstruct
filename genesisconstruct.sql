@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2018 at 03:58 AM
+-- Generation Time: Nov 06, 2018 at 08:26 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -35,10 +35,8 @@ CREATE TABLE `albums` (
   `releasedate` date NOT NULL,
   `producer` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` int(20) NOT NULL,
-  `illust` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `label` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `thumbnail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'https://png.pngtree.com/element_origin_min_pic/17/04/19/f0657f5b68eb9d3c6e0076fbd897322a.jpg',
-  `songs` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `producerid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -46,23 +44,37 @@ CREATE TABLE `albums` (
 -- Dumping data for table `albums`
 --
 
-INSERT INTO `albums` (`albumid`, `title`, `description`, `releasedate`, `producer`, `price`, `illust`, `label`, `thumbnail`, `songs`, `producerid`) VALUES
-(2, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, NULL, 'https://png.pngtree.com/element_origin_min_pic/17/04/19/f0657f5b68eb9d3c6e0076fbd897322a.jpg', 'sdfas, sdfas, asdfasd', 1),
-(3, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, NULL, 'img/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
-(4, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, NULL, 'img/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
-(5, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, NULL, 'img/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
-(6, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, NULL, 'img/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
-(7, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, NULL, 'img/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
-(8, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, NULL, 'img/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
-(9, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, NULL, 'img/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
-(10, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, NULL, 'img/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
-(11, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, NULL, 'img/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
-(12, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, NULL, 'img/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
-(13, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, NULL, 'img/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
-(14, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, NULL, 'img/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
-(15, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, NULL, 'img/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
-(16, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, NULL, 'img/v1.jpg', 'sdfas, sdfas, asdfasd', 1),
-(17, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, NULL, 'img/v1.jpg', 'sdfas, sdfas, asdfasd', 1);
+INSERT INTO `albums` (`albumid`, `title`, `description`, `releasedate`, `producer`, `price`, `label`, `thumbnail`, `producerid`) VALUES
+(2, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'https://png.pngtree.com/element_origin_min_pic/17/04/19/f0657f5b68eb9d3c6e0076fbd897322a.jpg', 1),
+(3, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(4, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(5, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(6, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(7, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(8, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(9, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(10, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(11, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(12, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(13, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(14, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(15, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(16, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(17, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(18, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(19, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(20, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(21, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(22, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(23, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(24, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(25, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(26, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(27, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(28, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(29, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
+(30, 'title1', 'N/A', '2018-11-06', 'Acedia', 1, 'asdf', 'https://png.pngtree.com/element_origin_min_pic/17/04/19/f0657f5b68eb9d3c6e0076fbd897322a.jpg', 3),
+(31, 'title1', '<p>sdfasfasdfads</p>', '2018-11-06', 'Acedia', 123412, 'asdfas', 'img/302bcf1d37012ac70bc0d467a35e7084.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -75,8 +87,28 @@ CREATE TABLE `comments` (
   `userid` int(11) UNSIGNED NOT NULL,
   `songid` int(11) NOT NULL,
   `message` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `uploadtime` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `uploadtime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `favorite`
+--
+
+CREATE TABLE `favorite` (
+  `userid` int(11) UNSIGNED NOT NULL,
+  `songid` int(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `favorite`
+--
+
+INSERT INTO `favorite` (`userid`, `songid`) VALUES
+(6, 34),
+(6, 35),
+(6, 36);
 
 -- --------------------------------------------------------
 
@@ -174,7 +206,9 @@ INSERT INTO `songs` (`songid`, `title`, `genre`, `producer`, `vocal`, `album`, `
 (34, 'title4', 'N/A', 'adf', 'N/A', NULL, 'N/A', 'N/A', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6),
 (35, 'title3', 'N/A', 'adf', 'N/A', NULL, 'N/A', 'N/A', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6),
 (36, 'title2', 'N/A', 'adf', 'N/A', NULL, 'N/A', 'N/A', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6),
-(37, 'title1', 'N/A', 'adf', 'N/A', NULL, 'N/A', 'N/A', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6);
+(37, 'title1', 'N/A', 'adf', 'N/A', NULL, 'N/A', '<p>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6),
+(38, 'title1', 'asd/asdf/asdf', 'N/A', 'vocal', NULL, 'vvvv', '<p>asdfasdfasdfaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>', '<p>aaaaaaaaaaaaaaaaaaaa</p><p>aaaaaaaaaaaaaaaaaaaaaaa</p><p>aaaaaaaaaaaaaaa</p><p>aaaaaaaa</p>', '2018-11-06', 'img/2e5fead82113a5a623b51572ab934088.jpg', NULL, NULL, 'video/Musunde, Hiraite, Rasetsu to Mukuro(retake ver.)_Hachi ft.Hatsune Miku.mp3', 6),
+(42, 'title5', 'asd/asdf/asdf', 'adf', 'vocal', 'sda', 'vvvv', '<p>fdsafas</p>', '<p>asdfasdf</p>', '2018-11-06', 'img/2a483b27d98e3f8af02391bd9bc14a1d.jpg', 1, 18, 'video/Butterfly_ON OFF.mp3', 6);
 
 -- --------------------------------------------------------
 
@@ -206,8 +240,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `dob`, `gender`, `location`, `about`, `level`, `avatar`, `favorite`) VALUES
 (3, 'Lý Quốc Trọng', 'trongdaigia19955@gmail.com', NULL, '$2y$10$QOcDzOpejqMgHmKLP4agF.lvG6o.nFoPv1BzwbycqUIXmQJuuWoDC', NULL, '2018-10-22 20:17:43', '2018-10-22 20:17:43', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, '1234', '12345@gmail.com', NULL, '$2y$10$he1/UHlQUiw8.2o5XuSj6.5eT7BlmfCxg63jIn8iSv/UlhlNuo65e', 'njQ1elbHTCbyy2WSc3UVxXbY8DakWhffUwl3tusWapXOKgXMFVNpjBpeIT58', '2018-10-26 01:18:06', '2018-10-28 21:23:58', NULL, 'Female', 'dsfgsdf', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 3, 'img/6c8f071210788b56c8c2cc98ec570227.jpg', NULL),
-(6, 'Acedia', '1234@gmail.com', NULL, '$2y$10$AQXfYItG7wINPymHsLAtdue/nN4Yxnqvqhwo2xAb4TP7n6YNvE56C', 'zy8v0yEeU1HhZgHDi26PTR6DWfJSfUt6yPfBOQ8V2kz8B4kaU2QetXNY3mEP', '2018-10-29 18:48:27', '2018-11-04 19:39:56', '2018-10-30', 'Female', '123', '<p><a href=\"http://facebook.com\" target=\"_blank\">asdfa</a><br></p>', 3, 'img/1b53f247a8f8174d65fe425a10f307ba.jpg', NULL),
+(5, '1234', '12345@gmail.com', NULL, '$2y$10$he1/UHlQUiw8.2o5XuSj6.5eT7BlmfCxg63jIn8iSv/UlhlNuo65e', 'AAJz8YpUlMSdnXh4Xl6E1Lc0MPzhTUlfkEjR4LnMo8jKkxnSrQGrtWxrZpfe', '2018-10-26 01:18:06', '2018-10-28 21:23:58', NULL, 'Female', 'dsfgsdf', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 3, 'img/6c8f071210788b56c8c2cc98ec570227.jpg', NULL),
+(6, 'Acedia', '1234@gmail.com', NULL, '$2y$10$AQXfYItG7wINPymHsLAtdue/nN4Yxnqvqhwo2xAb4TP7n6YNvE56C', 'iK4IAGl52kWeEYXKgJ9QG9DVM5Mo8wspuf2dnDwYjykm3r1co3YLXtQa2sKQ', '2018-10-29 18:48:27', '2018-11-05 21:08:52', '2018-10-30', 'Female', '123', '<p><b>asdfdas</b></p>', 3, 'https://res.cloudinary.com/silentlove995/image/upload/c_scale,o_100,q_auto:eco,w_658,z_0.4/v1541417597/avatar/__code_sariel_and_eve_elsword__d1e7b99e3abb6828d136fcce36166b0f1541417587484.png', NULL),
 (7, 'Acedia', '123456@gmail.com', NULL, '$2y$10$plWnFqXt3iqaFsmz7OPDheTC/0wW.7p/U1hTY/us.Lef8qWlhuVUW', '9SLqNmJbwZVWlHp5WCnBnM1fJsHlpP08MeozihvJ5gewebKCcc2TtuGGHh6g', '2018-10-30 20:23:31', '2018-10-30 21:00:22', NULL, NULL, NULL, NULL, 3, 'img/3c13c7812b05c37375e33baef7d539df.jpg', NULL);
 
 --
@@ -228,6 +262,13 @@ ALTER TABLE `comments`
   ADD PRIMARY KEY (`commentid`),
   ADD KEY `userid` (`userid`),
   ADD KEY `song_comment` (`songid`);
+
+--
+-- Indexes for table `favorite`
+--
+ALTER TABLE `favorite`
+  ADD KEY `user_favorite` (`userid`),
+  ADD KEY `song_favorite` (`songid`);
 
 --
 -- Indexes for table `migrations`
@@ -272,7 +313,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `albumid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `albumid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `comments`
@@ -296,7 +337,7 @@ ALTER TABLE `producer`
 -- AUTO_INCREMENT for table `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `songid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `songid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -320,6 +361,13 @@ ALTER TABLE `albums`
 ALTER TABLE `comments`
   ADD CONSTRAINT `song_comment` FOREIGN KEY (`songid`) REFERENCES `songs` (`songid`),
   ADD CONSTRAINT `user_comment` FOREIGN KEY (`userid`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `favorite`
+--
+ALTER TABLE `favorite`
+  ADD CONSTRAINT `song_favorite` FOREIGN KEY (`songid`) REFERENCES `songs` (`songid`),
+  ADD CONSTRAINT `user_favorite` FOREIGN KEY (`userid`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `songs`
