@@ -67,12 +67,11 @@
 
 		<!-- /error_page -->
 		<div class="error-top">
-			<img src="{{asset('images/pic_error.png')}}" alt="" />
 			<h3>You Have To Login To Use This Feature...<h3>
 			<div class="clearfix"></div>
 
 			<div class="error">
-				<a class="not" href="{{URL::route('index')}}">Back To Home</a>
+				<a class="not" href="{{route('login')}}">Login</a>
 			</div>
 			<!-- //error_page -->
 		</div>

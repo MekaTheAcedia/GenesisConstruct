@@ -1,5 +1,10 @@
 @extends('layouts.master')
 @section('content')
+<style type="text/css">
+	.content-grid {
+		height: 175px;
+	}
+</style>
 <div id="page-wrapper">
 	<div class="inner-content">
 		<div class="music-left">
@@ -424,7 +429,7 @@
 		<ul id="flexiselDemo1">
 			@foreach($newalbums as $item)
 			<li>
-				<a href="{{URL::route('albums', $item->albumid)}}"><img src="{{asset($item->thumbnail)}}" alt=""/></a>
+				<a href="{{URL::route('albums', $item->albumid)}}" style="height: 233px"><img src="{{asset($item->thumbnail)}}" alt=""/></a>
 				<div class="slide-title"><h4>{{$item->title}}</h4></div>
 				<div class="date-city">
 					<h5>{{$item->releasedate}}</h5>
@@ -442,7 +447,7 @@
 			visibleItems: 5,
 			animationSpeed: 1000,
 			autoPlay: true,
-					autoPlaySpeed: 5000,
+					autoPlaySpeed: 100000,
 			pauseOnHover: false,
 			enableResponsiveBreakpoints: true,
 			responsiveBreakpoints: {

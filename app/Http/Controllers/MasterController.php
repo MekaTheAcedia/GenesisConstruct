@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Auth;
 
 class MasterController extends Controller {
 	public function indexSongs(Request $request) {
-		$newsongs = songs::orderBy('uploaddate', '')->paginate(8);
+		$newsongs = songs::orderBy('songid', '')->paginate(8);
 		$discover = songs::inRandomOrder()->paginate(8);
-		$newalbums = albums::orderBy('releasedate', '')->paginate(7);
+		$newalbums = albums::orderBy('albumid', '')->paginate(7);
 
 		return view('index')->with([
 			'newsongs' => $newsongs,

@@ -1,5 +1,10 @@
 @extends('layouts.master')
 @section('content')
+<style type="text/css">
+	.artist-grid {
+		height: 245px;
+	}
+</style>
 <div id="page-wrapper">
 	<div class="inner-content">
 		<div class="music-browse">

@@ -5,7 +5,7 @@
 
 		<!-- /error_page -->
 		<div class="error-top">
-			<img src="{{asset('images/pic_error.png')}}" alt="" />
+			<img src="{{asset('img/pic_error.png')}}" alt="" />
 			<h3>Page Not Found...<h3>
 			<div class="clearfix"></div>
 
