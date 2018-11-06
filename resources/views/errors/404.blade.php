@@ -10,7 +10,7 @@
 			<div class="clearfix"></div>
 
 			<div class="error">
-				<a class="not" href="index.html">Back To Home</a>
+				<a class="not" href="{{URL::route('index')}}">Back To Home</a>
 			</div>
 			<!-- //error_page -->
 		</div>

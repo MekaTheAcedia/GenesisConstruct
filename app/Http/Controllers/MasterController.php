@@ -326,12 +326,12 @@ class MasterController extends Controller {
 	}
 
 	public function favorite(Request $request) {
-		$favorite = favorite::where('userid', Auth::id())->get();
-		$result = songs::join('favorite', 'songs.songid', '=', 'favorite.songid')
+		$favorite = songs::join('favorite', 'songs.songid', '=', 'favorite.songid')
 			->select('songs.*', 'favorite.userid')
+			->where('favorite.userid', Auth::id())
 			->get();
 		return view('favorite')->with([
-			'favorite' => $result,
+			'favorite' => $favorite,
 		]);
 	}
 }

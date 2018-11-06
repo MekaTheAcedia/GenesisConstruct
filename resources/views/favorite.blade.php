@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+@if (count($favorite) != 0)
 <div id="page-wrapper">
 	<div class="inner-content">
 		<div class="music-browse">
@@ -60,4 +61,45 @@
 <!-- /w3layouts-agile -->
 </div>
 <!--body wrapper end-->
+@elseif(!Auth::check())
+<div id="page-wrapper">
+	<div class="inner-content">
+
+		<!-- /error_page -->
+		<div class="error-top">
+			<img src="{{asset('images/pic_error.png')}}" alt="" />
+			<h3>You Have To Login To Use This Feature...<h3>
+			<div class="clearfix"></div>
+
+			<div class="error">
+				<a class="not" href="{{URL::route('index')}}">Back To Home</a>
+			</div>
+			<!-- //error_page -->
+		</div>
+		<div class="clearfix"></div>
+		<!--body wrapper end-->
+	</div>
+</div>
+@else
+<div id="page-wrapper">
+	<div class="inner-content">
+
+		<!-- /error_page -->
+		<div class="error-top">
+			<img src="{{asset('images/pic_error.png')}}" alt="" />
+			<h3>You Don't Have Any Favorite Song...<h3>
+			<div class="clearfix"></div>
+
+			<div class="error">
+				<a class="not" href="{{URL::route('index')}}">Back To Home</a>
+			</div>
+			<!-- //error_page -->
+		</div>
+		<div class="clearfix"></div>
+		<!--body wrapper end-->
+	</div>
+</div>
+<!-- /agileinfo -->
+<!--body wrapper end-->
+@endif
 @stop
