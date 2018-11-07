@@ -52,6 +52,7 @@
 							</li>
 							@endforeach
 						</ul>
+						{!!$songs->links()!!}
 					</div>
 				</div>
 			</div>
