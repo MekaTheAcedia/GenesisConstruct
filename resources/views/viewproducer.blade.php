@@ -99,7 +99,7 @@ color: #0062cc;
 			<div class="col-md-4">
 				@foreach ($producer as $item)
 				<div class="profile-img">
-					<img src="{{asset($item->avatar)}}">
+					<img src="{{$item->avatar}}">
 				</div>
 				@endforeach
 				<div class="profile-work">

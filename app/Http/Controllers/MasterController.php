@@ -16,7 +16,7 @@ class MasterController extends Controller {
 	public function indexSongs(Request $request) {
 		$newsongs = songs::orderBy('songid', '')->paginate(8);
 		$discover = songs::inRandomOrder()->paginate(8);
-		$newalbums = albums::orderBy('albumid', '')->paginate(7);
+		$newalbums = albums::whereNotIn('albumid', [0])->orderBy('albumid', '')->paginate(7);
 
 		return view('index')->with([
 			'newsongs' => $newsongs,
@@ -30,8 +30,8 @@ class MasterController extends Controller {
 	}
 
 	public function browse(Request $request) {
-		$album = albums::orderBy('releasedate', '')->paginate(24);
-		$discover = albums::inRandomOrder()->paginate(12);
+		$album = albums::whereNotIn('albumid', [0])->orderBy('releasedate', '')->paginate(24);
+		$discover = albums::whereNotIn('albumid', [0])->inRandomOrder()->paginate(12);
 		return view('browse')->with([
 			'album' => $album,
 			'discover' => $discover,
@@ -63,8 +63,7 @@ class MasterController extends Controller {
 			->orWhere('associations', 'like', '%' . $request->input('search') . '%')->get();
 		$user = user::where('name', 'like', '%' . $request->input('search') . '%')->get();
 		$album = albums::where('title', 'like', '%' . $request->input('search') . '%')
-			->orWhere('producer', 'like', '%' . $request->input('search') . '%')
-			->orWhere('songs', 'like', '%' . $request->input('search') . '%')->get();
+			->orWhere('producer', 'like', '%' . $request->input('search') . '%')->get();
 
 		return view('search')->with([
 			'songs' => $song,
@@ -193,8 +192,8 @@ class MasterController extends Controller {
 	}
 
 	public function uploadsong(Request $request) {
-		$producer = producer::orderBy('name')->get();
-		$album = albums::orderBy('title')->get();
+		$producer = producer::whereNotIn('producerid', [0])->orderBy('name')->get();
+		$album = albums::whereNotIn('albumid', [0])->orderBy('title')->get();
 		return view('uploadsong')->with([
 			'producer' => $producer,
 			'album' => $album,
@@ -356,7 +355,7 @@ class MasterController extends Controller {
 	}
 
 	public function createalbum(Request $request) {
-		$producer = producer::orderBy('name')->get();
+		$producer = producer::whereNotIn('producerid', [0])->orderBy('name')->get();
 		return view('createalbum')->with([
 			'producer' => $producer,
 		]);

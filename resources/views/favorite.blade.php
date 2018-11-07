@@ -37,7 +37,7 @@
 								@foreach ($favorite as $item)
 								<div class="col-md-3 artist-grid">
 									<a  href="{{URL::route('songs', $item->songid)}}">
-										<img src="{{asset($item->avatar)}}" title="{{$item->title}}">
+										<img src="{{$item->avatar}}" title="{{$item->title}}">
 									</a>
 									<a href="{{URL::route('songs', $item->songid)}}">
 									</a>

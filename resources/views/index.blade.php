@@ -77,12 +77,12 @@
 				@foreach($newsongs as $item)
 				@if ($songCount % 4 != 0)
 				<div class="col-md-3 content-grid">
-					<a class="play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}"><img src="{{asset($item->avatar)}}" title="{{$item->title}}"></a>
+					<a class="play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
 					<a class="button play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}">Listen now</a>
 				</div>
 				@else
 				<div class="col-md-3 content-grid last-grid">
-					<a class="play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}"><img src="{{asset($item->avatar)}}" title="{{$item->title}}"></a>
+					<a class="play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
 					<a class="button play-icon popup-with-zoom-anim" href="{{URL::route('songs', $item->songid)}}">Listen now</a>
 				</div>
 				@endif
@@ -101,11 +101,11 @@
 				@foreach($discover as $item)
 				@if ($songCount % 4 != 0)
 				<div class="col-md-3 content-grid">
-					<a href="songs/{{$item->songid}}"><img src="{{asset($item->avatar)}}" title="{{$item->title}}"></a>
+					<a href="songs/{{$item->songid}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
 				</div>
 				@else
 				<div class="col-md-3 content-grid last-grid">
-					<a href="songs/{{$item->songid}}"><img src="{{asset($item->avatar)}}" title="{{$item->title}}"></a>
+					<a href="songs/{{$item->songid}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
 				</div>
 				@endif
 				<?php $songCount++?>
@@ -424,7 +424,7 @@
 		<ul id="flexiselDemo1">
 			@foreach($newalbums as $item)
 			<li>
-				<a href="{{URL::route('albums', $item->albumid)}}"><img src="{{asset($item->thumbnail)}}" alt=""/></a>
+				<a href="{{URL::route('albums', $item->albumid)}}"><img src="{{$item->thumbnail}}" alt=""/></a>
 				<div class="slide-title"><h4>{{$item->title}}</h4></div>
 				<div class="date-city">
 					<h5>{{$item->releasedate}}</h5>

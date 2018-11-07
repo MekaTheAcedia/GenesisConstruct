@@ -24,7 +24,7 @@
 	<div class="col-md-12">
 		<div class="fb-profile">
 			<img align="left" class="fb-image-lg" src="{{asset('img/coverdemo.jpg')}}" alt="Profile image example">
-			<img align="left" class="fb-image-profile thumbnail" src="{{asset($item->thumbnail)}}">
+			<img align="left" class="fb-image-profile thumbnail" src="{{$item->thumbnail}}">
 			<div class="fb-profile-text col-md-7">
 				<h1>{{$item->title}}</h1>
 				<p>{{$item->producer}}</p>
@@ -38,7 +38,7 @@
 							@foreach ($songs as $item)
 							<li class="song-element">
 								<a href="{{URL::route('songs', $item->songid)}}" class="image-link">
-									<img class="image" src="{{asset($item->avatar)}}">
+									<img class="image" src="{{$item->avatar}}">
 									<span class="hover-image"></span>
 								</a>
 								<h3 class="next-song-name">

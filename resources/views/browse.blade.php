@@ -30,7 +30,7 @@
 				</div>
 				@foreach ($album as $item)
 				<div class="col-md-3 browse-grid">
-					<a  href="{{URL::route('albums', $item->albumid)}}"><img src="{{asset($item->thumbnail)}}" title="{{$item->title}}"></a>
+					<a  href="{{URL::route('albums', $item->albumid)}}"><img src="{{$item->thumbnail}}" title="{{$item->title}}"></a>
 					<a href="{{URL::route('albums', $item->albumid)}}"></a>
 					<a class="sing" href="{{URL::route('albums', $item->albumid)}}">{{$item->title}}</a>
 				</div>
@@ -46,7 +46,7 @@
 				</div>
 				@foreach ($discover as $item)
 				<div class="col-md-3 artist-grid">
-					<a href="{{URL::route('albums', $item->albumid)}}"><img src="{{asset($item->thumbnail)}}" title="{{$item->title}}"></a>
+					<a href="{{URL::route('albums', $item->albumid)}}"><img src="{{$item->thumbnail}}" title="{{$item->title}}"></a>
 					<div class="inner-info"><h5>{{$item->title}}</h5></div>
 				</div>
 				@endforeach

@@ -42,7 +42,7 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 		@foreach ($songs as $item)
 		<article class="search-result row">
 			<div class="col-xs-12 col-sm-12 col-md-2">
-				<a href="{{URL::route('songs', $item->songid)}}" title="{{$item->title}}" class="thumbnail"><img src="{{asset($item->avatar)}}"/></a>
+				<a href="{{URL::route('songs', $item->songid)}}" title="{{$item->title}}" class="thumbnail"><img src="{{$item->avatar}}"/></a>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-2">
 				<ul class="meta-search">
@@ -71,7 +71,7 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 		@foreach ($producer as $item)
 		<article class="search-result row">
 			<div class="col-xs-12 col-sm-12 col-md-2">
-				<a href="{{URL::route('producer', $item->producerid)}}" title="{{$item->name}}" class="thumbnail"><img src="{{asset($item->avatar)}}"/></a>
+				<a href="{{URL::route('producer', $item->producerid)}}" title="{{$item->name}}" class="thumbnail"><img src="{{$item->avatar}}"/></a>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-2">
 				<ul class="meta-search">
@@ -100,7 +100,7 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 		@foreach ($album as $item)
 		<article class="search-result row">
 			<div class="col-xs-12 col-sm-12 col-md-2">
-				<a href="{{URL::route('albums', $item->albumid)}}" title="{{$item->name}}" class="thumbnail"><img src="{{asset($item->thumbnail)}}"/></a>
+				<a href="{{URL::route('albums', $item->albumid)}}" title="{{$item->name}}" class="thumbnail"><img src="{{$item->thumbnail}}"/></a>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-2">
 				<ul class="meta-search">
@@ -129,7 +129,7 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 		@foreach ($user as $item)
 		<article class="search-result row">
 			<div class="col-xs-12 col-sm-12 col-md-2">
-				<a href="{{URL::route('user', $item->id)}}" title="{{$item->name}}" class="thumbnail"><img src="{{asset($item->avatar)}}"/></a>
+				<a href="{{URL::route('user', $item->id)}}" title="{{$item->name}}" class="thumbnail"><img src="{{$item->avatar}}"/></a>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-2">
 				<ul class="meta-search">

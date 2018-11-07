@@ -61,6 +61,7 @@
 								<label for="producer"><h4>Producer</h4></label>
 								<select class="form-control" name="producer" id="producer" required="">
 									<option value="" disabled="" selected="">Can't find your producer? Try adding one.</option>
+									<option value="">N/A</option>
 									@foreach ($producer as $item)
 									<option value="{{$item->producerid}}">{{$item->name}}</option>
 									@endforeach

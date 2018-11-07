@@ -36,7 +36,7 @@
 								@foreach ($songs as $item)
 								<div class="col-md-3 artist-grid">
 									<a  href="{{URL::route('songs', $item->songid)}}">
-										<img src="{{asset($item->avatar)}}" title="{{$item->title}}">
+										<img src="{{$item->avatar}}" title="{{$item->title}}">
 									</a>
 									<a href="{{URL::route('songs', $item->songid)}}">
 									</a>
@@ -60,7 +60,7 @@
 				</div>
 				@foreach ($discover as $item)
 				<div class="col-md-3 artist-grid">
-					<a href="{{URL::route('songs', $item->songid)}}"><img src="{{asset($item->avatar)}}" title="{{$item->title}}"></a>
+					<a href="{{URL::route('songs', $item->songid)}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
 					<div class="inner-info"><h5>{{$item->title}}</h5></div>
 				</div>
 				@endforeach
