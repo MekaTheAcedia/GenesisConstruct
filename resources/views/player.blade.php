@@ -613,152 +613,208 @@ list-style: none;
 									<div id="slider"><div id="elapsed"></div></div>
 									<p id="timer">0:00</p>
 									<div class="controls">
-										<span class="expend"><svg class="step-backward" viewBox="0 0 25 25" xml:space="preserve">
-										<g><polygon points="4.9,4.3 9,4.3 9,11.6 21.4,4.3 21.4,20.7 9,13.4 9,20.7 4.9,20.7"/></g>
-									</svg></span>
-									<svg id="play" viewBox="0 0 25 25" xml:space="preserve">
-										<defs><rect x="-49.5" y="-132.9" width="446.4" height="366.4"/></defs>
-										<g><circle fill="none" cx="12.5" cy="12.5" r="10.8"/>
-											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.7,6.9V18c0,0,0.2,1.4,1.8,0l8.1-4.8c0,0,1.2-1.1-1-2L9.8,6.5 C9.8,6.5,9.1,6,8.7,6.9z"/>
-										</g>
-									</svg>
-									<svg id="pause" viewBox="0 0 25 25" xml:space="preserve">
-										<g>
-											<rect x="6" y="4.6" width="3.8" height="15.7"/>
-											<rect x="14" y="4.6" width="3.9" height="15.7"/>
-										</g>
-									</svg>
-									<span class="expend"><svg class="step-foreward" viewBox="0 0 25 25" xml:space="preserve">
-									<g><polygon points="20.7,4.3 16.6,4.3 16.6,11.6 4.3,4.3 4.3,20.7 16.7,13.4 16.6,20.7 20.7,20.7"/></g>
-								</svg></span>
+										<span class="expend">
+											<svg class="step-backward" viewBox="0 0 25 25" xml:space="preserve">
+												<g>
+													<polygon points="4.9,4.3 9,4.3 9,11.6 21.4,4.3 21.4,20.7 9,13.4 9,20.7 4.9,20.7"/>
+													</g>
+												</svg>
+											</span>
+											<svg id="play" viewBox="0 0 25 25" xml:space="preserve">
+												<defs>
+												<rect x="-49.5" y="-132.9" width="446.4" height="366.4"/>
+												</defs>
+												<g>
+													<circle fill="none" cx="12.5" cy="12.5" r="10.8"/>
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M8.7,6.9V18c0,0,0.2,1.4,1.8,0l8.1-4.8c0,0,1.2-1.1-1-2L9.8,6.5 C9.8,6.5,9.1,6,8.7,6.9z"/>
+												</g>
+											</svg>
+											<svg id="pause" viewBox="0 0 25 25" xml:space="preserve">
+												<g>
+													<rect x="6" y="4.6" width="3.8" height="15.7"/>
+													<rect x="14" y="4.6" width="3.9" height="15.7"/>
+												</g>
+											</svg>
+											<span class="expend">
+												<svg class="step-foreward" viewBox="0 0 25 25" xml:space="preserve">
+													<g>
+														<polygon points="20.7,4.3 16.6,4.3 16.6,11.6 4.3,4.3 4.3,20.7 16.7,13.4 16.6,20.7 20.7,20.7"/>
+														</g>
+													</svg>
+												</span>
+											</div>
+										</div>
+									</li>
+								</ul>
 							</div>
 						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div class="row" style="margin: -30px;">
-			<div class="producer-info">
-				@foreach ($producer as $item2)
-				<a href="{{URL::route('producer', $item2->producerid)}}"><img src="{{$item2->avatar}}" alt="avatar" style="">
-					<div class="producer-name" style="margin: -100px 130px 100px;padding: 0;">
-						<h2><a href="{{URL::route('producer', $item2->producerid)}}">{{$item2->name}}</a></h2>
+						<div class="row" style="margin: -30px;">
+							<div class="producer-info">
+								@foreach ($producer as $item2)
+								<a href="{{URL::route('producer', $item2->producerid)}}"><img src="{{$item2->avatar}}" alt="avatar" style="">
+									<div class="producer-name" style="margin: -100px 130px 100px;padding: 0;">
+										<h2>
+										<a href="{{URL::route('producer', $item2->producerid)}}">{{$item2->name}}</a>
+										</h2>
+									</div>
+								</a>
+								<div class="producer-description" style="margin: -90px 130px 100px;">
+									<div class="description" style="color: #666; word-break: break-all;">{!!$item->description!!}</div>
+								</div>
+								@php
+								break;
+								@endphp
+								@endforeach
+							</div>
+							<div class="song-lyric col-md-11 pre-scrollable" style="margin: -55px 0px 20px; background-color: #eeeeee;">
+								<h3 style="font-size: 20px;font-family: Open Sans,segoe ui,Helvetica,Arial,sans-serif;">
+								Lyrics:
+								</h3>
+								<br>
+								<div class="lyric" style="word-break: break-all;">
+									<p>{!!$item->lyric!!}</p>
+									<p style="font-weight:600;float: right;font-size: 13px;">
+										Upload by:
+										@foreach ($user as $item2)
+										<a href="{{URL::route('user', $item2->id)}}" style="text-decoration: none;color: #721799">{{$item2->name}}</a>
+										@php
+										break;
+										@endphp
+										@endforeach
+									</p>
+									<hr>
+								</div>
+							</div>
+							<div class="row col-md-11" style="margin-left: 0px;">
+								<div class="box-comment">
+									<h3 class="title-section">Comment (<span id="commentCounter"></span>)</h3>
+									<form action method="POST" class="form-comment">
+										{{csrf_field()}}
+										<p class="comment-avatar">
+											<img src="{{Auth::user()->avatar}}" class="useravatar">
+										</p>
+										<div class="wrap-comment">
+											<textarea cols="25" rows="10"></textarea>
+											<button name="btn-submit" type="submit" class="button-submit btn-dark-blue pull-right">Submit</button>
+										</div>
+									</form>
+									<ul class="list-comment">
+										<li class="item-comment">
+											<a href="#" class="thumb-user">
+												<img src="{{asset('img/avatar-default.jpg')}}" class="user-avatar">
+											</a>
+											<div class="post-comment">
+												<a href="#" target="blank" class="username">Honey</a>
+												<p class="fn-content">Hãy chiếm lấy em đi ^^ </p>
+												<div class="func-comment">
+													<a href="#" class="reply">Reply</a>
+												</div>
+												<span class="time-comment">2 minutes ago</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
-				</a>
-				<div class="producer-description" style="margin: -90px 130px 100px;">
-					<div class="description" style="color: #666; word-break: break-all;">{!!$item->description!!}</div>
-				</div>
-				@php
-					break;
-				@endphp
-				@endforeach
-			</div>
-			<div class="song-lyric col-md-11 pre-scrollable" style="margin: -55px 0px 20px; background-color: #eeeeee;">
-				<h3 style="font-size: 20px;font-family: Open Sans,segoe ui,Helvetica,Arial,sans-serif;">Lyrics: <span style="font-weight: 600;font-size: 21px;font-family: Open Sans,segoe ui,Helvetica,Arial,sans-serif;"></span></h3><br>
-				<div class="lyric" style="word-break: break-all;">
-					<p>{!!$item->lyric!!}</p>
-					<p style="font-weight:600;float: right;font-size: 13px;">
-						Upload by:
-						@foreach ($user as $item2)
-						<a href="{{URL::route('user', $item2->id)}}" style="text-decoration: none;color: #721799">{{$item2->name}}</a>
+					<div class="col-md-4 recommend-song" style="">
+						<!-- next song -->
+						@foreach ($nextsong as $item2)
+						<div class="row next-song">
+							<h3 class="title-song">Next</h3>
+							<div class="box-content">
+								<ul class="list-element">
+									<li class="song-element">
+										<a href="{{URL::route('songs', $item2->songid)}}" class="image-link">
+											<img class="image" src="{{$item2->avatar}}">
+											<span class="hover-image"></span>
+										</a>
+										<h3 class="next-song-name">
+										<a href="{{URL::route('songs', $item2->songid)}}" class="song-link">{{$item2->title}}</a>
+										</h3>
+										<div class="next-idol">
+											<h4 class="idol-title">
+											<a href="{{URL::route('producer', $item2->producerid)}}" class="idol-link">{{$item2->producer}}</a>
+											</h4>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
 						@php
-							break;
+						break;
 						@endphp
 						@endforeach
-					</p>
-					<hr>
-				</div>
-			</div>
-			<div class="row col-md-11" style="margin-left: 0px;">
-				<div class="box-comment">
-					<h3 class="title-section">Comment (<span id="commentCounter"></span>)</h3>
-					<form action method="POST" class="form-comment">
-						{{csrf_field()}}
-						<p class="comment-avatar">
-							<img src="{{Auth::user()->avatar}}" class="useravatar">
-						</p>
-						<div class="wrap-comment">
-							<textarea cols="25" rows="10"></textarea>
-							<p class="frm-checkbox disabled">
-								<input type="hidden" name="id" value="Em gai mua">
-								<input type="hidden" name="type" value="audio">
-							</p>
-							<button name="btn-submit" type="submit" class="button-submit btn-dark-blue pull-right">Submit</button>
-						</div>
-					</form>
-					<ul class="list-comment">
-						<li class="item-comment">
-							<a href="#" class="thumb-user"><img src="{{asset('img/avatar-default.jpg')}}" class="user-avatar"></a>
-							<div class="post-comment">
-								<a href="#" target="blank" class="username">Honey</a>
-								<p class="fn-content">Hãy chiếm lấy em đi ^^ </p>
-								<div class="func-comment">
-									<a href="#" class="reply">Reply</a>
-								</div>
-								<span class="time-comment">2 minutes ago</span>
+						<!-- previous song -->
+						@foreach ($prevsong as $item2)
+						<div class="row next-song" style="margin-bottom: 20px;margin: 0;box-sizing: border-box;padding: 0;position: relative;">
+							<h3 class="title-song">Previous</h3>
+							<div class="box-content">
+								<ul class="list-element">
+									<li class="song-element">
+										<a href="{{URL::route('songs', $item2->songid)}}" class="image-link">
+											<img class="image" src="{{$item2->avatar}}">
+											<span class="hover-image"></span>
+										</a>
+										<h3 class="next-song-name">
+										<a href="{{URL::route('songs', $item2->songid)}}" class="song-link">{{$item2->title}}</a>
+										</h3>
+										<div class="next-idol">
+											<h4 class="idol-title">
+											<a href="{{URL::route('producer', $item2->producerid)}}" class="idol-link">{{$item2->producer}}</a>
+											</h4>
+										</div>
+									</li>
+								</ul>
 							</div>
-						</li>
-					</ul>
+						</div>
+						@php
+						break;
+						@endphp
+						@endforeach
+						<!-- new song -->
+						<div class="row next-song" style="margin-bottom: 20px;margin: 0;box-sizing: border-box;padding: 0;position: relative;">
+							<h3 class="title-song">new</h3>
+							<div class="box-content">
+								<ul class="list-element">
+									<li class="song-element">
+										<a href="#" class="image-link">
+											<img class="image" src="{{ asset('img/a12.jpg') }}">
+											<span class="hover-image"></span>
+										</a>
+										<h3 class="next-song-name">
+										<a href="#" class="song-link">Dấu mưa</a>
+										</h3>
+										<div class="next-idol">
+											<h4 class="idol-title">
+											<a href="#" class="idol-link">Trung Quân Idol</a>
+											</h4>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
+				<!-- Container -->
 			</div>
+			<!-- Inner-content -->
 		</div>
 	</div>
-	<div class="col-md-4 recommend-song" style="">
-		<!-- next song -->
-		<div class="row next-song">
-			<h3 class="title-song">Next</h3>
-			<div class="box-content">
-				<ul class="list-element">
-					<li class="song-element">
-						<a href="#" class="image-link"><img class="image" src="{{ asset('img/a12.jpg') }}"><span class="hover-image"></span></a>
-						<h3 class="next-song-name"><a href="#" class="song-link">Dấu mưa</a></h3>
-						<div class="next-idol"><h4 class="idol-title"><a href="#" class="idol-link">Trung Quân Idol</a></h4></div>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<!-- hot song -->
-		<div class="row next-song" style="margin-bottom: 20px;margin: 0;box-sizing: border-box;padding: 0;position: relative;">
-			<h3 class="title-song">Hot</h3>
-			<div class="box-content">
-				<ul class="list-element">
-					<li class="song-element">
-						<a href="#" class="image-link"><img class="image" src="{{ asset('img/a12.jpg') }}"><span class="hover-image"></span></a>
-						<h3 class="next-song-name"><a href="#" class="song-link">Dấu mưa</a></h3>
-						<div class="next-idol"><h4 class="idol-title"><a href="#" class="idol-link">Trung Quân Idol</a></h4></div>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<!-- new song -->
-		<div class="row next-song" style="margin-bottom: 20px;margin: 0;box-sizing: border-box;padding: 0;position: relative;">
-			<h3 class="title-song">new</h3>
-			<div class="box-content">
-				<ul class="list-element">
-					<li class="song-element">
-						<a href="#" class="image-link"><img class="image" src="{{ asset('img/a12.jpg') }}"><span class="hover-image"></span></a>
-						<h3 class="next-song-name"><a href="#" class="song-link">Dấu mưa</a></h3>
-						<div class="next-idol"><h4 class="idol-title"><a href="#" class="idol-link">Trung Quân Idol</a></h4></div>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	</div><!-- Container -->
-	</div><!-- Inner-content -->
-	</div><!-- page-wrapper -->
-	<hr>
-	<div class="clearfix"></div>
-	@php
-	break;
-	@endphp
-	@endforeach
-	<script src="{{ asset('js/player.js') }}"></script>
-	<script type="text/javascript">
-		$(".description > p").shorten({
-			"chars" : 170,
-			"more"  : "More",
-			"less"  : " Less",
-		});
-	</script>
-	@stop
+</div>
+<!-- page-wrapper -->
+<hr>
+<div class="clearfix"></div>
+@php
+break;
+@endphp
+@endforeach
+<script src="{{ asset('js/player.js') }}"></script>
+<script type="text/javascript">
+	$(".description > p").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+</script>
+@stop

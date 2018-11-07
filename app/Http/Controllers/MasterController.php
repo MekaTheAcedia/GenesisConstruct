@@ -148,10 +148,20 @@ class MasterController extends Controller {
 		$producer = producer::where('producerid', $producerid)->get();
 		$userid = $song[0]->userid;
 		$user = user::where('id', $userid)->get();
+		$albumid = $song[0]->albumid;
+		if ($albumid != 0) {
+			$nextsong = songs::where('songid', '>', $songid)->where('albumid', $albumid)->paginate(1);
+			$prevsong = songs::where('songid', '<', $songid)->where('albumid', $albumid)->paginate(1);
+		} else {
+			$nextsong = songs::where('songid', $songid + 1)->get();
+			$prevsong = songs::where('songid', $songid - 1)->get();
+		}
 		return view('player')->with([
 			'song' => $song,
 			'producer' => $producer,
 			'user' => $user,
+			'nextsong' => $nextsong,
+			'prevsong' => $prevsong,
 		]);
 	}
 
@@ -249,7 +259,7 @@ class MasterController extends Controller {
 			$albumtitle = albums::select('title')->where('albumid', $request->input('album'))->get();
 			$albtitle = $albumtitle[0]->title;
 			$albumid = albums::select('albumid')->where('albumid', $request->input('album'))->get();
-			$albid = $albumid[0]->id;
+			$albid = $albumid[0]->albumid;
 		}
 		$songaddress = 'video/' . $request->songaddress->getClientOriginalName();
 		$request->songaddress->move('video', $songaddress);
@@ -363,7 +373,7 @@ class MasterController extends Controller {
 
 	public function albumuploader(Request $request) {
 		if (is_null($request->thumbnail)) {
-			$thumbnail = 'https://png.pngtree.com/element_origin_min_pic/17/04/19/f0657f5b68eb9d3c6e0076fbd897322a.jpg';
+			$thumbnail = 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg';
 		} else {
 			$thumbnail = $request->thumbnail;
 		}

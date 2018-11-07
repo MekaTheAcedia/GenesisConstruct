@@ -24,7 +24,7 @@
 			<div class="col-sm-3">
 				<!--left col-->
 				<div class="text-center">
-					<img src="https://png.pngtree.com/element_origin_min_pic/17/04/19/f0657f5b68eb9d3c6e0076fbd897322a.jpg" class="avatar img-thumbnail img-fluid">
+					<img src="https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg" class="avatar img-thumbnail img-fluid">
 					<h6>Upload a album thumbnail...</h6>
 					<input type="file"  id="tb_change">
 					<input type="text" style="display: none;" name="thumbnail">
@@ -61,7 +61,6 @@
 								<label for="producer"><h4>Producer</h4></label>
 								<select class="form-control" name="producer" id="producer" required="">
 									<option value="" disabled="" selected="">Can't find your producer? Try adding one.</option>
-									<option value="">N/A</option>
 									@foreach ($producer as $item)
 									<option value="{{$item->producerid}}">{{$item->name}}</option>
 									@endforeach
