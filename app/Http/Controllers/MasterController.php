@@ -198,8 +198,8 @@ class MasterController extends Controller {
 			$producerid = producer::select('producerid')->where('producerid', $request->input('producer'))->get();
 			$id = $producerid[0]->producerid;
 		} else {
-			$producername = 'N/A';
-			$producerid = null;
+			$name = 'N/A';
+			$id = null;
 		}
 		if (is_null($request->input('vocal'))) {
 			$vocalname = 'N/A';
@@ -228,8 +228,8 @@ class MasterController extends Controller {
 			$avatar = $request->avatar;
 		}
 		if (is_null($request->input('album'))) {
-			$albumtitle = 'N/A';
-			$albumid = null;
+			$albtitle = 'N/A';
+			$albid = null;
 		} else {
 			$albumtitle = albums::select('title')->where('albumid', $request->input('album'))->get();
 			$albtitle = $albumtitle[0]->title;
