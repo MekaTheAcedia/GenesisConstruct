@@ -52,7 +52,7 @@ class MasterController extends Controller {
 	}
 
 	public function single(Request $request) {
-		return view('single');
+		return view('album');
 	}
 
 	public function search(Request $request) {
@@ -123,12 +123,6 @@ class MasterController extends Controller {
 		} else {
 			$about = $request->input('about');
 		};
-		if (is_null($request->avatar)) {
-			$avatar = Auth::user()->avatar;
-		} else {
-			$avatar = 'img/' . $request->avatar->getClientOriginalName();
-			$request->avatar->move('img', $avatar);
-		}
 		try {
 			user::where('id', Auth::id())->update([
 				'name' => $name,
@@ -138,7 +132,6 @@ class MasterController extends Controller {
 				'dob' => $dob,
 				'gender' => $gender,
 				'about' => $about,
-				'avatar' => $avatar,
 			]);
 			return redirect('profiledetails');
 		} catch (Exception $e) {
@@ -146,6 +139,12 @@ class MasterController extends Controller {
 				'error' => '<div class="alert alert-danger alert-dismissable">Email is already taken</div>',
 			]);
 		}
+	}
+
+	public function update_avatar(Request $request){
+		user::where('id', Auth::id())->update([
+				'avatar' => $request->avatar,
+			]);
 	}
 
 	public function songs(Request $request, $songid) {
