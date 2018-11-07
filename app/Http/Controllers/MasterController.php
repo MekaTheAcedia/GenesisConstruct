@@ -144,19 +144,29 @@ class MasterController extends Controller {
 	}
 
 	public function songs(Request $request, $songid) {
-		$song = songs::where('songid', $songid);
+		$song = songs::where('songid', $songid)->get();
+		$producerid = $song[0]->producerid;
+		$producer = producer::where('producerid', $producerid)->get();
+		$userid = $song[0]->userid;
+		$user = user::where('id', $userid)->get();
 		return view('player')->with([
 			'song' => $song,
+			'producer' => $producer,
+			'user' => $user,
 		]);
 	}
 
 	public function albums(Request $request, $albumid) {
-		$album = albums::where('albumid', $albumid)->get();
-		$songs = songs::where('albumid', $albumid)->orderBy('songid')->simplePaginate(5);
-		return view('album')->with([
-			'album' => $album,
-			'songs' => $songs,
-		]);
+		if ($albumid == 0) {
+			return view('error');
+		} else {
+			$album = albums::where('albumid', $albumid)->get();
+			$songs = songs::where('albumid', $albumid)->orderBy('songid')->simplePaginate(5);
+			return view('album')->with([
+				'album' => $album,
+				'songs' => $songs,
+			]);
+		}
 	}
 
 	public function viewprofile(Request $request, $userid) {
@@ -167,15 +177,19 @@ class MasterController extends Controller {
 	}
 
 	public function viewproducer(Request $request, $producerid) {
-		$producer = producer::where('producerid', $producerid)->get();
-		$works = songs::orderBy('songid', '')->where('producerid', $producerid)->get();
-		$discography = albums::orderBy('albumid', '')->where('producerid', $producerid)->get();
+		if ($producerid == 0) {
+			return view('error');
+		} else {
+			$producer = producer::where('producerid', $producerid)->get();
+			$works = songs::orderBy('songid', '')->where('producerid', $producerid)->get();
+			$discography = albums::orderBy('albumid', '')->where('producerid', $producerid)->get();
 
-		return view('viewproducer')->with([
-			'producer' => $producer,
-			'works' => $works,
-			'discography' => $discography,
-		]);
+			return view('viewproducer')->with([
+				'producer' => $producer,
+				'works' => $works,
+				'discography' => $discography,
+			]);
+		}
 	}
 
 	public function uploadsong(Request $request) {
@@ -201,7 +215,7 @@ class MasterController extends Controller {
 			$id = $producerid[0]->producerid;
 		} else {
 			$name = 'N/A';
-			$id = null;
+			$id = 0;
 		}
 		if (is_null($request->input('vocal'))) {
 			$vocalname = 'N/A';
@@ -214,12 +228,12 @@ class MasterController extends Controller {
 			$country = $request->input('country');
 		}
 		if (is_null($request->input('description'))) {
-			$description = 'N/A';
+			$description = '<p>N/A</p>';
 		} else {
 			$description = $request->input('description');
 		}
 		if (is_null($request->input('lyric'))) {
-			$lyric = 'N/A';
+			$lyric = '<p>N/A</p>';
 		} else {
 			$lyric = $request->input('lyric');
 		}
@@ -231,7 +245,7 @@ class MasterController extends Controller {
 		}
 		if (is_null($request->input('album'))) {
 			$albtitle = 'N/A';
-			$albid = null;
+			$albid = 0;
 		} else {
 			$albumtitle = albums::select('title')->where('albumid', $request->input('album'))->get();
 			$albtitle = $albumtitle[0]->title;
@@ -272,14 +286,14 @@ class MasterController extends Controller {
 	public function produceruploader(Request $request) {
 		$name = $request->input('name');
 		if (is_null($request->input('about'))) {
-			$about = 'N/A';
+			$about = '<p>N/A</p>';
 		} else {
 			$about = $request->input('about');
 		}
 		if (is_null($request->input('sites'))) {
 			$sites = 'N/A';
 		} else {
-			$sites = '<a href="' . $request->input('sites') . '">' . $request->input('sites') . '</a><br>';
+			$sites = $request->input('sites');
 		}
 		if (is_null($request->input('associations'))) {
 			$associations = 'N/A';
@@ -355,7 +369,7 @@ class MasterController extends Controller {
 			$thumbnail = $request->thumbnail;
 		}
 		if (is_null($request->input('description'))) {
-			$description = 'N/A';
+			$description = '<p>N/A</p>';
 		} else {
 			$description = $request->input('description');
 		}
