@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2018 at 05:28 AM
+-- Generation Time: Nov 07, 2018 at 05:52 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -36,7 +36,7 @@ CREATE TABLE `albums` (
   `producer` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` int(20) NOT NULL,
   `label` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `thumbnail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'https://png.pngtree.com/element_origin_min_pic/17/04/19/f0657f5b68eb9d3c6e0076fbd897322a.jpg',
+  `thumbnail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg	',
   `producerid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -45,7 +45,7 @@ CREATE TABLE `albums` (
 --
 
 INSERT INTO `albums` (`albumid`, `title`, `description`, `releasedate`, `producer`, `price`, `label`, `thumbnail`, `producerid`) VALUES
-(2, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'https://png.pngtree.com/element_origin_min_pic/17/04/19/f0657f5b68eb9d3c6e0076fbd897322a.jpg', 1),
+(2, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg	', 1),
 (3, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
 (4, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'img/v1.jpg', 1),
 (5, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
@@ -73,8 +73,7 @@ INSERT INTO `albums` (`albumid`, `title`, `description`, `releasedate`, `produce
 (27, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
 (28, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'img/v1.jpg', 1),
 (29, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
-(30, 'title1', 'N/A', '2018-11-06', 'Acedia', 1, 'asdf', 'https://png.pngtree.com/element_origin_min_pic/17/04/19/f0657f5b68eb9d3c6e0076fbd897322a.jpg', 3),
-(31, 'title1', '<p>sdfasfasdfads</p>', '2018-11-06', 'Acedia', 123412, 'asdfas', 'img/302bcf1d37012ac70bc0d467a35e7084.jpg', 2),
+(30, 'title1', 'N/A', '2018-11-06', 'Acedia', 1, 'asdf', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg	', 3),
 (32, 'title1', '<p>312312</p>', '2018-11-07', 'Acedia', 1232, 'asdf', 'https://res.cloudinary.com/silentlove995/image/upload/c_scale,o_100,q_auto:eco,w_658,z_0.4/v1541560699/avatar/2e5fead82113a5a623b51572ab9340881541560678480.png', 3),
 (33, 'title1', '<p>sdafas</p>', '2018-11-07', 'Acedia', 123412, 'asdf', 'https://res.cloudinary.com/silentlove995/image/upload/c_scale,o_100,q_auto:eco,w_658,z_0.4/v1541564760/avatar/Screenshot_2017-11-17-14-47-481541564756178.png', 3);
 
@@ -212,11 +211,13 @@ INSERT INTO `songs` (`songid`, `title`, `genre`, `producer`, `vocal`, `album`, `
 (36, 'title2', 'N/A', 'adf', 'N/A', NULL, 'N/A', 'N/A', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6),
 (37, 'title1', 'N/A', 'adf', 'N/A', NULL, 'N/A', '<p>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6),
 (38, 'title1', 'asd/asdf/asdf', 'N/A', 'vocal', NULL, 'vvvv', '<p>asdfasdfasdfaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>', '<p>aaaaaaaaaaaaaaaaaaaa</p><p>aaaaaaaaaaaaaaaaaaaaaaa</p><p>aaaaaaaaaaaaaaa</p><p>aaaaaaaa</p>', '2018-11-06', 'img/2e5fead82113a5a623b51572ab934088.jpg', NULL, NULL, 'video/Musunde, Hiraite, Rasetsu to Mukuro(retake ver.)_Hachi ft.Hatsune Miku.mp3', 6),
-(42, 'title5', 'asd/asdf/asdf', 'adf', 'vocal', 'sda', 'vvvv', '<p>fdsafas</p>', '<p>asdfasdf</p>', '2018-11-06', 'img/2a483b27d98e3f8af02391bd9bc14a1d.jpg', 1, 18, 'video/Butterfly_ON OFF.mp3', 6),
-(43, 'title5', 'asd/asdf/asdf', 'adf', 'vocal', 'sda', 'vvvv', '<p>fdsafas</p>', '<p>asdfasdf</p>', '2018-11-06', 'img/2a483b27d98e3f8af02391bd9bc14a1d.jpg', 1, 18, 'video/Butterfly_ON OFF.mp3', 6),
-(44, 'title5', 'asd/asdf/asdf', 'adf', 'vocal', 'sda', 'vvvv', '<p>fdsafas</p>', '<p>asdfasdf</p>', '2018-11-06', 'img/2a483b27d98e3f8af02391bd9bc14a1d.jpg', 1, 18, 'video/Butterfly_ON OFF.mp3', 6),
-(45, 'title5', 'asd/asdf/asdf', 'adf', 'vocal', 'sda', 'vvvv', '<p>fdsafas</p>', '<p>asdfasdf</p>', '2018-11-06', 'img/2a483b27d98e3f8af02391bd9bc14a1d.jpg', 1, 18, 'video/Butterfly_ON OFF.mp3', 6),
-(46, 'Demon Dance', 'Soft Rock', 'Acedia', 'E ve', 'N/A', 'Jp', '<p>DemonDance</p>', 'N/A', '2018-11-07', 'https://res.cloudinary.com/silentlove995/image/upload/c_scale,o_100,q_auto:eco,w_658,z_0.4/v1541563077/avatar/2a483b27d98e3f8af02391bd9bc14a1d1541563065705.png', 2, NULL, 'video/DemonDanceTokyo-Eve-4817302.mp3', 6);
+(46, 'Demon Dance', 'Soft Rock', 'Acedia', 'E ve', 'N/A', 'Jp', '<p>DemonDance</p>', 'N/A', '2018-11-07', 'https://res.cloudinary.com/silentlove995/image/upload/c_scale,o_100,q_auto:eco,w_658,z_0.4/v1541563077/avatar/2a483b27d98e3f8af02391bd9bc14a1d1541563065705.png', 2, NULL, 'video/DemonDanceTokyo-Eve-4817302.mp3', 6),
+(47, 'Demon Dance', 'Soft Rock', 'Acedia', 'E ve', 'N/A', 'Jp', '<p>DemonDance</p>', 'N/A', '2018-11-07', 'https://res.cloudinary.com/silentlove995/image/upload/c_scale,o_100,q_auto:eco,w_658,z_0.4/v1541563077/avatar/2a483b27d98e3f8af02391bd9bc14a1d1541563065705.png', 2, NULL, 'video/DemonDanceTokyo-Eve-4817302.mp3', 6),
+(48, 'title1', 'asd/asdf/asdf', 'N/A', 'vocal', NULL, 'vvvv', '<p>asdfasdfasdfaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>', '<p>aaaaaaaaaaaaaaaaaaaa</p><p>aaaaaaaaaaaaaaaaaaaaaaa</p><p>aaaaaaaaaaaaaaa</p><p>aaaaaaaa</p>', '2018-11-06', 'img/2e5fead82113a5a623b51572ab934088.jpg', NULL, NULL, 'video/Musunde, Hiraite, Rasetsu to Mukuro(retake ver.)_Hachi ft.Hatsune Miku.mp3', 6),
+(49, 'title1', 'N/A', 'adf', 'N/A', NULL, 'N/A', '<p>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6),
+(50, 'title2', 'N/A', 'adf', 'N/A', NULL, 'N/A', 'N/A', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6),
+(51, 'title3', 'N/A', 'adf', 'N/A', NULL, 'N/A', 'N/A', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6),
+(52, 'title4', 'N/A', 'adf', 'N/A', NULL, 'N/A', 'N/A', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6);
 
 -- --------------------------------------------------------
 
@@ -345,7 +346,7 @@ ALTER TABLE `producer`
 -- AUTO_INCREMENT for table `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `songid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `songid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `users`
