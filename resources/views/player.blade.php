@@ -370,7 +370,7 @@ list-style: none;
 		color: #000;
 		font-weight: 300;
 }
-	.form-comment{
+.form-comment{
 		background: 0 0;
 		margin-bottom: 20px;
 		padding: 0 0 26px;
@@ -378,188 +378,188 @@ list-style: none;
 		border-bottom: 1px solid #ddd;
 		width: 100%;
 		margin: 0;
-	}
-	.comment-avatar{
+}
+.comment-avatar{
 		width: 50px;
 		height: 50px;
 		float: left;
 		margin: 0;
 		padding: 0;
-	}
-	.useravatar{
+}
+.useravatar{
 		width: 50px;
 		height: 50px;
 		max-width: 100%;
 		vertical-align: middle;
 		border: 0;
 		margin-right:10px;
-	}
-	.wrap-comment{
+}
+.wrap-comment{
 		position: relative;
 		margin-left: 65px;
 		overflow: hidden;
 		margin: 0;
 		padding: 0;
 		padding-left: 15px;
-	}
-	.wrap-comment textarea{
-		height: 50px;
-		padding: 5px 25px 5px 8px;
-		color: #333;
-		font-size: 14px;
-		width: 100%;
-		border: 1px solid #dedede;
-		margin-bottom: 10px;
-		overflow: auto;
-		vertical-align: top;
-		margin: 0;
-		font-weight: inherit;
-		font-style: inherit;
-		font-family: inherit;
-		margin-bottom: 12px;
-	}
-	.frm-checkbox{
-		margin-top: 0;
-		margin-left: 0;
-		color: #333;
-		font-size: 12px;
-		float: left;
-		margin-right: 10px;
-		margin: 0;
-		padding: 0;
-	}
-	.disabled{
-		opacity: .3!important;
-		pointer-events: none;
-	}
-	.frm-checkbox input{
-		margin-right: 5px;
-		margin: 0;
-		font-size: 100%;
-		vertical-align: middle;
-		line-height: normal;
-		border-radius: 0;
-		font-weight: inherit;
-		font-style: inherit;
-		font-family: inherit;
-		padding: 0;
-	}
-	.button-submit{
-		padding-top: 8px;
-		padding-bottom: 8px;
-		display: inline-block;
-		padding: 10px 20px;
-		color: #fff!important;
-		border: 0 none;
-		cursor: pointer;
-		margin: 0;
-		vertical-align: middle;
-		line-height: normal;
-		border-radius: 0;
-		font-weight: inherit;
-		font-style: inherit;
-		font-family: inherit;
-		border-radius: 2px;
-	}
-	.button-submit.btn-dark-blue {
-		background: #721799;
-		font-size: 14px;
-	}
-	.pull-right {
-		float: right !important;
-	}
-	.list-comment{
-		padding-top: 15px;
-		margin-bottom: 20px;
-		margin: 0;
-		padding: 0;
-	}
-	.item-comment{
-		border-bottom: none;
-		padding: 10px 0;
-		overflow: hidden;
-		position: relative;
-		list-style: none;
-		margin: 0;
-	}
-	.thumb-user{
-		float: left;
-		text-decoration: none !important;
-		color: #000;
-		outline: 0;
-		list-style: none;
-		padding-right: 15px;
-	}
-	.user-avatar{
-		max-width: 100%;
-		vertical-align: middle;
-		border: 0;
-		width: 50px;
-		height: 50px;
-		list-style: none;
-	}
-	.post-comment{
-		margin-left: 65px;
-		position: relative;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-	.username{
-		color: #333;
-		display: inline-block;
-		text-decoration: none !important;
-		margin-bottom: 5px;
-		outline: 0;
-		list-style: none;
-	}
-	.fn-content{
-		font-family: Roboto,segoe ui,Helvetica,Arial,sans-serif;
-		white-space: pre-line;
-		color: #666;
-		font-size: 14px;
-		margin: 0;
-		padding: 0;
-	}
-	.func-comment{
-		margin: 12px 0 5px;
-		padding: 0;
-		list-style: none;
-	}
-	.reply{
-		color: #333;
-		display: inline-block;
-		margin-bottom: 5px;
-		text-decoration: none !important;
-		outline: 0;
-		list-style: none;
-		margin-left: 65px;
-		font-size:13px;
-	}
-	.time-comment{
-		visibility: visible;
-		opacity: 1;
-		position: absolute;
-		top: 2px;
-		right: 0;
-		font-size: 12px;
-		color: #666;
-		list-style: none;
-	}
-	#volume-bar{
-		width: 120px;
-		height: 4px;
-		background: #151518;
-		border-radius: 2px;
-		cursor: pointer;
-	}
-	#volume-bar div{
-		width: 4px;
-		height: 4px;
-		margin-top: 1px;
-		background: #EF6DBC;
-		border-radius: 2px;
-	}
+}
+.wrap-comment textarea{
+	height: 50px;
+	padding: 5px 25px 5px 8px;
+	color: #333;
+	font-size: 14px;
+	width: 100%;
+	border: 1px solid #dedede;
+	margin-bottom: 10px;
+	overflow: auto;
+	vertical-align: top;
+	margin: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-family: inherit;
+	margin-bottom: 12px;
+}
+.frm-checkbox{
+	margin-top: 0;
+	margin-left: 0;
+	color: #333;
+	font-size: 12px;
+	float: left;
+	margin-right: 10px;
+	margin: 0;
+	padding: 0;
+}
+.disabled{
+	opacity: .3!important;
+	pointer-events: none;
+}
+.frm-checkbox input{
+	margin-right: 5px;
+	margin: 0;
+	font-size: 100%;
+	vertical-align: middle;
+	line-height: normal;
+	border-radius: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-family: inherit;
+	padding: 0;
+}
+.button-submit{
+	padding-top: 8px;
+	padding-bottom: 8px;
+	display: inline-block;
+	padding: 10px 20px;
+	color: #fff!important;
+	border: 0 none;
+	cursor: pointer;
+	margin: 0;
+	vertical-align: middle;
+	line-height: normal;
+	border-radius: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-family: inherit;
+	border-radius: 2px;
+}
+.button-submit.btn-dark-blue {
+	background: #721799;
+	font-size: 14px;
+}
+.pull-right {
+	float: right !important;
+}
+.list-comment{
+	padding-top: 15px;
+	margin-bottom: 20px;
+	margin: 0;
+	padding: 0;
+}
+.item-comment{
+	border-bottom: none;
+	padding: 10px 0;
+	overflow: hidden;
+	position: relative;
+	list-style: none;
+	margin: 0;
+}
+.thumb-user{
+	float: left;
+	text-decoration: none !important;
+	color: #000;
+	outline: 0;
+	list-style: none;
+	padding-right: 15px;
+}
+.user-avatar{
+	max-width: 100%;
+	vertical-align: middle;
+	border: 0;
+	width: 50px;
+	height: 50px;
+	list-style: none;
+}
+.post-comment{
+	margin-left: 65px;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.username{
+	color: #333;
+	display: inline-block;
+	text-decoration: none !important;
+	margin-bottom: 5px;
+	outline: 0;
+	list-style: none;
+}
+.fn-content{
+	font-family: Roboto,segoe ui,Helvetica,Arial,sans-serif;
+	white-space: pre-line;
+	color: #666;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+}
+.func-comment{
+	margin: 12px 0 5px;
+	padding: 0;
+	list-style: none;
+}
+.reply{
+	color: #333;
+	display: inline-block;
+	margin-bottom: 5px;
+	text-decoration: none !important;
+	outline: 0;
+	list-style: none;
+	margin-left: 65px;
+	font-size:13px;
+}
+.time-comment{
+	visibility: visible;
+	opacity: 1;
+	position: absolute;
+	top: 2px;
+	right: 0;
+	font-size: 12px;
+	color: #666;
+	list-style: none;
+}
+#volume-bar{
+	width: 120px;
+	height: 4px;
+	background: #151518;
+	border-radius: 2px;
+	cursor: pointer;
+}
+#volume-bar div{
+	width: 4px;
+	height: 4px;
+	margin-top: 1px;
+	background: #EF6DBC;
+	border-radius: 2px;
+}
 </style>
 <link rel="stylesheet" type="text/css" href="{{ asset('shorten/shorten.min.css') }}">
 <script type="text/javascript" src="{{ asset('shorten/shorten.min.js') }}"></script>

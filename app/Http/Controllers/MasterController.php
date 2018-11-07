@@ -151,9 +151,11 @@ class MasterController extends Controller {
 	}
 
 	public function albums(Request $request, $albumid) {
-		$album = albums::where('albumid', $albumid);
+		$album = albums::where('albumid', $albumid)->get();
+		$songs = songs::where('albumid', $albumid)->orderBy('songid')->paginate(10);
 		return view('album')->with([
 			'album' => $album,
+			'songs' => $songs,
 		]);
 	}
 
