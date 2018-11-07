@@ -21,8 +21,6 @@ Route::get('/contact', ['as' => 'contact', 'uses' => 'MasterController@contact']
 
 Route::get('/radio', ['as' => 'radio', 'uses' => 'MasterController@radio']);
 
-Route::get('/single', ['as' => 'single', 'uses' => 'MasterController@single']);
-
 Route::post('/search', ['as' => 'search', 'uses' => 'MasterController@search']);
 
 Route::get('/logout', ['as' => 'logout', 'uses' => 'Auth\LogoutController@getLogout']);
@@ -54,6 +52,8 @@ Route::get('/favorite', ['as' => 'favorite', 'uses' => 'MasterController@favorit
 Route::get('/createalbum', ['as' => 'createalbum', 'uses' => 'MasterController@createalbum']);
 
 Route::post('/albumuploader', ['as' => 'albumuploader', 'uses' => 'MasterController@albumuploader']);
+
+Route::get('/upload_albumavatar', ['as' => 'upload_albumavatar', 'uses' => 'MasterController@upload_albumavatar']);
 
 Route::post('/produceruploader', ['as' => 'produceruploader', 'uses' => 'MasterController@produceruploader']);
 
