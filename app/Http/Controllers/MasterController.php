@@ -51,10 +51,6 @@ class MasterController extends Controller {
 		]);
 	}
 
-	public function single(Request $request) {
-		return view('album');
-	}
-
 	public function search(Request $request) {
 		$song = songs::where('title', 'like', '%' . $request->input('search') . '%')
 			->orWhere('genre', 'like', '%' . $request->input('search') . '%')
@@ -141,15 +137,15 @@ class MasterController extends Controller {
 		}
 	}
 
-	public function update_avatar(Request $request){
+	public function update_avatar(Request $request) {
 		user::where('id', Auth::id())->update([
-				'avatar' => $request->avatar,
-			]);
+			'avatar' => $request->avatar,
+		]);
 	}
 
 	public function songs(Request $request, $songid) {
 		$song = songs::where('songid', $songid);
-		return view('single')->with([
+		return view('player')->with([
 			'song' => $song,
 		]);
 	}
@@ -198,7 +194,9 @@ class MasterController extends Controller {
 		}
 		if (!is_null($request->input('producer'))) {
 			$producername = producer::select('name')->where('producerid', $request->input('producer'))->get();
+			$name = $producername[0]->name;
 			$producerid = producer::select('producerid')->where('producerid', $request->input('producer'))->get();
+			$id = $producerid[0]->producerid;
 		} else {
 			$producername = 'N/A';
 			$producerid = null;
@@ -227,15 +225,16 @@ class MasterController extends Controller {
 		if (is_null($request->avatar)) {
 			$avatar = 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg';
 		} else {
-			$avatar = 'img/' . $request->avatar->getClientOriginalName();
-			$request->avatar->move('img', $avatar);
+			$avatar = $request->avatar;
 		}
 		if (is_null($request->input('album'))) {
 			$albumtitle = 'N/A';
 			$albumid = null;
 		} else {
 			$albumtitle = albums::select('title')->where('albumid', $request->input('album'))->get();
+			$albtitle = $albumtitle[0]->title;
 			$albumid = albums::select('albumid')->where('albumid', $request->input('album'))->get();
+			$albid = $albumid[0]->id;
 		}
 		$songaddress = 'video/' . $request->songaddress->getClientOriginalName();
 		$request->songaddress->move('video', $songaddress);
@@ -243,16 +242,16 @@ class MasterController extends Controller {
 			songs::insert([
 				'title' => $title,
 				'genre' => $genre,
-				'producer' => $producername[0]->name,
+				'producer' => $name,
 				'vocal' => $vocalname,
-				'album' => $albumtitle[0]->title,
+				'album' => $albtitle,
 				'country' => $country,
 				'description' => $description,
 				'lyric' => $lyric,
 				'uploaddate' => $uploaddate,
 				'avatar' => $avatar,
-				'producerid' => $producerid[0]->producerid,
-				'albumid' => $albumid[0]->albumid,
+				'producerid' => $id,
+				'albumid' => $albid,
 				'songaddress' => $songaddress,
 				'userid' => Auth::id(),
 			]);
@@ -308,8 +307,7 @@ class MasterController extends Controller {
 		if (is_null($request->avatar)) {
 			$avatar = 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png';
 		} else {
-			$avatar = 'img/' . $request->avatar->getClientOriginalName();
-			$request->avatar->move('img', $avatar);
+			$avatar = $request->avatar;
 		}
 		try {
 			producer::insert([
@@ -352,8 +350,7 @@ class MasterController extends Controller {
 		if (is_null($request->thumbnail)) {
 			$thumbnail = 'https://png.pngtree.com/element_origin_min_pic/17/04/19/f0657f5b68eb9d3c6e0076fbd897322a.jpg';
 		} else {
-			$thumbnail = 'img/' . $request->thumbnail->getClientOriginalName();
-			$request->thumbnail->move('img', $thumbnail);
+			$thumbnail = $request->thumbnail;
 		}
 		if (is_null($request->input('description'))) {
 			$description = 'N/A';
@@ -361,17 +358,19 @@ class MasterController extends Controller {
 			$description = $request->input('description');
 		}
 		$producername = producer::select('name')->where('producerid', $request->input('producer'))->get();
+		$name = $producername[0]->name;
 		$producerid = producer::select('producerid')->where('producerid', $request->input('producer'))->get();
+		$id = $producerid[0]->producerid;
 		$releasedate = date("Y-m-d H:i:s");
 		try {
 			albums::insert([
 				'title' => $request->input('title'),
 				'label' => $request->input('label'),
 				'price' => $request->input('price'),
-				'producer' => $producername[0]->name,
+				'producer' => $name,
 				'thumbnail' => $thumbnail,
 				'description' => $description,
-				'producerid' => $producerid[0]->producerid,
+				'producerid' => $id,
 				'releasedate' => $releasedate,
 			]);
 			return redirect('uploadsong');
@@ -381,4 +380,5 @@ class MasterController extends Controller {
 			]);
 		}
 	}
+
 }

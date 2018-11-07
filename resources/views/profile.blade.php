@@ -10,6 +10,8 @@
 		opacity: 0.8;
 	}
 </style>
+<link rel="stylesheet" type="text/css" href="{{asset('plugins/crop/croppie.css')}}">
+<script type="text/javascript" src="{{asset('plugins/crop/croppie.min.js')}}"></script>
 <hr>
 <div class="container bootstrap snippet">
 	<div class="row">
@@ -114,9 +116,30 @@
 </div>
 <hr style="opacity: 0">
 <div class="clearfix"></div>
+<div class="modal" id="crop">
+	<div class="modal-content card" style="width: 86%;max-width: 500px;margin: 1.75rem auto;">
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Cropping Profile Picture</h5>
+			<button type="button" class="close close_crop" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="col">
+					<div id="preview"></div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal" id="close_crop">Close</button>
+			<button type="button" class="btn btn-primary mr-4" id="save_crop">Save</button>
+		</div>
+	</div>
+</div>
+@stop
 @section('js')
 <script type="text/javascript">
-	
 	$(document).ready(function(e){
 		var basic, imageName;
 		var pre = document.getElementById('preview');
@@ -137,11 +160,11 @@
 			e.preventDefault();
 			if ($(this).val() != "") {
 				if (e.target.files[0].type != "image/jpeg" && e.target.files[0].type != "image/jpg" && e.target.files[0].type != "image/png" && e.target.files[0].type != "image/ico") {
-					alert('Type of image not found !!!');
+					alert('Invalid type of file');
 					return;
 				}
 				imageName = e.target.files[0].name;
-				imageName = imageName.substring(0, imageName.indexOf(".")) + new Date().getTime() + ".png";	
+				imageName = imageName.substring(0, imageName.indexOf(".")) + new Date().getTime() + ".png";
 				pathAvatar = URL.createObjectURL(e.target.files[0]);
 				basic.bind({
 					url: pathAvatar,
@@ -152,7 +175,7 @@
 		$("#save_crop").click(function(){
 			basic.result({type: 'blob'}).then(function(blob) {
 				var file = new File([blob], imageName, {type: blob.type, lastModified: Date.now()});
-				console.log(file);	
+				console.log(file);
 				var form_data = new FormData();
 				form_data.append('file', file);
 				form_data.append('upload_preset', 'quoc_trong');
@@ -165,9 +188,9 @@
 					success: function(data){
 						var url = data.secure_url;
 
-						url = url.substring(0, url.indexOf('upload/') + 7) + "c_scale,o_100,q_auto:eco,w_658,z_0.4/" 
+						url = url.substring(0, url.indexOf('upload/') + 7) + "c_scale,o_100,q_auto:eco,w_658,z_0.4/"
 						+ url.substring(url.indexOf('upload/') + 7, url.length) ;
-						$(".avatar").attr('src', url);
+						$(".avatar, #loginpop a img").attr('src', url);
 						$("#tb_change").val('');
 						$("#crop").fadeOut();
 						$.ajax({
