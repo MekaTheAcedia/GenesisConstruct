@@ -149,14 +149,14 @@ class MasterController extends Controller {
 
 	public function songs(Request $request, $songid) {
 		$song = songs::where('songid', $songid);
-		return view('single')->with([
+		return view('player')->with([
 			'song' => $song,
 		]);
 	}
 
 	public function albums(Request $request, $albumid) {
 		$album = albums::where('albumid', $albumid);
-		return view('single')->with([
+		return view('album')->with([
 			'album' => $album,
 		]);
 	}

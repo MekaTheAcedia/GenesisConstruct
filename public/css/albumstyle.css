@@ -1,0 +1,227 @@
+body
+{
+    color: #000;
+    font-weight: 400;
+    font-style: normal!important;
+    font-size: 14px;
+    font-family: "Roboto",'Open Sans',"segoe ui",Helvetica,Arial,sans-serif;
+    line-height: 1.42857;
+}
+*{
+    font-family: "Roboto",'Open Sans',"segoe ui",Helvetica,Arial,sans-serif;
+    line-height: 1.42857;
+     font-style: normal!important;
+}
+}
+.title-song{
+    margin-bottom: 20px;
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: purple;
+    margin-block-start: 0.70em;
+    margin-block-end: 0.70em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    display: block;
+    box-sizing: border-box;
+    font-style: normal!important;
+    line-height: 1.42857;
+}
+.fb-profile img.fb-image-lg{
+    height: 380px;
+    z-index: 7;
+    width: 100%;  
+    margin-bottom: 10px;
+}
+
+.fb-image-profile
+{
+    margin: -90px 10px 0px 50px;
+    z-index: 9;
+    width: 20%; 
+}
+
+.song-list{
+    margin: 0;
+    padding: 0;
+}
+.box-content{
+    overflow: hidden;
+    border: 0 none!important;
+    padding: 0!important;
+    margin: 0;
+    box-sizing: border-box;
+    color: #000;
+    font-weight: 400;
+    font-style: normal!important;
+    font-size: 14px;
+    
+}
+.list-element{
+    margin: 0;
+    box-sizing: border-box;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    padding: 0;
+    color: #000;
+    font-weight: 400;
+    font-style: normal!important;
+    font-size: 14px;
+}
+.song-element{
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+    margin: 0 0 15px;
+    padding: 0 10px 15px 0;
+    border-bottom: 1px solid #f2f2f2;
+    position: relative;
+    min-height: 41px;
+    list-style: none;
+    color: #000;
+    font-weight: 400;
+    font-style: normal!important;
+    font-size: 14px;
+}
+h3{
+    padding: 0px 0 !important;
+}
+.image-link{
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 0;
+    background-color: #000;
+    text-decoration: none !important;
+    color: #000;
+    outline: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-weight: 400;
+    font-style: normal!important;
+    font-size: 14px;
+}
+.image{
+    transition: all .3s ease-in;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    box-sizing: border-box;
+    width: 65px;
+    height: 65px;
+    color: #000;
+    cursor: pointer;
+    list-style: none;
+}
+.hover-image{
+    margin: -13px 0 0 -13px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: scale(0);
+    transition: all .3s ease-in;
+    width: 25px;
+    height: 25px;
+    background-position: 0 -1509px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url({{asset('img/icon.png')}});
+box-sizing: border-box;
+cursor: pointer;
+list-style: none;
+}
+.next-song-name{
+    display: inherit;
+    max-height: 3em;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-weight: 400;
+    margin: 0;
+    box-sizing: border-box;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding: 0;
+    font-size: 100%;
+    list-style: none;
+    color: #000;
+    font-style: normal!important;
+}
+.song-link{
+    font-size: 21px;
+    color: #000;
+    text-decoration: none !important;
+    outline: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: 400;
+    list-style: none;
+    text-align: -webkit-match-parent;
+    font-style: normal!important;
+}
+.next-idol{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    color: #000;
+    font-weight: 400;
+    font-style: normal!important;
+    font-size: 14px;
+}
+.idol-title{
+    display: inline;
+    font-style: normal;
+    font-size: 14px;
+    color: #888;
+    font-weight: 400;
+    margin: 0;
+    box-sizing: border-box;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding: 0;
+    white-space: nowrap;
+    list-style: none;
+}
+.idol-link{
+    font-size: 15px;
+    color: #888;
+    outline: 0;
+    font-style: normal;
+    font-weight: 400;
+    white-space: nowrap;
+    list-style: none;
+    font-stretch: condensed;
+    text-decoration: none !important;
+}
+
+@media (max-width:768px)
+{
+    
+.fb-profile-text>h1{
+    font-weight: 700;
+    font-size:16px;
+}
+
+.fb-image-profile
+{
+    margin: -45px 10px 0px 25px;
+    z-index: 9;
+    width: 20%; 
+}
+}
