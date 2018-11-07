@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2018 at 08:26 AM
+-- Generation Time: Nov 07, 2018 at 05:28 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -74,7 +74,9 @@ INSERT INTO `albums` (`albumid`, `title`, `description`, `releasedate`, `produce
 (28, 'sda', NULL, '2017-12-30', 'asda', 1231, NULL, 'img/v1.jpg', 1),
 (29, 'sda', NULL, '2017-12-29', 'asda', 1231, NULL, 'img/v1.jpg', 1),
 (30, 'title1', 'N/A', '2018-11-06', 'Acedia', 1, 'asdf', 'https://png.pngtree.com/element_origin_min_pic/17/04/19/f0657f5b68eb9d3c6e0076fbd897322a.jpg', 3),
-(31, 'title1', '<p>sdfasfasdfads</p>', '2018-11-06', 'Acedia', 123412, 'asdfas', 'img/302bcf1d37012ac70bc0d467a35e7084.jpg', 2);
+(31, 'title1', '<p>sdfasfasdfads</p>', '2018-11-06', 'Acedia', 123412, 'asdfas', 'img/302bcf1d37012ac70bc0d467a35e7084.jpg', 2),
+(32, 'title1', '<p>312312</p>', '2018-11-07', 'Acedia', 1232, 'asdf', 'https://res.cloudinary.com/silentlove995/image/upload/c_scale,o_100,q_auto:eco,w_658,z_0.4/v1541560699/avatar/2e5fead82113a5a623b51572ab9340881541560678480.png', 3),
+(33, 'title1', '<p>sdafas</p>', '2018-11-07', 'Acedia', 123412, 'asdf', 'https://res.cloudinary.com/silentlove995/image/upload/c_scale,o_100,q_auto:eco,w_658,z_0.4/v1541564760/avatar/Screenshot_2017-11-17-14-47-481541564756178.png', 3);
 
 -- --------------------------------------------------------
 
@@ -108,7 +110,8 @@ CREATE TABLE `favorite` (
 INSERT INTO `favorite` (`userid`, `songid`) VALUES
 (6, 34),
 (6, 35),
-(6, 36);
+(6, 36),
+(7, 37);
 
 -- --------------------------------------------------------
 
@@ -172,7 +175,8 @@ INSERT INTO `producer` (`producerid`, `name`, `gender`, `dob`, `status`, `genre`
 (1, 'adf', NULL, NULL, 'asd', 'asd', NULL, NULL, 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png	', ''),
 (2, 'Acedia', 'N/A', NULL, 'N/A', 'N/A', 'N/A', 'N/A', 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png', 'N/A'),
 (3, 'Acedia', 'N/A', NULL, 'N/A', 'N/A', 'N/A', 'N/A', 'img/7a41d06d1d08ff4d618ebda0e1adbaac.jpg', 'N/A'),
-(5, 'name', 'N/A', NULL, 'N/A', 'N/A', 'N/A', 'N/A', 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png', 'N/A');
+(5, 'name', 'N/A', NULL, 'N/A', 'N/A', 'N/A', 'N/A', 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png', 'N/A'),
+(6, 'Acedia', 'Other', '2018-11-07', 'Working', 'asd/asdf/asdf', 'hjkh', '<a href=\"ádas\">ádas</a><br>', 'https://res.cloudinary.com/silentlove995/image/upload/c_scale,o_100,q_auto:eco,w_658,z_0.4/v1541564648/avatar/73a3dc2ca94f898071cb4dc6658d6d811541564644573.png', '<p>ádasda</p>');
 
 -- --------------------------------------------------------
 
@@ -208,7 +212,11 @@ INSERT INTO `songs` (`songid`, `title`, `genre`, `producer`, `vocal`, `album`, `
 (36, 'title2', 'N/A', 'adf', 'N/A', NULL, 'N/A', 'N/A', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6),
 (37, 'title1', 'N/A', 'adf', 'N/A', NULL, 'N/A', '<p>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>', 'N/A', '2018-11-03', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 1, NULL, 'video/∴flower『アイアルの勘違い 』.mp3', 6),
 (38, 'title1', 'asd/asdf/asdf', 'N/A', 'vocal', NULL, 'vvvv', '<p>asdfasdfasdfaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>', '<p>aaaaaaaaaaaaaaaaaaaa</p><p>aaaaaaaaaaaaaaaaaaaaaaa</p><p>aaaaaaaaaaaaaaa</p><p>aaaaaaaa</p>', '2018-11-06', 'img/2e5fead82113a5a623b51572ab934088.jpg', NULL, NULL, 'video/Musunde, Hiraite, Rasetsu to Mukuro(retake ver.)_Hachi ft.Hatsune Miku.mp3', 6),
-(42, 'title5', 'asd/asdf/asdf', 'adf', 'vocal', 'sda', 'vvvv', '<p>fdsafas</p>', '<p>asdfasdf</p>', '2018-11-06', 'img/2a483b27d98e3f8af02391bd9bc14a1d.jpg', 1, 18, 'video/Butterfly_ON OFF.mp3', 6);
+(42, 'title5', 'asd/asdf/asdf', 'adf', 'vocal', 'sda', 'vvvv', '<p>fdsafas</p>', '<p>asdfasdf</p>', '2018-11-06', 'img/2a483b27d98e3f8af02391bd9bc14a1d.jpg', 1, 18, 'video/Butterfly_ON OFF.mp3', 6),
+(43, 'title5', 'asd/asdf/asdf', 'adf', 'vocal', 'sda', 'vvvv', '<p>fdsafas</p>', '<p>asdfasdf</p>', '2018-11-06', 'img/2a483b27d98e3f8af02391bd9bc14a1d.jpg', 1, 18, 'video/Butterfly_ON OFF.mp3', 6),
+(44, 'title5', 'asd/asdf/asdf', 'adf', 'vocal', 'sda', 'vvvv', '<p>fdsafas</p>', '<p>asdfasdf</p>', '2018-11-06', 'img/2a483b27d98e3f8af02391bd9bc14a1d.jpg', 1, 18, 'video/Butterfly_ON OFF.mp3', 6),
+(45, 'title5', 'asd/asdf/asdf', 'adf', 'vocal', 'sda', 'vvvv', '<p>fdsafas</p>', '<p>asdfasdf</p>', '2018-11-06', 'img/2a483b27d98e3f8af02391bd9bc14a1d.jpg', 1, 18, 'video/Butterfly_ON OFF.mp3', 6),
+(46, 'Demon Dance', 'Soft Rock', 'Acedia', 'E ve', 'N/A', 'Jp', '<p>DemonDance</p>', 'N/A', '2018-11-07', 'https://res.cloudinary.com/silentlove995/image/upload/c_scale,o_100,q_auto:eco,w_658,z_0.4/v1541563077/avatar/2a483b27d98e3f8af02391bd9bc14a1d1541563065705.png', 2, NULL, 'video/DemonDanceTokyo-Eve-4817302.mp3', 6);
 
 -- --------------------------------------------------------
 
@@ -240,9 +248,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `dob`, `gender`, `location`, `about`, `level`, `avatar`, `favorite`) VALUES
 (3, 'Lý Quốc Trọng', 'trongdaigia19955@gmail.com', NULL, '$2y$10$QOcDzOpejqMgHmKLP4agF.lvG6o.nFoPv1BzwbycqUIXmQJuuWoDC', NULL, '2018-10-22 20:17:43', '2018-10-22 20:17:43', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, '1234', '12345@gmail.com', NULL, '$2y$10$he1/UHlQUiw8.2o5XuSj6.5eT7BlmfCxg63jIn8iSv/UlhlNuo65e', 'AAJz8YpUlMSdnXh4Xl6E1Lc0MPzhTUlfkEjR4LnMo8jKkxnSrQGrtWxrZpfe', '2018-10-26 01:18:06', '2018-10-28 21:23:58', NULL, 'Female', 'dsfgsdf', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 3, 'img/6c8f071210788b56c8c2cc98ec570227.jpg', NULL),
-(6, 'Acedia', '1234@gmail.com', NULL, '$2y$10$AQXfYItG7wINPymHsLAtdue/nN4Yxnqvqhwo2xAb4TP7n6YNvE56C', 'iK4IAGl52kWeEYXKgJ9QG9DVM5Mo8wspuf2dnDwYjykm3r1co3YLXtQa2sKQ', '2018-10-29 18:48:27', '2018-11-05 21:08:52', '2018-10-30', 'Female', '123', '<p><b>asdfdas</b></p>', 3, 'https://res.cloudinary.com/silentlove995/image/upload/c_scale,o_100,q_auto:eco,w_658,z_0.4/v1541417597/avatar/__code_sariel_and_eve_elsword__d1e7b99e3abb6828d136fcce36166b0f1541417587484.png', NULL),
-(7, 'Acedia', '123456@gmail.com', NULL, '$2y$10$plWnFqXt3iqaFsmz7OPDheTC/0wW.7p/U1hTY/us.Lef8qWlhuVUW', '9SLqNmJbwZVWlHp5WCnBnM1fJsHlpP08MeozihvJ5gewebKCcc2TtuGGHh6g', '2018-10-30 20:23:31', '2018-10-30 21:00:22', NULL, NULL, NULL, NULL, 3, 'img/3c13c7812b05c37375e33baef7d539df.jpg', NULL);
+(5, '1234', '12345@gmail.com', NULL, '$2y$10$he1/UHlQUiw8.2o5XuSj6.5eT7BlmfCxg63jIn8iSv/UlhlNuo65e', 'ho3UqV0L58h5nuN63MMDi9MMfevuG1mfYTy9ymMroEQVrxF3aaIug8CJac0b', '2018-10-26 01:18:06', '2018-10-28 21:23:58', NULL, 'Female', 'dsfgsdf', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 3, 'img/6c8f071210788b56c8c2cc98ec570227.jpg', NULL),
+(6, 'Acedia', '1234@gmail.com', NULL, '$2y$10$AQXfYItG7wINPymHsLAtdue/nN4Yxnqvqhwo2xAb4TP7n6YNvE56C', 'rrVQhWLJIhtGaJ8DaaaMxXcCgKac5glWCnnA4aXVHedNan079ZzNeRZXkaOf', '2018-10-29 18:48:27', '2018-11-06 20:02:57', '2018-10-30', 'Female', '123', '<p><b>asdfdas</b></p>', 3, 'https://res.cloudinary.com/silentlove995/image/upload/c_scale,o_100,q_auto:eco,w_658,z_0.4/v1541559770/avatar/12cd8664d54f817b818873dee910bba11541559765828.png', NULL),
+(7, 'Acedia', '123456@gmail.com', NULL, '$2y$10$plWnFqXt3iqaFsmz7OPDheTC/0wW.7p/U1hTY/us.Lef8qWlhuVUW', 'tGghL4AqfmK003WXPiP5Cb20sXSAs9xpOutrjI4hrMXZ6wjPa7vkfdLO7tFK', '2018-10-30 20:23:31', '2018-10-30 21:00:22', NULL, NULL, NULL, NULL, 3, 'img/3c13c7812b05c37375e33baef7d539df.jpg', NULL);
 
 --
 -- Indexes for dumped tables
@@ -313,7 +321,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `albumid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `albumid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `comments`
@@ -331,13 +339,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `producer`
 --
 ALTER TABLE `producer`
-  MODIFY `producerid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `producerid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `songid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `songid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `users`
