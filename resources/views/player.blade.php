@@ -757,8 +757,8 @@ list-style: none;
 	<script type="text/javascript">
 		$(".description > p").shorten({
 			"chars" : 170,
-			"more"  : "Xem thêm",
-			"less"  : " Rút gọn",
+			"more"  : "More",
+			"less"  : " Less",
 		});
 	</script>
 	@stop
