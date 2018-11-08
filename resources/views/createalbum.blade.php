@@ -75,7 +75,7 @@
 						</div>
 						<div class="form-group">
 							<div class="col-xs-6">
-								<label for="price"><h4>Price</h4></label>
+								<label for="price"><h4>Price ($)</h4></label>
 								<input type="number" class="form-control" name="price" id="price" required="">
 							</div>
 						</div>

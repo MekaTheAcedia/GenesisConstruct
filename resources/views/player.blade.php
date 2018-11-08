@@ -860,6 +860,8 @@ list-style: none;
 break;
 @endphp
 @endforeach
+@stop
+@section('js')
 <script src="{{ asset('js/player.js') }}"></script>
 <script type="text/javascript">
 	$(".description > p").shorten({

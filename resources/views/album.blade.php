@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('content')
-@foreach ($album as $item)
 <style type="text/css">
 .title-song{
 	margin-bottom: 20px;
@@ -32,6 +31,9 @@
 }
 </style>
 <link rel="stylesheet" type="text/css" href="{{asset('css/albumstyle.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset('shorten/shorten.min.css') }}">
+<script type="text/javascript" src="{{ asset('shorten/shorten.min.js') }}"></script>
+@foreach ($album as $item)
 <div class="clearfix"></div>
 <div class="container">
 	<div class="col-md-12">
@@ -48,18 +50,18 @@
 					<div class="box-content">
 						<h3 class="title-song">Track List</h3>
 						<ul class="list-element">
-							@foreach ($songs as $item)
+							@foreach ($songs as $item2)
 							<li class="song-element">
-								<a href="{{URL::route('songs', $item->songid)}}" class="image-link">
-									<img class="image" src="{{$item->avatar}}">
+								<a href="{{URL::route('songs', $item2->songid)}}" class="image-link">
+									<img class="image" src="{{$item2->avatar}}">
 									<span class="hover-image"></span>
 								</a>
 								<h3 class="next-song-name">
-									<a href="{{URL::route('songs', $item->songid)}}" class="song-link">{{$item->title}}</a>
+									<a href="{{URL::route('songs', $item2->songid)}}" class="song-link">{{$item2->title}}</a>
 								</h3>
 								<div class="next-idol">
 									<h4 class="idol-title">
-										<a href="{{URL::route('producer', $item->producerid)}}" class="idol-link">{{$item->producer}}</a>
+										<a href="{{URL::route('producer', $item2->producerid)}}" class="idol-link">{{$item2->producer}}</a>
 									</h4>
 								</div>
 							</li>
@@ -70,17 +72,28 @@
 				</div>
 			</div>
 		</div>
-		<div class="producer-description col-md-6">
-			<h3 class="title-song">Label:<span> Genesis Construct Entertainment</span></h3>
-			<h3 class="title-song">Price:<span> 2000$</span></h3>
+		<div class="producer-description col-md-6" style="word-break: break-all;">
+			<h3 class="title-song">Label:<span> {{$item->label}}</span></h3>
+			<h3 class="title-song">Price:<span> {{$item->price}}$</span></h3>
 			<h3 class="title-song">Description</h3>
-			<div class="description"><p>Hương Tràm là con nhà nòi. Cô có ba là NSƯT Tiến Dũng và anh trai là thí sinh Sao Mai điểm hẹn 2010 Phạm Tiến Mạnh. Hương Tràm đã gây cơn sốt trong buổi lên sóng đầu tiên ở vòng Giấu Mặt của "The Voice 2012" khi cô chọn ca khúc kinh điển I Will Always Love You của Whitney Houston và đã được cả 4 vị huấn luyện viên xoay ghế chọn vào đội của mình. Tuy nhiên, Hương Tràm quyết định chọn ca sỹ Thu Minh là vị huấn luyện viên cho giọng ca của mình. Ngày 13/01/2013, Hương Tràm chính thức trở thành quán quân đầu tiên của Giọng Hát Việt. Với ngôi vị quán quân, cô gái Nghệ An sẽ nhận được giải thưởng 500 triệu đồng tiền mặt, 200 triệu tiền sản phẩm của nhà tài trợ và một chuyến du lịch Hàn Quốc 7 ngày. Ngoài ra, cô còn được sở hữu một hợp đồng ghi âm khủng với hãng đĩa quốc tế. Với ngôi vị này, sẽ là bàn đạp rất tốt để cô gái đến từ xứ Nghệ bước vào làng nhạc Việt Nam với nhiều chông gai và đầy thách thức. Những bài hát tiêu biểu làm nên tên tuổi ca sĩ Hương Tràm: Năm phát hành 2013: Ngại Ngùng Với Em Là Mãi Mãi Xa Sẽ Có Người Cần Anh – song ca với Cao Thái Sơn Trăng dưới chân mình Vẫn yêu từng phút giây – song ca với Cao Thái Sơn. Năm phát hành 2015: I’m still loving you. Năm phát hành 2016: Ngốc Cho Em Gần Anh Thêm Chút Nữa (Nhạc phim cùng tên). Năm phát hành 2017: Ta Còn Thuộc Về Nhau. Em Gái Mưa</p></div>
+			<div class="description">{!!$item->description!!}</div>
 		</div>
 	</div>
-</div> <!-- /container -->
+</div>
+<!-- /container -->
+<hr style="opacity: 0">
 <div class="clearfix"></div>
 @php
 	break;
 @endphp
 @endforeach
+@stop
+@section('js')
+<script type="text/javascript">
+	$(".description > p").shorten({
+		"chars" : 500,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+</script>
 @stop
