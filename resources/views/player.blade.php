@@ -626,7 +626,7 @@ list-style: none;
 								<h4>Feat.</h4>
 								<br>
 								@foreach ($producer as $item2)
-								<h2>{{$item2->producer}}</h2>
+								<h2>{{$item2->name}}</h2>
 								@endforeach
 								<br>
 								<div class="button-items">
@@ -789,7 +789,7 @@ list-style: none;
 								<div class="next-idol">
 									<h4 class="idol-title">
 										@foreach ($prevproducer as $item3)
-										<a href="{{URL::route('producer', $item3->producerid)}}" class="idol-link">{{$item3->producer}}</a>
+										<a href="{{URL::route('producer', $item3->producerid)}}" class="idol-link">{{$item3->name}}</a>
 										@endforeach
 									</h4>
 								</div>

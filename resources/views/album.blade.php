@@ -43,7 +43,7 @@
 			<div class="fb-profile-text col-md-7">
 				<h1>{{$item->title}}</h1>
 				@foreach ($producer as $item2)
-				<p>{{$item2->producer}}</p>
+				<p>{{$item2->name}}</p>
 				@endforeach
 			</div>
 			<div class="col-md-5" style="float: right;margin-top: -30px;">
