@@ -46,7 +46,7 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-2">
 				<ul class="meta-search">
-					<li><i class="glyphicon glyphicon-user"></i> <span>{{$item->producer}}</span></li>
+					<li><i class="glyphicon glyphicon-user"></i> <span>{{$item->name}}</span></li>
 					<li><i class="glyphicon glyphicon-calendar"></i> <span>{{$item->uploaddate}}</span></li>
 					<li><i class="glyphicon glyphicon-tags"></i> <span>{{$item->genre}}</span></li>
 				</ul>
@@ -100,12 +100,12 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 		@foreach ($album as $item)
 		<article class="search-result row">
 			<div class="col-xs-12 col-sm-12 col-md-2">
-				<a href="{{URL::route('albums', $item->albumid)}}" title="{{$item->name}}" class="thumbnail"><img src="{{$item->thumbnail}}"/></a>
+				<a href="{{URL::route('albums', $item->albumid)}}" title="{{$item->title}}" class="thumbnail"><img src="{{$item->thumbnail}}"/></a>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-2">
 				<ul class="meta-search">
 					<li><i class="glyphicon glyphicon-calendar"></i> <span>{{$item->releasedate}}</span></li>
-					<li><i class="glyphicon glyphicon-user"></i> <span>{{$item->producer}}</span></li>
+					<li><i class="glyphicon glyphicon-user"></i> <span>{{$item->name}}</span></li>
 					<li><i class="glyphicon glyphicon-tag"></i> <span>{{$item->price}}</span></li>
 				</ul>
 			</div>

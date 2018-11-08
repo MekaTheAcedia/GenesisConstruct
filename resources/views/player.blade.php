@@ -574,7 +574,12 @@ list-style: none;
 				<div class="row">
 					<div class="song-info row">
 						<div class="song-name" style="word-break: break-all;">
-							<h1 class="song-title">{{$item->title}} - <a href="{{URL::route('producer', $item->producerid)}}" class="vocal">{{$item->producer}}</a></h1>
+							<h1 class="song-title">
+								{{$item->title}} -
+								@foreach ($producer as $item2)
+								<a href="{{URL::route('producer', $item2->producerid)}}" class="vocal">{{$item2->name}}</a>
+								@endforeach
+							</h1>
 						</div>
 						<div class="row" style="margin-right: 0; margin-left: 0">
 							<div class="col-sm-4" style="word-break: break-all;">
@@ -597,9 +602,11 @@ list-style: none;
 							</div>
 							<div class="col-md-7" style="word-break: break-all;">
 								<span class="genre" style="">
+									@foreach ($album as $item2)
 									<div class="album">
-										<span>Album : </span><a href="{{URL::route('albums', $item->albumid)}}" class="album-name">{{$item->album}}</a>
+										<span>Album : </span><a href="{{URL::route('albums', $item2->albumid)}}" class="album-name">{{$item2->title}}</a>
 									</div>
+									@endforeach
 									<br>
 									<div class="album">
 										<span>Country : {{$item->country}}</span>
@@ -618,7 +625,9 @@ list-style: none;
 								<h1>{{$item->title}}</h1>
 								<h4>Feat.</h4>
 								<br>
-								<h2>{{$item->producer}}</h2>
+								@foreach ($producer as $item2)
+								<h2>{{$item2->producer}}</h2>
+								@endforeach
 								<br>
 								<div class="button-items">
 									<audio id="music" preload="auto" loop="false">
@@ -750,7 +759,9 @@ list-style: none;
 								</h3>
 								<div class="next-idol">
 									<h4 class="idol-title">
-									<a href="{{URL::route('producer', $item2->producerid)}}" class="idol-link">{{$item2->producer}}</a>
+										@foreach ($nextproducer as $item3)
+										<a href="{{URL::route('producer', $item3->producerid)}}" class="idol-link">{{$item3->name}}</a>
+										@endforeach
 									</h4>
 								</div>
 							</li>
@@ -777,7 +788,9 @@ list-style: none;
 								</h3>
 								<div class="next-idol">
 									<h4 class="idol-title">
-									<a href="{{URL::route('producer', $item2->producerid)}}" class="idol-link">{{$item2->producer}}</a>
+										@foreach ($prevproducer as $item3)
+										<a href="{{URL::route('producer', $item3->producerid)}}" class="idol-link">{{$item3->producer}}</a>
+										@endforeach
 									</h4>
 								</div>
 							</li>
@@ -809,7 +822,7 @@ list-style: none;
 								</h3>
 								<div class="next-idol">
 									<h4 class="idol-title">
-									<a href="{{URL::route('producer', $item2->producerid)}}" class="idol-link">{{$item2->producer}}</a>
+									<a href="{{URL::route('producer', $item2->producerid)}}" class="idol-link">{{$item2->name}}</a>
 									</h4>
 								</div>
 							</li>
@@ -838,7 +851,7 @@ list-style: none;
 								</h3>
 								<div class="next-idol">
 									<h4 class="idol-title">
-									<a href="{{URL::route('producer', $item2->producerid)}}" class="idol-link">{{$item2->producer}}</a>
+									<a href="{{URL::route('producer', $item2->producerid)}}" class="idol-link">{{$item2->name}}</a>
 									</h4>
 								</div>
 							</li>

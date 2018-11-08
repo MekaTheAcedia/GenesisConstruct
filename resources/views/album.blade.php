@@ -42,7 +42,9 @@
 			<img align="left" class="fb-image-profile thumbnail" src="{{$item->thumbnail}}">
 			<div class="fb-profile-text col-md-7">
 				<h1>{{$item->title}}</h1>
-				<p>{{$item->producer}}</p>
+				@foreach ($producer as $item2)
+				<p>{{$item2->producer}}</p>
+				@endforeach
 			</div>
 			<div class="col-md-5" style="float: right;margin-top: -30px;">
 				<div class="song-list">
@@ -61,7 +63,7 @@
 								</h3>
 								<div class="next-idol">
 									<h4 class="idol-title">
-										<a href="{{URL::route('producer', $item2->producerid)}}" class="idol-link">{{$item2->producer}}</a>
+										<a href="{{URL::route('producer', $item2->producerid)}}" class="idol-link">{{$item2->name}}</a>
 									</h4>
 								</div>
 							</li>

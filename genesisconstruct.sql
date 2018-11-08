@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2018 at 09:31 AM
+-- Generation Time: Nov 08, 2018 at 12:35 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -33,19 +33,19 @@ CREATE TABLE `albums` (
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8mb4_unicode_ci,
   `releasedate` date NOT NULL,
-  `producer` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` int(20) NOT NULL,
   `label` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `thumbnail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg	',
-  `producerid` int(11) NOT NULL
+  `producerid` int(11) NOT NULL,
+  `userid` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `albums`
 --
 
-INSERT INTO `albums` (`albumid`, `title`, `description`, `releasedate`, `producer`, `price`, `label`, `thumbnail`, `producerid`) VALUES
-(0, 'N/A', '<p>N/A</p>', '0000-00-00', 'N/A', 0, 'N/A', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 0);
+INSERT INTO `albums` (`albumid`, `title`, `description`, `releasedate`, `price`, `label`, `thumbnail`, `producerid`, `userid`) VALUES
+(0, 'N/A', '<p>N/A</p>', '0000-00-00', 0, 'N/A', 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -123,15 +123,16 @@ CREATE TABLE `producer` (
   `associations` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sites` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png',
-  `about` longtext COLLATE utf8mb4_unicode_ci
+  `about` longtext COLLATE utf8mb4_unicode_ci,
+  `userid` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `producer`
 --
 
-INSERT INTO `producer` (`producerid`, `name`, `gender`, `dob`, `status`, `genre`, `associations`, `sites`, `avatar`, `about`) VALUES
-(0, 'N/A', 'N/A', '0000-00-00', 'N/A', 'N/A', 'N/A', '<a href=\"#\">N/A</a><br>', '	\r\nhttp://ssl.gstatic.com/accounts/ui/avatar_2x.png', '<p>N/A</p>');
+INSERT INTO `producer` (`producerid`, `name`, `gender`, `dob`, `status`, `genre`, `associations`, `sites`, `avatar`, `about`, `userid`) VALUES
+(0, 'N/A', 'N/A', '0000-00-00', 'N/A', 'N/A', 'N/A', '<a href=\"#\">N/A</a><br>', '	\r\nhttp://ssl.gstatic.com/accounts/ui/avatar_2x.png', '<p>N/A</p>', 0);
 
 -- --------------------------------------------------------
 
@@ -143,9 +144,7 @@ CREATE TABLE `songs` (
   `songid` int(15) NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `genre` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'N/A',
-  `producer` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'N/A',
   `vocal` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'N/A',
-  `album` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` longtext COLLATE utf8mb4_unicode_ci,
   `lyric` longtext COLLATE utf8mb4_unicode_ci,
@@ -185,6 +184,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `dob`, `gender`, `location`, `about`, `level`, `avatar`) VALUES
+(0, 'N/A', 'N/A', NULL, 'N/A', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png'),
 (3, 'Lý Quốc Trọng', 'trongdaigia19955@gmail.com', NULL, '$2y$10$QOcDzOpejqMgHmKLP4agF.lvG6o.nFoPv1BzwbycqUIXmQJuuWoDC', NULL, '2018-10-22 20:17:43', '2018-10-22 20:17:43', NULL, NULL, NULL, NULL, NULL, NULL),
 (5, '1234', '12345@gmail.com', NULL, '$2y$10$he1/UHlQUiw8.2o5XuSj6.5eT7BlmfCxg63jIn8iSv/UlhlNuo65e', 'ho3UqV0L58h5nuN63MMDi9MMfevuG1mfYTy9ymMroEQVrxF3aaIug8CJac0b', '2018-10-26 01:18:06', '2018-10-28 21:23:58', NULL, 'Female', 'dsfgsdf', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 3, 'img/6c8f071210788b56c8c2cc98ec570227.jpg'),
 (6, 'Acedia', '1234@gmail.com', NULL, '$2y$10$AQXfYItG7wINPymHsLAtdue/nN4Yxnqvqhwo2xAb4TP7n6YNvE56C', '7412k0OCLBTQEKgaOBlBxkbvKRNyrgpFDrPoJoejnCeFLpjskAOZKSIpaIxd', '2018-10-29 18:48:27', '2018-11-08 01:06:35', '2018-10-30', 'Female', '123', '<b><u>BIG BUGGY BUG BUG BIG BUG BUGGY BUG BIG</u></b>', 3, 'https://res.cloudinary.com/silentlove995/image/upload/c_scale,o_100,q_auto:eco,w_658,z_0.4/v1541664391/avatar/814ca3257321b666e97b7c2bac583e0e1541664383110.png'),
@@ -200,7 +200,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 --
 ALTER TABLE `albums`
   ADD PRIMARY KEY (`albumid`),
-  ADD KEY `producerid` (`producerid`);
+  ADD KEY `producerid` (`producerid`),
+  ADD KEY `user_album` (`userid`);
 
 --
 -- Indexes for table `comments`
@@ -233,7 +234,8 @@ ALTER TABLE `password_resets`
 -- Indexes for table `producer`
 --
 ALTER TABLE `producer`
-  ADD PRIMARY KEY (`producerid`);
+  ADD PRIMARY KEY (`producerid`),
+  ADD KEY `user_producer` (`userid`);
 
 --
 -- Indexes for table `songs`
@@ -260,13 +262,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `albumid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `albumid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -278,19 +280,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `producer`
 --
 ALTER TABLE `producer`
-  MODIFY `producerid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `producerid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `songid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `songid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
@@ -300,7 +302,8 @@ ALTER TABLE `users`
 -- Constraints for table `albums`
 --
 ALTER TABLE `albums`
-  ADD CONSTRAINT `producer_name` FOREIGN KEY (`producerid`) REFERENCES `producer` (`producerid`);
+  ADD CONSTRAINT `producer_name` FOREIGN KEY (`producerid`) REFERENCES `producer` (`producerid`),
+  ADD CONSTRAINT `user_album` FOREIGN KEY (`userid`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `comments`
@@ -315,6 +318,12 @@ ALTER TABLE `comments`
 ALTER TABLE `favorite`
   ADD CONSTRAINT `song_favorite` FOREIGN KEY (`songid`) REFERENCES `songs` (`songid`),
   ADD CONSTRAINT `user_favorite` FOREIGN KEY (`userid`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `producer`
+--
+ALTER TABLE `producer`
+  ADD CONSTRAINT `user_producer` FOREIGN KEY (`userid`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `songs`

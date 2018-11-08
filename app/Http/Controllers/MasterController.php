@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\albums;
-use App\Models\comments;
 use App\Models\favorite;
 use App\Models\producer;
 use App\Models\songs;
@@ -53,24 +52,32 @@ class MasterController extends Controller {
 	}
 
 	public function search(Request $request) {
-		$song = songs::where('title', 'like', '%' . $request->input('search') . '%')
-			->orWhere('genre', 'like', '%' . $request->input('search') . '%')
-			->orWhere('producer', 'like', '%' . $request->input('search') . '%')
-			->orWhere('vocal', 'like', '%' . $request->input('search') . '%')
-			->orWhere('album', 'like', '%' . $request->input('search') . '%')
-			->orWhere('country', 'like', '%' . $request->input('search') . '%')->get();
+		$song = songs::join('producer', 'producer.producerid', '=', 'songs.producerid')
+			->select('songs.*', 'producer.name')
+			->where('songs.title', 'like', '%' . $request->input('search') . '%')
+			->orWhere('songs.genre', 'like', '%' . $request->input('search') . '%')
+			->orWhere('songs.vocal', 'like', '%' . $request->input('search') . '%')
+			->orWhere('songs.country', 'like', '%' . $request->input('search') . '%')
+			->inRandomOrder()
+			->get();
 		$producer = producer::where('name', 'like', '%' . $request->input('search') . '%')
 			->whereNotIn('producerid', [0])
 			->orWhere('genre', 'like', '%' . $request->input('search') . '%')
 			->whereNotIn('producerid', [0])
 			->orWhere('associations', 'like', '%' . $request->input('search') . '%')
-			->whereNotIn('producerid', [0])->get();
-		$user = user::where('name', 'like', '%' . $request->input('search') . '%')->get();
-		$album = albums::where('title', 'like', '%' . $request->input('search') . '%')
+			->whereNotIn('producerid', [0])
+			->inRandomOrder()
+			->get();
+		$user = user::where('name', 'like', '%' . $request->input('search') . '%')
+			->whereNotIn('id', [0])
+			->inRandomOrder()
+			->get();
+		$album = albums::join('producer', 'producer.producerid', '=', 'albums.producerid')
+			->select('albums.*', 'producer.name')
+			->where('albums.title', 'like', '%' . $request->input('search') . '%')
 			->whereNotIn('albumid', [0])
-			->orWhere('producer', 'like', '%' . $request->input('search') . '%')
-			->whereNotIn('albumid', [0])->get();
-
+			->inRandomOrder()
+			->get();
 		return view('search')->with([
 			'songs' => $song,
 			'producer' => $producer,
@@ -134,9 +141,6 @@ class MasterController extends Controller {
 				'gender' => $gender,
 				'about' => $about,
 			]);
-			comments::where('userid', Auth::id())->update([
-				'name' => $name,
-			]);
 			return redirect('profiledetails');
 		} catch (Exception $e) {
 			return redirect('profile')->with([
@@ -158,8 +162,15 @@ class MasterController extends Controller {
 		$userid = $song[0]->userid;
 		$user = user::where('id', $userid)->get();
 		$albumid = $song[0]->albumid;
-		$newsongs = songs::orderBy('songid', '')->paginate(3);
-		$discover = songs::inRandomOrder()->paginate(3);
+		$album = albums::where('albumid', $albumid)->get();
+		$newsongs = songs::join('producer', 'producer.producerid', '=', 'songs.producerid')
+			->select('songs.*', 'producer.name')
+			->orderBy('songid', '')
+			->paginate(3);
+		$discover = songs::join('producer', 'producer.producerid', '=', 'songs.producerid')
+			->select('songs.*', 'producer.name')
+			->inRandomOrder()
+			->paginate(3);
 		$comments = user::join('comments', 'comments.userid', '=', 'users.id')
 			->select('users.*', 'comments.message')
 			->where('comments.songid', $songid)
@@ -167,16 +178,43 @@ class MasterController extends Controller {
 		if ($albumid != 0) {
 			$nextsong = songs::orderBy('songid')->where('songid', '>', $songid)->where('albumid', $albumid)->paginate(1);
 			$prevsong = songs::orderBy('songid', '')->where('songid', '<', $songid)->where('albumid', $albumid)->paginate(1);
+			if (count($nextsong) == 0) {
+				$nextproducerid = 0;
+			} else {
+				$nextproducerid = $nextsong[0]->producerid;
+			}
+			if (count($prevsong) == 0) {
+				$prevproducerid = 0;
+			} else {
+				$prevproducerid = $prevsong[0]->producerid;
+			}
+			$nextproducer = producer::where('producerid', $nextproducerid)->get();
+			$prevproducer = producer::where('producerid', $prevproducerid)->get();
 		} else {
 			$nextsong = songs::where('songid', $songid + 1)->get();
 			$prevsong = songs::where('songid', $songid - 1)->get();
+			if (count($nextsong) == 0) {
+				$nextproducerid = 0;
+			} else {
+				$nextproducerid = $nextsong[0]->producerid;
+			}
+			if (count($prevsong) == 0) {
+				$prevproducerid = 0;
+			} else {
+				$prevproducerid = $prevsong[0]->producerid;
+			}
+			$nextproducer = producer::where('producerid', $nextproducerid)->get();
+			$prevproducer = producer::where('producerid', $prevproducerid)->get();
 		}
 		return view('player')->with([
 			'song' => $song,
 			'producer' => $producer,
 			'user' => $user,
+			'album' => $album,
 			'nextsong' => $nextsong,
 			'prevsong' => $prevsong,
+			'nextproducer' => $nextproducer,
+			'prevproducer' => $prevproducer,
 			'newsongs' => $newsongs,
 			'discover' => $discover,
 			'comments' => $comments,
@@ -188,10 +226,17 @@ class MasterController extends Controller {
 			return view('error');
 		} else {
 			$album = albums::where('albumid', $albumid)->get();
-			$songs = songs::where('albumid', $albumid)->orderBy('songid')->simplePaginate(5);
+			$songs = songs::join('producer', 'producer.producerid', '=', 'songs.producerid')
+				->select('songs.*', 'producer.name')
+				->where('albumid', $albumid)
+				->orderBy('songid')
+				->simplePaginate(5);
+			$producerid = $album[0]->producerid;
+			$producer = producer::where('producerid', $producerid)->get();
 			return view('album')->with([
 				'album' => $album,
 				'songs' => $songs,
+				'producer' => $producer,
 			]);
 		}
 	}
@@ -236,8 +281,6 @@ class MasterController extends Controller {
 			$genre = $request->input('genre');
 		}
 		if (!is_null($request->input('producer'))) {
-			$producername = producer::select('name')->where('producerid', $request->input('producer'))->get();
-			$name = $producername[0]->name;
 			$producerid = producer::select('producerid')->where('producerid', $request->input('producer'))->get();
 			$id = $producerid[0]->producerid;
 		} else {
@@ -271,11 +314,8 @@ class MasterController extends Controller {
 			$avatar = $request->avatar;
 		}
 		if (is_null($request->input('album'))) {
-			$albtitle = 'N/A';
 			$albid = 0;
 		} else {
-			$albumtitle = albums::select('title')->where('albumid', $request->input('album'))->get();
-			$albtitle = $albumtitle[0]->title;
 			$albumid = albums::select('albumid')->where('albumid', $request->input('album'))->get();
 			$albid = $albumid[0]->albumid;
 		}
@@ -285,9 +325,7 @@ class MasterController extends Controller {
 			songs::insert([
 				'title' => $title,
 				'genre' => $genre,
-				'producer' => $name,
 				'vocal' => $vocalname,
-				'album' => $albtitle,
 				'country' => $country,
 				'description' => $description,
 				'lyric' => $lyric,
@@ -363,6 +401,7 @@ class MasterController extends Controller {
 				'sites' => $sites,
 				'about' => $about,
 				'avatar' => $avatar,
+				'userid' => Auth::id(),
 			]);
 			return redirect('profiledetails');
 		} catch (Exception $e) {
@@ -400,8 +439,6 @@ class MasterController extends Controller {
 		} else {
 			$description = $request->input('description');
 		}
-		$producername = producer::select('name')->where('producerid', $request->input('producer'))->get();
-		$name = $producername[0]->name;
 		$producerid = producer::select('producerid')->where('producerid', $request->input('producer'))->get();
 		$id = $producerid[0]->producerid;
 		$releasedate = date("Y-m-d H:i:s");
@@ -410,11 +447,11 @@ class MasterController extends Controller {
 				'title' => $request->input('title'),
 				'label' => $request->input('label'),
 				'price' => $request->input('price'),
-				'producer' => $name,
 				'thumbnail' => $thumbnail,
 				'description' => $description,
 				'producerid' => $id,
 				'releasedate' => $releasedate,
+				'userid' => Auth::id(),
 			]);
 			return redirect('uploadsong');
 		} catch (Exception $e) {
