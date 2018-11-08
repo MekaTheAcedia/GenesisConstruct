@@ -699,8 +699,11 @@ list-style: none;
 					</div>
 					<div class="row col-md-11" style="margin-left: 0px;">
 						<div class="box-comment">
-							<h3 class="title-section">Comment (<span id="commentCounter"></span>)</h3>
-							<form action method="POST" class="form-comment">
+							<h3 class="title-section">Comment (
+								<span id="commentCounter">
+							  	</span>)
+							</h3>
+							<form action="{{URL::route('comment')}}" method="POST" class="form-comment">
 								{{csrf_field()}}
 								<p class="comment-avatar">
 									<img src="{{Auth::user()->avatar}}" class="useravatar">
@@ -711,19 +714,21 @@ list-style: none;
 								</div>
 							</form>
 							<ul class="list-comment">
+								@foreach ($comments as $item2)
 								<li class="item-comment">
-									<a href="#" class="thumb-user">
-										<img src="{{asset('img/avatar-default.jpg')}}" class="user-avatar">
+									<a href="{{URL::route('user', $item2->userid)}}" class="thumb-user">
+										<img src="{{$item2->avatar}}" class="user-avatar">
 									</a>
 									<div class="post-comment">
-										<a href="#" target="blank" class="username">Honey</a>
-										<p class="fn-content">Hãy chiếm lấy em đi ^^ </p>
+										<a href="{{URL::route('user', $item2->userid)}}" target="blank" class="username">{{$item2->name}}</a>
+										<p class="fn-content">{{$item2->message}}</p>
 										<div class="func-comment">
-											<a href="#" class="reply">Reply</a>
+											<div class="reply"><i class="glyphicon glyphicon-ban-circle"></i> Report</div>
 										</div>
-										<span class="time-comment">2 minutes ago</span>
+										<span class="time-comment">{{$item2->uploaddate}}</span>
 									</div>
 								</li>
+								@endforeach
 							</ul>
 						</div>
 					</div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\albums;
+use App\Models\comments;
 use App\Models\favorite;
 use App\Models\producer;
 use App\Models\songs;
@@ -156,6 +157,7 @@ class MasterController extends Controller {
 		$albumid = $song[0]->albumid;
 		$newsongs = songs::orderBy('songid', '')->paginate(3);
 		$discover = songs::inRandomOrder()->paginate(3);
+		$comments = comments::where('songid', $songid)->get();
 		if ($albumid != 0) {
 			$nextsong = songs::orderBy('songid')->where('songid', '>', $songid)->where('albumid', $albumid)->paginate(1);
 			$prevsong = songs::orderBy('songid', '')->where('songid', '<', $songid)->where('albumid', $albumid)->paginate(1);
@@ -171,6 +173,7 @@ class MasterController extends Controller {
 			'prevsong' => $prevsong,
 			'newsongs' => $newsongs,
 			'discover' => $discover,
+			'comments' => $comments,
 		]);
 	}
 
@@ -415,4 +418,7 @@ class MasterController extends Controller {
 		}
 	}
 
+	public function comment(Request $request) {
+
+	}
 }

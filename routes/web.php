@@ -53,7 +53,7 @@ Route::get('/createalbum', ['as' => 'createalbum', 'uses' => 'MasterController@c
 
 Route::post('/albumuploader', ['as' => 'albumuploader', 'uses' => 'MasterController@albumuploader']);
 
-Route::get('/upload_albumavatar', ['as' => 'upload_albumavatar', 'uses' => 'MasterController@upload_albumavatar']);
+Route::get('/comment', ['as' => 'comment', 'uses' => 'MasterController@comment']);
 
 Route::post('/produceruploader', ['as' => 'produceruploader', 'uses' => 'MasterController@produceruploader']);
 
