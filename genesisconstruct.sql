@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2018 at 03:17 PM
+-- Generation Time: Nov 08, 2018 at 09:31 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `albums` (
   `albumid` int(15) NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
   `releasedate` date NOT NULL,
   `producer` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` int(20) NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE `comments` (
   `commentid` int(11) NOT NULL,
   `userid` int(11) UNSIGNED NOT NULL,
   `songid` int(11) NOT NULL,
-  `message` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `uploadtime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -147,7 +147,7 @@ CREATE TABLE `songs` (
   `vocal` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'N/A',
   `album` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
   `lyric` longtext COLLATE utf8mb4_unicode_ci,
   `uploaddate` date NOT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'https://png.pngtree.com/element_origin_min_pic/16/08/08/0957a7e677c6791.jpg',
@@ -175,22 +175,21 @@ CREATE TABLE `users` (
   `dob` date DEFAULT NULL,
   `gender` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `about` text COLLATE utf8mb4_unicode_ci,
+  `about` longtext COLLATE utf8mb4_unicode_ci,
   `level` int(1) DEFAULT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png',
-  `favorite` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `dob`, `gender`, `location`, `about`, `level`, `avatar`, `favorite`) VALUES
-(3, 'Lý Quốc Trọng', 'trongdaigia19955@gmail.com', NULL, '$2y$10$QOcDzOpejqMgHmKLP4agF.lvG6o.nFoPv1BzwbycqUIXmQJuuWoDC', NULL, '2018-10-22 20:17:43', '2018-10-22 20:17:43', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, '1234', '12345@gmail.com', NULL, '$2y$10$he1/UHlQUiw8.2o5XuSj6.5eT7BlmfCxg63jIn8iSv/UlhlNuo65e', 'ho3UqV0L58h5nuN63MMDi9MMfevuG1mfYTy9ymMroEQVrxF3aaIug8CJac0b', '2018-10-26 01:18:06', '2018-10-28 21:23:58', NULL, 'Female', 'dsfgsdf', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 3, 'img/6c8f071210788b56c8c2cc98ec570227.jpg', NULL),
-(6, 'Acedia', '1234@gmail.com', NULL, '$2y$10$AQXfYItG7wINPymHsLAtdue/nN4Yxnqvqhwo2xAb4TP7n6YNvE56C', '7412k0OCLBTQEKgaOBlBxkbvKRNyrgpFDrPoJoejnCeFLpjskAOZKSIpaIxd', '2018-10-29 18:48:27', '2018-11-06 20:02:57', '2018-10-30', 'Female', '123', '<p><b>asdfdas</b></p>', 3, 'https://res.cloudinary.com/silentlove995/image/upload/c_scale,o_100,q_auto:eco,w_658,z_0.4/v1541559770/avatar/12cd8664d54f817b818873dee910bba11541559765828.png', NULL),
-(7, 'Acedia', '123456@gmail.com', NULL, '$2y$10$plWnFqXt3iqaFsmz7OPDheTC/0wW.7p/U1hTY/us.Lef8qWlhuVUW', 'tGghL4AqfmK003WXPiP5Cb20sXSAs9xpOutrjI4hrMXZ6wjPa7vkfdLO7tFK', '2018-10-30 20:23:31', '2018-10-30 21:00:22', NULL, NULL, NULL, NULL, 3, 'img/3c13c7812b05c37375e33baef7d539df.jpg', NULL),
-(8, 'Acedia', '123@gmail.com', NULL, '$2y$10$GJbi3FglYdBISluNlDkiEu9QD9x79b4D73uGKueZ93GPv7i5q1TkS', NULL, '2018-11-07 06:34:07', '2018-11-07 06:34:07', NULL, NULL, NULL, NULL, 3, 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png', NULL);
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `dob`, `gender`, `location`, `about`, `level`, `avatar`) VALUES
+(3, 'Lý Quốc Trọng', 'trongdaigia19955@gmail.com', NULL, '$2y$10$QOcDzOpejqMgHmKLP4agF.lvG6o.nFoPv1BzwbycqUIXmQJuuWoDC', NULL, '2018-10-22 20:17:43', '2018-10-22 20:17:43', NULL, NULL, NULL, NULL, NULL, NULL),
+(5, '1234', '12345@gmail.com', NULL, '$2y$10$he1/UHlQUiw8.2o5XuSj6.5eT7BlmfCxg63jIn8iSv/UlhlNuo65e', 'ho3UqV0L58h5nuN63MMDi9MMfevuG1mfYTy9ymMroEQVrxF3aaIug8CJac0b', '2018-10-26 01:18:06', '2018-10-28 21:23:58', NULL, 'Female', 'dsfgsdf', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 3, 'img/6c8f071210788b56c8c2cc98ec570227.jpg'),
+(6, 'Acedia', '1234@gmail.com', NULL, '$2y$10$AQXfYItG7wINPymHsLAtdue/nN4Yxnqvqhwo2xAb4TP7n6YNvE56C', '7412k0OCLBTQEKgaOBlBxkbvKRNyrgpFDrPoJoejnCeFLpjskAOZKSIpaIxd', '2018-10-29 18:48:27', '2018-11-08 01:06:35', '2018-10-30', 'Female', '123', '<b><u>BIG BUGGY BUG BUG BIG BUG BUGGY BUG BIG</u></b>', 3, 'https://res.cloudinary.com/silentlove995/image/upload/c_scale,o_100,q_auto:eco,w_658,z_0.4/v1541664391/avatar/814ca3257321b666e97b7c2bac583e0e1541664383110.png'),
+(7, 'Acedia', '123456@gmail.com', NULL, '$2y$10$plWnFqXt3iqaFsmz7OPDheTC/0wW.7p/U1hTY/us.Lef8qWlhuVUW', 'tGghL4AqfmK003WXPiP5Cb20sXSAs9xpOutrjI4hrMXZ6wjPa7vkfdLO7tFK', '2018-10-30 20:23:31', '2018-10-30 21:00:22', NULL, NULL, NULL, NULL, 3, 'img/3c13c7812b05c37375e33baef7d539df.jpg'),
+(8, 'Acedia', '123@gmail.com', NULL, '$2y$10$GJbi3FglYdBISluNlDkiEu9QD9x79b4D73uGKueZ93GPv7i5q1TkS', '9u9OE7BKxVCwtIXkYk6xvEveDFnupynLKRhBxTf6KAvAjEReMY3wzUobkK5a', '2018-11-07 06:34:07', '2018-11-07 06:34:07', NULL, NULL, NULL, NULL, 3, 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png');
 
 --
 -- Indexes for dumped tables
@@ -261,13 +260,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `albumid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `albumid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -279,13 +278,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `producer`
 --
 ALTER TABLE `producer`
-  MODIFY `producerid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `producerid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `songid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `songid` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `users`

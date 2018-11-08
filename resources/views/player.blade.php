@@ -699,9 +699,8 @@ list-style: none;
 					</div>
 					<div class="row col-md-11" style="margin-left: 0px;">
 						<div class="box-comment">
-							<h3 class="title-section">Comment (
-								<span id="commentCounter">
-							  	</span>)
+							<h3 class="title-section">
+								Comment ({{count($comments)}})
 							</h3>
 							<form action="{{URL::route('comment')}}" method="POST" class="form-comment">
 								{{csrf_field()}}
@@ -716,12 +715,12 @@ list-style: none;
 							<ul class="list-comment">
 								@foreach ($comments as $item2)
 								<li class="item-comment">
-									<a href="{{URL::route('user', $item2->userid)}}" class="thumb-user">
+									<a href="{{URL::route('user', $item2->id)}}" class="thumb-user">
 										<img src="{{$item2->avatar}}" class="user-avatar">
 									</a>
-									<div class="post-comment">
-										<a href="{{URL::route('user', $item2->userid)}}" target="blank" class="username">{{$item2->name}}</a>
-										<p class="fn-content">{{$item2->message}}</p>
+									<div class="post-comment" style="word-break: break-all;">
+										<a href="{{URL::route('user', $item2->id)}}" target="blank" class="username">{{$item2->name}}</a>
+										<p class="fn-content comment">{{$item2->message}}</p>
 										<div class="func-comment">
 											<div class="reply"><i class="glyphicon glyphicon-ban-circle"></i> Report</div>
 										</div>
@@ -864,10 +863,15 @@ break;
 @section('js')
 <script src="{{ asset('js/player.js') }}"></script>
 <script type="text/javascript">
-	$(".description > p").shorten({
+	$(".description > *").shorten({
 		"chars" : 170,
 		"more"  : "More",
 		"less"  : " Less",
 	});
+	$(".comment").shorten({
+		"chars" : 150,
+		"more"  : "More",
+		"less"  : " Less"
+	})
 </script>
 @stop

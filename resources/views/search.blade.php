@@ -147,8 +147,13 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 		@endforeach
 	</section>
 </div>
+<hr style="opacity: 0">
+<div class="clearfix"></div>
+@stop
+@section('js')
 <script type="text/javascript">
 	$("p").shorten({
+		"chars" : 230,
 		"more" : ' More',
 		"less" : ' Less',
 	});

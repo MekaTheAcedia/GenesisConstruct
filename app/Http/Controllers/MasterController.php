@@ -134,6 +134,9 @@ class MasterController extends Controller {
 				'gender' => $gender,
 				'about' => $about,
 			]);
+			comments::where('userid', Auth::id())->update([
+				'name' => $name,
+			]);
 			return redirect('profiledetails');
 		} catch (Exception $e) {
 			return redirect('profile')->with([
@@ -157,7 +160,10 @@ class MasterController extends Controller {
 		$albumid = $song[0]->albumid;
 		$newsongs = songs::orderBy('songid', '')->paginate(3);
 		$discover = songs::inRandomOrder()->paginate(3);
-		$comments = comments::where('songid', $songid)->get();
+		$comments = user::join('comments', 'comments.userid', '=', 'users.id')
+			->select('users.*', 'comments.message')
+			->where('comments.songid', $songid)
+			->get();
 		if ($albumid != 0) {
 			$nextsong = songs::orderBy('songid')->where('songid', '>', $songid)->where('albumid', $albumid)->paginate(1);
 			$prevsong = songs::orderBy('songid', '')->where('songid', '<', $songid)->where('albumid', $albumid)->paginate(1);
