@@ -669,6 +669,12 @@ list-style: none;
 						</ul>
 					</div>
 				</div>
+
+				<div class="row col-md-10" style="margin: 0px 0px 25px -45px;">
+						<button class="btn btn-danger" style="margin-right: 10px;">Favorite</button>
+						<button class="btn btn-success">Edit</button>
+				</div>
+
 				<div class="row" style="margin: -30px;">
 					<div class="producer-info row" style="margin-bottom: 20px">
 						@foreach ($producer as $item2)

@@ -29,6 +29,9 @@
 	text-transform: none;
 	color: black;
 }
+.fb-profile-text h1{
+	font-family: "Roboto",'Open Sans',"segoe ui",Helvetica,Arial,sans-serif;
+}
 </style>
 <link rel="stylesheet" type="text/css" href="{{asset('css/albumstyle.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('shorten/shorten.min.css') }}">
@@ -41,7 +44,7 @@ $cover = rand(1, 23);
 <div class="container">
 	<div class="col-md-12">
 		<div class="fb-profile">
-			<img align="left" class="fb-image-lg" src="{{asset('img/cover/'.$cover.'.jpg')}}" alt="Profile image example">
+			<img align="left" class="fb-image-lg" src="{{asset('img/cover/18.jpg')}}" alt="Profile image example">
 			<img align="left" class="fb-image-profile thumbnail" src="{{$item->thumbnail}}">
 			<div class="fb-profile-text col-md-7">
 				<h1>{{$item->title}}</h1>
