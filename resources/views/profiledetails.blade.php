@@ -181,3 +181,37 @@ color: #0062cc;
 	</form>
 </div>
 @stop
+@section('js')
+<script type="text/javascript">
+$(".description > a").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+	$(".description > b").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+	$(".description > i").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+	$(".description > p").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+	$(".description > ul").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+	$(".description > ol").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+</script>
+@stop

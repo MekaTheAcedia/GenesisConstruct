@@ -693,7 +693,7 @@ list-style: none;
 						</h3>
 						<br>
 						<div class="lyric" style="word-break: break-word;">
-							<p>{!!$item->lyric!!}</p>
+							{!!$item->lyric!!}
 							<p style="font-weight:600;float: right;font-size: 13px;">
 								Upload by:
 								@foreach ($user as $item2)
@@ -892,6 +892,16 @@ break;
 		"less"  : " Less",
 	});
 	$(".description > p").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+	$(".description > ul").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+	$(".description > ol").shorten({
 		"chars" : 170,
 		"more"  : "More",
 		"less"  : " Less",

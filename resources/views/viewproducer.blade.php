@@ -213,8 +213,8 @@ color: #0062cc;
 						<div class="col-md-6">
 							<label>About</label>
 						</div>
-						<div class="col-md-12" style="word-break: break-word;">
-							<p>{!!$item->about!!}</p>
+						<div class="col-md-12 description" style="word-break: break-word;">
+							{!!$item->about!!}
 						</div>
 					</div>
 				</div>
@@ -223,4 +223,38 @@ color: #0062cc;
 		</div>
 	</form>
 </div>
+@stop
+@section('js')
+<script type="text/javascript">
+$(".description > a").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+	$(".description > b").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+	$(".description > i").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+	$(".description > p").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+	$(".description > ul").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+	$(".description > ol").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+</script>
 @stop
