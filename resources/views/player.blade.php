@@ -876,7 +876,22 @@ break;
 @section('js')
 <script src="{{ asset('js/player.js') }}"></script>
 <script type="text/javascript">
-	$(".description > *").shorten({
+	$(".description > a").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+	$(".description > b").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+	$(".description > i").shorten({
+		"chars" : 170,
+		"more"  : "More",
+		"less"  : " Less",
+	});
+	$(".description > p").shorten({
 		"chars" : 170,
 		"more"  : "More",
 		"less"  : " Less",

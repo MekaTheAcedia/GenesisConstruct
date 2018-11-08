@@ -5,7 +5,9 @@
 		position: relative !important;
 		z-index: 1;
 	}
-	.btn-fullscreen,.btn-codeview,.note-table,.note-insert{display: none;}
+	.btn-fullscreen,.btn-codeview,.note-table,.note-insert,.note-style{
+		display: none;
+	}
 	::placeholder{
 		opacity: 0.8;
 	}
