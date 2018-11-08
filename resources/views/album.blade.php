@@ -95,7 +95,7 @@ $cover = rand(1, 23);
 @stop
 @section('js')
 <script type="text/javascript">
-	$(".description > p").shorten({
+	$(".description").shorten({
 		"chars" : 500,
 		"more"  : "More",
 		"less"  : " Less",

@@ -51,7 +51,7 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 					<li><i class="glyphicon glyphicon-tags"></i> <span>{{$item->genre}}</span></li>
 				</ul>
 			</div>
-			<div class="col-xs-12 col-sm-12 col-md-7 excerpet" style="word-break: break-word;">
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet description" style="word-break: break-word;">
 				<h3><a href="{{URL::route('songs', $item->songid)}}" title="">{{$item->title}}</a></h3>
 				{!!$item->description!!}
 			</div>
@@ -80,7 +80,7 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 					<li><i class="glyphicon glyphicon-tags"></i> <span>{{$item->genre}}</span></li>
 				</ul>
 			</div>
-			<div class="col-xs-12 col-sm-12 col-md-7 excerpet" style="word-break: break-word;">
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet description" style="word-break: break-word;">
 				<h3><a href="{{URL::route('producer', $item->producerid)}}" title="">{{$item->name}}</a></h3>
 				{!!$item->about!!}
 			</div>
@@ -109,7 +109,7 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 					<li><i class="glyphicon glyphicon-tag"></i> <span>{{$item->price}}</span></li>
 				</ul>
 			</div>
-			<div class="col-xs-12 col-sm-12 col-md-7 excerpet" style="word-break: break-word;">
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet description" style="word-break: break-word;">
 				<h3><a href="{{URL::route('albums', $item->albumid)}}" title="">{{$item->title}}</a></h3>
 				{!!$item->description!!}
 			</div>
@@ -138,7 +138,7 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 					<li><i class="glyphicon glyphicon-tag"></i> <span>{{$item->email}}</span></li>
 				</ul>
 			</div>
-			<div class="col-xs-12 col-sm-12 col-md-7 excerpet" style="word-break: break-word;">
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet description" style="word-break: break-word;">
 				<h3><a href="{{URL::route('user', $item->id)}}" title="">{{$item->name}}</a></h3>
 				{!!$item->about!!}
 			</div>
@@ -152,35 +152,10 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 @stop
 @section('js')
 <script type="text/javascript">
-	$("p").shorten({
+$(".description").shorten({
 		"chars" : 230,
-		"more" : ' More',
-		"less" : ' Less',
-	});
-	$("a").shorten({
-		"chars" : 230,
-		"more" : ' More',
-		"less" : ' Less',
-	});
-	$("b").shorten({
-		"chars" : 230,
-		"more" : ' More',
-		"less" : ' Less',
-	});
-	$("i").shorten({
-		"chars" : 230,
-		"more" : ' More',
-		"less" : ' Less',
-	});
-	$("ul").shorten({
-		"chars" : 230,
-		"more" : ' More',
-		"less" : ' Less',
-	});
-	$("ol").shorten({
-		"chars" : 230,
-		"more" : ' More',
-		"less" : ' Less',
-	});
+		"more"  : "More",
+		"less"  : " Less",
+});
 </script>
 @stop

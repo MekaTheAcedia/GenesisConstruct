@@ -727,9 +727,9 @@ list-style: none;
 									<a href="{{URL::route('user', $item2->id)}}" class="thumb-user">
 										<img src="{{$item2->avatar}}" class="user-avatar">
 									</a>
-									<div class="post-comment" style="word-break: break-word;">
+									<div class="post-comment comment" style="word-break: break-word;">
 										<a href="{{URL::route('user', $item2->id)}}" target="blank" class="username">{{$item2->name}}</a>
-										<p class="fn-content comment">{{$item2->message}}</p>
+										<p class="fn-content">{{$item2->message}}</p>
 										<div class="func-comment">
 											<div class="reply"><i class="glyphicon glyphicon-ban-circle"></i> Report</div>
 										</div>
@@ -876,40 +876,15 @@ break;
 @section('js')
 <script src="{{ asset('js/player.js') }}"></script>
 <script type="text/javascript">
-	$(".description > a").shorten({
-		"chars" : 170,
-		"more"  : "More",
-		"less"  : " Less",
-	});
-	$(".description > b").shorten({
-		"chars" : 170,
-		"more"  : "More",
-		"less"  : " Less",
-	});
-	$(".description > i").shorten({
-		"chars" : 170,
-		"more"  : "More",
-		"less"  : " Less",
-	});
-	$(".description > p").shorten({
-		"chars" : 170,
-		"more"  : "More",
-		"less"  : " Less",
-	});
-	$(".description > ul").shorten({
-		"chars" : 170,
-		"more"  : "More",
-		"less"  : " Less",
-	});
-	$(".description > ol").shorten({
-		"chars" : 170,
-		"more"  : "More",
-		"less"  : " Less",
-	});
-	$(".comment").shorten({
-		"chars" : 150,
-		"more"  : "More",
-		"less"  : " Less"
-	})
+$(".description").shorten({
+	"chars" : 170,
+	"more"  : "More",
+	"less"  : " Less",
+});
+$(".comment").shorten({
+	"chars" : 150,
+	"more"  : "More",
+	"less"  : " Less"
+})
 </script>
 @stop
