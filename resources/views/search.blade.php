@@ -157,5 +157,30 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 		"more" : ' More',
 		"less" : ' Less',
 	});
+	$("a").shorten({
+		"chars" : 230,
+		"more" : ' More',
+		"less" : ' Less',
+	});
+	$("b").shorten({
+		"chars" : 230,
+		"more" : ' More',
+		"less" : ' Less',
+	});
+	$("i").shorten({
+		"chars" : 230,
+		"more" : ' More',
+		"less" : ' Less',
+	});
+	$("ul").shorten({
+		"chars" : 230,
+		"more" : ' More',
+		"less" : ' Less',
+	});
+	$("ol").shorten({
+		"chars" : 230,
+		"more" : ' More',
+		"less" : ' Less',
+	});
 </script>
 @stop
