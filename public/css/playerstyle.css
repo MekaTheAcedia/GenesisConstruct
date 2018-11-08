@@ -30,6 +30,7 @@ h2 {
 .playertheme {
   padding-top: 5px;
   height: 190px;
+  width: auto;
   background-color: #1E2125;
   position: relative;
   -webkit-touch-callout: none;
