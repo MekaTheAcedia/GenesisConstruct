@@ -59,11 +59,16 @@ class MasterController extends Controller {
 			->orWhere('album', 'like', '%' . $request->input('search') . '%')
 			->orWhere('country', 'like', '%' . $request->input('search') . '%')->get();
 		$producer = producer::where('name', 'like', '%' . $request->input('search') . '%')
+			->whereNotIn('producerid', [0])
 			->orWhere('genre', 'like', '%' . $request->input('search') . '%')
-			->orWhere('associations', 'like', '%' . $request->input('search') . '%')->get();
+			->whereNotIn('producerid', [0])
+			->orWhere('associations', 'like', '%' . $request->input('search') . '%')
+			->whereNotIn('producerid', [0])->get();
 		$user = user::where('name', 'like', '%' . $request->input('search') . '%')->get();
 		$album = albums::where('title', 'like', '%' . $request->input('search') . '%')
-			->orWhere('producer', 'like', '%' . $request->input('search') . '%')->get();
+			->whereNotIn('albumid', [0])
+			->orWhere('producer', 'like', '%' . $request->input('search') . '%')
+			->whereNotIn('albumid', [0])->get();
 
 		return view('search')->with([
 			'songs' => $song,
@@ -149,9 +154,11 @@ class MasterController extends Controller {
 		$userid = $song[0]->userid;
 		$user = user::where('id', $userid)->get();
 		$albumid = $song[0]->albumid;
+		$newsongs = songs::orderBy('songid', '')->paginate(3);
+		$discover = songs::inRandomOrder()->paginate(3);
 		if ($albumid != 0) {
-			$nextsong = songs::where('songid', '>', $songid)->where('albumid', $albumid)->paginate(1);
-			$prevsong = songs::where('songid', '<', $songid)->where('albumid', $albumid)->paginate(1);
+			$nextsong = songs::orderBy('songid')->where('songid', '>', $songid)->where('albumid', $albumid)->paginate(1);
+			$prevsong = songs::orderBy('songid', '')->where('songid', '<', $songid)->where('albumid', $albumid)->paginate(1);
 		} else {
 			$nextsong = songs::where('songid', $songid + 1)->get();
 			$prevsong = songs::where('songid', $songid - 1)->get();
@@ -162,6 +169,8 @@ class MasterController extends Controller {
 			'user' => $user,
 			'nextsong' => $nextsong,
 			'prevsong' => $prevsong,
+			'newsongs' => $newsongs,
+			'discover' => $discover,
 		]);
 	}
 
