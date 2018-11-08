@@ -105,11 +105,11 @@ color: #0062cc;
 				<div class="profile-work">
 					<p>Sites</p>
 					@foreach ($producer as $item)
-					<a href="#" style="word-break: break-all;">{{$item->sites}}</a>
+					<a href="#" style="word-break: break-word;">{{$item->sites}}</a>
 					@endforeach
 				</div>
 			</div>
-			<div class="col-md-8" style="word-break: break-all;">
+			<div class="col-md-8" style="word-break: break-word;">
 				<div class="profile-head">
 					@foreach ($producer as $item)
 					<h2>{{$item->name}}</h2>
@@ -127,7 +127,7 @@ color: #0062cc;
 						<div class="col-md-6">
 							<label>Name</label>
 						</div>
-						<div class="col-md-6" style="word-break: break-all;">
+						<div class="col-md-6" style="word-break: break-word;">
 							<p>{{$item->name}}</p>
 						</div>
 					</div>
@@ -135,7 +135,7 @@ color: #0062cc;
 						<div class="col-md-6">
 							<label>Date of Birth</label>
 						</div>
-						<div class="col-md-6" style="word-break: break-all;">
+						<div class="col-md-6" style="word-break: break-word;">
 							<p>{{$item->dob}}</p>
 						</div>
 					</div>
@@ -143,7 +143,7 @@ color: #0062cc;
 						<div class="col-md-6">
 							<label>Gender</label>
 						</div>
-						<div class="col-md-6" style="word-break: break-all;">
+						<div class="col-md-6" style="word-break: break-word;">
 							<p>{{$item->gender}}</p>
 						</div>
 					</div>
@@ -151,7 +151,7 @@ color: #0062cc;
 						<div class="col-md-6">
 							<label>Status</label>
 						</div>
-						<div class="col-md-6" style="word-break: break-all;">
+						<div class="col-md-6" style="word-break: break-word;">
 							<p>{{$item->status}}</p>
 						</div>
 					</div>
@@ -159,7 +159,7 @@ color: #0062cc;
 						<div class="col-md-6">
 							<label>Genre</label>
 						</div>
-						<div class="col-md-6" style="word-break: break-all;">
+						<div class="col-md-6" style="word-break: break-word;">
 							<p>{{$item->genre}}</p>
 						</div>
 					</div>
@@ -167,7 +167,7 @@ color: #0062cc;
 						<div class="col-md-6">
 							<label>Associations</label>
 						</div>
-						<div class="col-md-6" style="word-break: break-all;">
+						<div class="col-md-6" style="word-break: break-word;">
 							<p>{{$item->associations}}</p>
 						</div>
 					</div>
@@ -181,7 +181,7 @@ color: #0062cc;
 							break;
 						@endphp
 						@endforeach
-						<div class="col-md-12 pre-scrollable" style="word-break: break-all; max-height: 200px; background-color: #eeeeee">
+						<div class="col-md-12 pre-scrollable" style="word-break: break-word; max-height: 200px; background-color: #eeeeee">
 							@foreach ($works as $item)
 							<a href="{{URL::route('songs', $item->songid)}}"><p>{{$count}}. {{$item->title}}</p></a>
 							@php
@@ -200,7 +200,7 @@ color: #0062cc;
 							break;
 						@endphp
 						@endforeach
-						<div class="col-md-12 pre-scrollable" style="word-break: break-all; max-height: 200px; background-color: #eeeeee">
+						<div class="col-md-12 pre-scrollable" style="word-break: break-word; max-height: 200px; background-color: #eeeeee">
 							@foreach ($discography as $item)
 							<a href="{{URL::route('albums', $item->albumid)}}"><p>{{$count}}. {{$item->title}}</p></a>
 							@php
@@ -213,7 +213,7 @@ color: #0062cc;
 						<div class="col-md-6">
 							<label>About</label>
 						</div>
-						<div class="col-md-12" style="word-break: break-all;">
+						<div class="col-md-12" style="word-break: break-word;">
 							<p>{!!$item->about!!}</p>
 						</div>
 					</div>

@@ -168,7 +168,7 @@
 												</div>
 												<div class="col-xs-7" style="height: inherit;">
 													<br>
-													<fieldset  style="word-break: break-all;">
+													<fieldset  style="word-break: break-word;">
 														<a href="{{URL::route('profiledetails')}}">
 															<i class="glyphicon glyphicon-tag"></i>
 															{{Auth::user()->name}}

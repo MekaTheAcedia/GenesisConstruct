@@ -573,7 +573,7 @@ list-style: none;
 			<div class="song-content col-md-8">
 				<div class="row">
 					<div class="song-info row">
-						<div class="song-name" style="word-break: break-all;">
+						<div class="song-name" style="word-break: break-word;">
 							<h1 class="song-title">
 								{{$item->title}} -
 								@foreach ($producer as $item2)
@@ -582,7 +582,7 @@ list-style: none;
 							</h1>
 						</div>
 						<div class="row" style="margin-right: 0; margin-left: 0">
-							<div class="col-sm-4" style="word-break: break-all;">
+							<div class="col-sm-4" style="word-break: break-word;">
 								<span class="producer">
 									Vocal :  {{$item->vocal}}
 									<br>
@@ -590,7 +590,7 @@ list-style: none;
 									<br>
 								</span>
 							</div>
-							<div class="col-sm-1" style="word-break: break-all;">
+							<div class="col-sm-1" style="word-break: break-word;">
 								<div class="album">
 									<span>.</span>
 								</div>
@@ -600,7 +600,7 @@ list-style: none;
 								</div>
 								<br>
 							</div>
-							<div class="col-md-7" style="word-break: break-all;">
+							<div class="col-md-7" style="word-break: break-word;">
 								<span class="genre" style="">
 									@foreach ($album as $item2)
 									<div class="album">
@@ -673,14 +673,14 @@ list-style: none;
 					<div class="producer-info row" style="margin-bottom: 20px">
 						@foreach ($producer as $item2)
 						<a href="{{URL::route('producer', $item2->producerid)}}"><img src="{{$item2->avatar}}" alt="avatar" style="">
-							<div class="producer-name" style="margin: -100px 130px 100px;padding: 0;word-break: break-all;">
+							<div class="producer-name" style="margin: -100px 130px 100px;padding: 0;word-break: break-word;">
 								<h2>
 								<a href="{{URL::route('producer', $item2->producerid)}}">{{$item2->name}}</a>
 								</h2>
 							</div>
 						</a>
 						<div class="producer-description" style="margin: -90px 130px 100px;">
-							<div class="description" style="color: #666; word-break: break-all;">{!!$item->description!!}</div>
+							<div class="description" style="color: #666; word-break: break-word;">{!!$item->description!!}</div>
 						</div>
 						@php
 						break;
@@ -692,7 +692,7 @@ list-style: none;
 						Lyrics:
 						</h3>
 						<br>
-						<div class="lyric" style="word-break: break-all;">
+						<div class="lyric" style="word-break: break-word;">
 							<p>{!!$item->lyric!!}</p>
 							<p style="font-weight:600;float: right;font-size: 13px;">
 								Upload by:
@@ -727,7 +727,7 @@ list-style: none;
 									<a href="{{URL::route('user', $item2->id)}}" class="thumb-user">
 										<img src="{{$item2->avatar}}" class="user-avatar">
 									</a>
-									<div class="post-comment" style="word-break: break-all;">
+									<div class="post-comment" style="word-break: break-word;">
 										<a href="{{URL::route('user', $item2->id)}}" target="blank" class="username">{{$item2->name}}</a>
 										<p class="fn-content comment">{{$item2->message}}</p>
 										<div class="func-comment">

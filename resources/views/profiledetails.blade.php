@@ -107,7 +107,7 @@ color: #0062cc;
 					<a href="">Youtube Profile</a>
 				</div>
 			</div>
-			<div class="col-md-6" style="word-break: break-all;">
+			<div class="col-md-6" style="word-break: break-word;">
 				<div class="profile-head">
 					<h2>{{Auth::user()->name}}</h2>
 					@if (Auth::user()->level == 1)
@@ -127,7 +127,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Name</label>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
+							<div class="col-md-6" style="word-break: break-word;">
 								<p>{{Auth::user()->name}}</p>
 							</div>
 						</div>
@@ -135,7 +135,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Email</label>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
+							<div class="col-md-6" style="word-break: break-word;">
 								<p>{{Auth::user()->email}}</p>
 							</div>
 						</div>
@@ -143,7 +143,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Date of Birth</label>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
+							<div class="col-md-6" style="word-break: break-word;">
 								<p>{{Auth::user()->dob}}</p>
 							</div>
 						</div>
@@ -151,7 +151,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Gender</label>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
+							<div class="col-md-6" style="word-break: break-word;">
 								<p>{{Auth::user()->gender}}</p>
 							</div>
 						</div>
@@ -159,7 +159,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Location</label>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
+							<div class="col-md-6" style="word-break: break-word;">
 								<p>{{Auth::user()->location}}</p>
 							</div>
 						</div>
@@ -167,7 +167,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>About</label>
 							</div>
-							<div class="col-md-12 description" style="word-break: break-all;">
+							<div class="col-md-12 description" style="word-break: break-word;">
 								{!!Auth::user()->about!!}
 							</div>
 						</div>

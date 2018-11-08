@@ -109,7 +109,7 @@ color: #0062cc;
 					<a href="">Youtube Profile</a>
 				</div>
 			</div>
-			<div class="col-md-8" style="word-break: break-all;">
+			<div class="col-md-8" style="word-break: break-word;">
 				@foreach ($user as $item)
 				<div class="profile-head">
 					<h2>{{$item->name}}</h2>
@@ -132,7 +132,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Name</label>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
+							<div class="col-md-6" style="word-break: break-word;">
 								<p>{{$item->name}}</p>
 							</div>
 						</div>
@@ -140,7 +140,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Email</label>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
+							<div class="col-md-6" style="word-break: break-word;">
 								<p>{{$item->email}}</p>
 							</div>
 						</div>
@@ -148,7 +148,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Date of Birth</label>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
+							<div class="col-md-6" style="word-break: break-word;">
 								<p>{{$item->dob}}</p>
 							</div>
 						</div>
@@ -156,7 +156,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Gender</label>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
+							<div class="col-md-6" style="word-break: break-word;">
 								<p>{{$item->gender}}</p>
 							</div>
 						</div>
@@ -164,7 +164,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>Location</label>
 							</div>
-							<div class="col-md-6" style="word-break: break-all;">
+							<div class="col-md-6" style="word-break: break-word;">
 								<p>{{$item->location}}</p>
 							</div>
 						</div>
@@ -172,7 +172,7 @@ color: #0062cc;
 							<div class="col-md-6">
 								<label>About</label>
 							</div>
-							<div class="col-md-12" style="word-break: break-all;">
+							<div class="col-md-12" style="word-break: break-word;">
 								<p>{!!$item->about!!}</p>
 							</div>
 						</div>

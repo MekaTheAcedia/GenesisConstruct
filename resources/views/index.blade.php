@@ -13,7 +13,7 @@
 									<img src="img/11.jpg" class="img-responsive" alt="">
 								</div>
 								<div class="banner-info">
-									<a class="trend" href="single">TRENDING</a>
+									<a class="trend" href="#">TRENDING</a>
 									<h3>Let Your Home</h3>
 									<p>Album by <span>Rock star</span></p>
 								</div>
@@ -23,7 +23,7 @@
 									<img src="img/22.jpg" class="img-responsive" alt="">
 								</div>
 								<div class="banner-info">
-									<a class="trend" href="single">TRENDING</a>
+									<a class="trend" href="#">TRENDING</a>
 									<h3>Charis Brown feet</h3>
 									<p>Album by <span>Rock star</span></p>
 								</div>
@@ -33,7 +33,7 @@
 									<img src="img/33.jpg" class="img-responsive" alt="">
 								</div>
 								<div class="banner-info">
-									<a class="trend" href="single">TRENDING</a>
+									<a class="trend" href="#">TRENDING</a>
 									<h3>Let Your Home</h3>
 									<p>Album by <span>Rock star</span></p>
 								</div>

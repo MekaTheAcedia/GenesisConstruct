@@ -34,11 +34,14 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('shorten/shorten.min.css') }}">
 <script type="text/javascript" src="{{ asset('shorten/shorten.min.js') }}"></script>
 @foreach ($album as $item)
+@php
+$cover = rand(1, 23);
+@endphp
 <div class="clearfix"></div>
 <div class="container">
 	<div class="col-md-12">
 		<div class="fb-profile">
-			<img align="left" class="fb-image-lg" src="{{asset('img/coverdemo.jpg')}}" alt="Profile image example">
+			<img align="left" class="fb-image-lg" src="{{asset('img/cover/'.$cover.'.jpg')}}" alt="Profile image example">
 			<img align="left" class="fb-image-profile thumbnail" src="{{$item->thumbnail}}">
 			<div class="fb-profile-text col-md-7">
 				<h1>{{$item->title}}</h1>
@@ -74,7 +77,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="producer-description col-md-6" style="word-break: break-all;">
+		<div class="producer-description col-md-6" style="word-break: break-word;">
 			<h3 class="title-song">Label:<span> {{$item->label}}</span></h3>
 			<h3 class="title-song">Price:<span> {{$item->price}}$</span></h3>
 			<h3 class="title-song">Description</h3>
