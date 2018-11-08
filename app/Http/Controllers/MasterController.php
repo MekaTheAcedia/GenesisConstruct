@@ -403,7 +403,7 @@ class MasterController extends Controller {
 				'avatar' => $avatar,
 				'userid' => Auth::id(),
 			]);
-			return redirect('profiledetails');
+			return redirect('uploadsong');
 		} catch (Exception $e) {
 			return redirect('addproducer')->with([
 				'error' => '<div class="alert alert-danger alert-dismissable">Error</div>',

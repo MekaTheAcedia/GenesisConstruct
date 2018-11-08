@@ -671,10 +671,13 @@ list-style: none;
 				</div>
 
 				<div class="row col-md-10" style="margin: 0px 0px 25px -45px;">
-						<button class="btn btn-danger" style="margin-right: 10px;">Favorite</button>
-						<button class="btn btn-success">Edit</button>
+						<div class="btn btn-danger" style="margin-right: 10px;background-color: #E8567B;border-color: #E8567B;"><i class=" glyphicon glyphicon-heart"></i> Favorite</div>
+						@foreach ($user as $item2)
+						@if ($item2->id == Auth::id())
+						<div class="btn btn-success"><i class="glyphicon glyphicon-wrench"></i> Edit</div>
+						@endif
+						@endforeach
 				</div>
-
 				<div class="row" style="margin: -30px;">
 					<div class="producer-info row" style="margin-bottom: 20px">
 						@foreach ($producer as $item2)
@@ -720,7 +723,11 @@ list-style: none;
 							<form action="{{URL::route('comment')}}" method="POST" class="form-comment">
 								{{csrf_field()}}
 								<p class="comment-avatar">
+									@if (Auth::check())
 									<img src="{{Auth::user()->avatar}}" class="useravatar">
+									@else
+									<img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="useravatar">
+									@endif
 								</p>
 								<div class="wrap-comment">
 									<textarea cols="25" rows="10"></textarea>
