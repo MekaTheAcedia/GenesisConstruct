@@ -55,6 +55,8 @@ Route::post('/albumuploader', ['as' => 'albumuploader', 'uses' => 'MasterControl
 
 Route::get('/comment', ['as' => 'comment', 'uses' => 'MasterController@comment']);
 
+Route::get('/addfavorite', ['as' => 'addfavorite', 'uses' => 'MasterController@addfavorite']);
+
 Route::post('/produceruploader', ['as' => 'produceruploader', 'uses' => 'MasterController@produceruploader']);
 
 Route::group(['middleware' => 'auth'], function () {

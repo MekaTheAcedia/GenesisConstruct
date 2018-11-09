@@ -668,8 +668,27 @@ list-style: none;
 						</ul>
 					</div>
 				</div>
-				<div class="row col-md-10" style="margin: 0px 0px 25px -45px;">
-					<div class="btn btn-danger" style="margin-right: 10px;background-color: #E8567B;border-color: #E8567B;"><i class=" glyphicon glyphicon-heart"></i> Favorite</div>
+				<div class="row col-md-10 favorite-outer" style="margin: 0px 0px 25px -45px;">
+					@php
+						$favorcheck = false;
+					@endphp
+						@foreach ($favorite as $item2)
+							@if ($item2->songid == $item->songid)
+							@php
+								$favorcheck = true;
+								break;
+							@endphp
+						@else
+							@php
+								$favorcheck = false;
+							@endphp
+						@endif
+					@endforeach
+					@if ($favorcheck == true)
+					<button class="btn btn-danger" style="margin-right: 10px;background-color: #E8567B;border-color: #E8567B;"><i class=" glyphicon glyphicon-heart"></i> Favored</button>
+					@elseif (Auth::check())
+					<button class="btn btn-danger favorite-button" style="margin-right: 10px;background-color: #E8567B;border-color: #E8567B;"><i class=" glyphicon glyphicon-heart"></i> Favorite</button>
+					@endif
 					@foreach ($user as $item2)
 					@if ($item2->id == Auth::id())
 					<div class="btn btn-success"><i class="glyphicon glyphicon-wrench"></i> Edit</div>
@@ -735,17 +754,19 @@ list-style: none;
 							<ul class="list-comment">
 								@foreach ($comments as $item2)
 								<li class="item-comment row">
-									<a href="{{URL::route('user', $item2->id)}}" class="thumb-user">
+									<a href="{{URL::route('user', $item2->id)}}" class="thumb-user col-sm-2">
 										<img src="{{$item2->avatar}}" class="user-avatar">
 									</a>
-									<a href="{{URL::route('user', $item2->id)}}" target="blank" class="username" style="word-break: break-word;">{{$item2->name}}</a>
-									<div class="post-comment comment" style="word-break: break-word;">
-										<p class="fn-content">{{$item2->message}}</p>
+									<div class="col-sm-10">
+										<a href="{{URL::route('user', $item2->id)}}" target="blank" class="username" style="word-break: break-word;">{{$item2->name}}</a>
+										<div class="post-comment comment" style="word-break: break-word;">
+											<p class="fn-content">{{$item2->message}}</p>
+										</div>
+										<div class="func-comment">
+											<div class="reply"><i class="glyphicon glyphicon-ban-circle"></i> Report</div>
+										</div>
+										<span class="time-comment">{{$item2->uploadtime}}</span>
 									</div>
-									<div class="func-comment">
-										<div class="reply"><i class="glyphicon glyphicon-ban-circle"></i> Report</div>
-									</div>
-									<span class="time-comment">{{$item2->uploadtime}}</span>
 								</li>
 								@endforeach
 							</ul>
@@ -908,14 +929,35 @@ $(document).ready(
 			type: 'GET',
 			url: '{{URL::route("comment")}}',
 			data: {
-			message: comment,
-			songid: '{{$song[0]->songid}}',
+				message: comment,
+				songid: '{{$song[0]->songid}}',
 			},
 			success: function (response) {
 				$("#comment-field").val("");
-				}
+				$('.list-comment').prepend('<div class="alert alert-success alert-dismissable">Comment uploaded</div>');
+				$('.alert').delay(3000).fadeOut();
+			}
 		});
 		}
+	})
+)
+</script>
+<script type="text/javascript">
+$(document).ready(
+	$('.favorite-button').click(function (e) {
+		e.preventDefault();
+		$.ajax ({
+			type: 'GET',
+			url: '{{URL::route("addfavorite")}}',
+			data: {
+				songid: '{{$song[0]->songid}}',
+			},
+			success: function (response) {
+				$('.favorite-button').remove();
+				$('.favorite-outer').prepend('<button class="btn btn-danger" style="margin-right: 10px;background-color: #E8567B;border-color: #E8567B;"><i class=" glyphicon glyphicon-heart"></i> Favored</button>');
+
+			}
+		})
 	})
 )
 </script>

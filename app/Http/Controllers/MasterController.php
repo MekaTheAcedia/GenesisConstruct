@@ -177,6 +177,7 @@ class MasterController extends Controller {
 			->where('comments.songid', $songid)
 			->orderBy('commentid', '')
 			->get();
+		$favorite = favorite::where('userid', Auth::id())->get();
 		if ($albumid != 0) {
 			$nextsong = songs::orderBy('songid')->where('songid', '>', $songid)->where('albumid', $albumid)->paginate(1);
 			$prevsong = songs::orderBy('songid', '')->where('songid', '<', $songid)->where('albumid', $albumid)->paginate(1);
@@ -220,6 +221,7 @@ class MasterController extends Controller {
 			'newsongs' => $newsongs,
 			'discover' => $discover,
 			'comments' => $comments,
+			'favorite' => $favorite,
 		]);
 	}
 
@@ -473,6 +475,15 @@ class MasterController extends Controller {
 			'songid' => $songid,
 			'message' => $message,
 			'uploadtime' => $uploadtime,
+		]);
+	}
+
+	public function addfavorite(Request $request) {
+		$songid = $request->songid;
+		$userid = Auth::id();
+		$favorite = favorite::insert([
+			'userid' => $userid,
+			'songid' => $songid,
 		]);
 	}
 }
