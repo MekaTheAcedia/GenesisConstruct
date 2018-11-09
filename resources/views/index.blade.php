@@ -99,13 +99,19 @@
 					<div class="clearfix"> </div>
 				</div>
 				@foreach($discover as $item)
-				@if ($songCount % 4 != 0)
-				<div class="col-md-3 content-grid">
-					<a href="songs/{{$item->songid}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
-				</div>
+				@if ($songCount == 1 || $songCount == 5)
+				<div class="row" style="margin-left: 0;margin-right: 0">
+					<div class="col-md-3 content-grid">
+						<a href="songs/{{$item->songid}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
+					</div>
+				@elseif ($songCount %4 != 0)
+					<div class="col-md-3 content-grid">
+						<a href="songs/{{$item->songid}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
+					</div>
 				@else
-				<div class="col-md-3 content-grid last-grid">
-					<a href="songs/{{$item->songid}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
+					<div class="col-md-3 content-grid last-grid">
+						<a href="songs/{{$item->songid}}"><img src="{{$item->avatar}}" title="{{$item->title}}"></a>
+					</div>
 				</div>
 				@endif
 				<?php $songCount++?>
@@ -425,7 +431,9 @@
 			@foreach($newalbums as $item)
 			<li>
 				<a href="{{URL::route('albums', $item->albumid)}}"><img src="{{$item->thumbnail}}" alt=""/></a>
-				<div class="slide-title"><h4>{{$item->title}}</h4></div>
+				<div  class="slide-title">
+					<h4 style="font-size: 0.9em !important;font-family: Open Sans,segoe ui,Helvetica,Arial,sans-serif !important;">{{$item->title}}</h4>
+				</div>
 				<div class="date-city">
 					<h5>{{$item->releasedate}}</h5>
 					<div class="buy-tickets">

@@ -30,7 +30,7 @@ class MasterController extends Controller {
 	}
 
 	public function browse(Request $request) {
-		$album = albums::whereNotIn('albumid', [0])->orderBy('releasedate', '')->paginate(24);
+		$album = albums::whereNotIn('albumid', [0])->orderBy('releasedate', '')->paginate(18);
 		$discover = albums::whereNotIn('albumid', [0])->inRandomOrder()->paginate(12);
 		return view('browse')->with([
 			'album' => $album,

@@ -28,12 +28,46 @@
 					<h3 class="tittle">New Releses <span class="new">New</span></h3>
 					<div class="clearfix"> </div>
 				</div>
+				@php
+				$songCount = 1;
+				@endphp
 				@foreach ($album as $item)
-				<div class="col-md-3 browse-grid">
-					<a  href="{{URL::route('albums', $item->albumid)}}"><img src="{{$item->thumbnail}}" title="{{$item->title}}"></a>
-					<a href="{{URL::route('albums', $item->albumid)}}"></a>
-					<a class="sing" href="{{URL::route('albums', $item->albumid)}}">{{$item->title}}</a>
+				@if ($songCount == 1 || $songCount == 7 || $songCount == 13)
+				<div class="row" style="margin-left: 0;margin-right: 0">
+					<div class="col-md-3 browse-grid">
+						<a  href="{{URL::route('albums', $item->albumid)}}"><img src="{{$item->thumbnail}}" title="{{$item->title}}"></a>
+						<a href="{{URL::route('albums', $item->albumid)}}"></a>
+						<a class="sing"
+							style="font-size: 0.9em !important;font-family: Open Sans,segoe ui,Helvetica,Arial,sans-serif !important;"
+							href="{{URL::route('albums', $item->albumid)}}">
+							{{$item->title}}
+						</a>
+					</div>
+				@elseif ($songCount % 6 != 0)
+					<div class="col-md-3 browse-grid">
+						<a  href="{{URL::route('albums', $item->albumid)}}"><img src="{{$item->thumbnail}}" title="{{$item->title}}"></a>
+						<a href="{{URL::route('albums', $item->albumid)}}"></a>
+						<a class="sing"
+							style="font-size: 0.9em !important;font-family: Open Sans,segoe ui,Helvetica,Arial,sans-serif !important;"
+							href="{{URL::route('albums', $item->albumid)}}">
+							{{$item->title}}
+						</a>
+					</div>
+				@else
+					<div class="col-md-3 browse-grid">
+						<a  href="{{URL::route('albums', $item->albumid)}}"><img src="{{$item->thumbnail}}" title="{{$item->title}}"></a>
+						<a href="{{URL::route('albums', $item->albumid)}}"></a>
+						<a class="sing"
+							style="font-size: 0.9em !important;font-family: Open Sans,segoe ui,Helvetica,Arial,sans-serif !important;"
+							href="{{URL::route('albums', $item->albumid)}}">
+							{{$item->title}}
+						</a>
+					</div>
 				</div>
+				@endif
+				@php
+				$songCount++
+				@endphp
 				@endforeach
 				<div class="clearfix"> </div>
 			</div>

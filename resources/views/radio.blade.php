@@ -33,15 +33,52 @@
 						<div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
 							<div class="browse-inner">
 								<!-- /agileits -->
+								@php
+								$songCount = 1;
+								@endphp
 								@foreach ($songs as $item)
-								<div class="col-md-3 artist-grid">
-									<a  href="{{URL::route('songs', $item->songid)}}">
-										<img src="{{$item->avatar}}" title="{{$item->title}}">
-									</a>
-									<a href="{{URL::route('songs', $item->songid)}}">
-									</a>
-									<a class="art" href="{{URL::route('songs', $item->songid)}}">{{$item->title}}</a>
+								@if ($songCount == 1 || $songCount == 7 || $songCount == 13 || $songCount == 19)
+								<div class="row" style="margin-left: 0;margin-right: 0">
+									<div class="col-md-3 artist-grid" style="word-break: break-word">
+										<a  href="{{URL::route('songs', $item->songid)}}">
+											<img src="{{$item->avatar}}" title="{{$item->title}}">
+										</a>
+										<a href="{{URL::route('songs', $item->songid)}}"></a>
+										<a class="art"
+											style="font-size: 0.9em !important;font-family: Open Sans,segoe ui,Helvetica,Arial,sans-serif !important;"
+											href="{{URL::route('songs', $item->songid)}}">
+											{{$item->title}}
+										</a>
+									</div>
+								@elseif ($songCount % 6 != 0)
+									<div class="col-md-3 artist-grid" style="word-break: break-word">
+										<a  href="{{URL::route('songs', $item->songid)}}">
+											<img src="{{$item->avatar}}" title="{{$item->title}}">
+										</a>
+										<a href="{{URL::route('songs', $item->songid)}}"></a>
+										<a class="art"
+											style="font-size: 0.9em !important;font-family: Open Sans,segoe ui,Helvetica,Arial,sans-serif !important;"
+											href="{{URL::route('songs', $item->songid)}}">
+											{{$item->title}}
+										</a>
+									</div>
+								@else
+									<div class="col-md-3 artist-grid" style="word-break: break-word">
+										<a  href="{{URL::route('songs', $item->songid)}}">
+											<img src="{{$item->avatar}}" title="{{$item->title}}">
+										</a>
+										<a href="{{URL::route('songs', $item->songid)}}"></a>
+										<a class="art"
+											style="font-size: 0.9em !important;font-family: Open Sans,segoe ui,Helvetica,Arial,sans-serif !important;"
+											href="{{URL::route('songs', $item->songid)}}">
+											{{$item->title}}
+										</a>
+									</div>
 								</div>
+								@endif
+								@php
+								$songCount++
+								@endphp
 								@endforeach
 								<div class="clearfix"></div>
 								{{$songs->links()}}
