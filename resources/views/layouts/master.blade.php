@@ -52,12 +52,6 @@
 							</a>
 						</li>
 						<li>
-							<a href="{{URL::route('radio')}}">
-								<i class="lnr lnr-users"></i>
-								<span>Artists</span>
-							</a>
-						</li>
-						<li>
 							<a href="{{URL::route('browse')}}">
 								<i class="lnr lnr-music-note"></i>
 								<span>Albums</span>
