@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\albums;
+use App\Models\comments;
 use App\Models\favorite;
 use App\Models\producer;
 use App\Models\songs;
@@ -172,8 +173,9 @@ class MasterController extends Controller {
 			->inRandomOrder()
 			->paginate(3);
 		$comments = user::join('comments', 'comments.userid', '=', 'users.id')
-			->select('users.*', 'comments.message')
+			->select('users.*', 'comments.message', 'comments.uploadtime')
 			->where('comments.songid', $songid)
+			->orderBy('commentid', '')
 			->get();
 		if ($albumid != 0) {
 			$nextsong = songs::orderBy('songid')->where('songid', '>', $songid)->where('albumid', $albumid)->paginate(1);
@@ -462,6 +464,15 @@ class MasterController extends Controller {
 	}
 
 	public function comment(Request $request) {
-
+		$message = $request->message;
+		$userid = Auth::id();
+		$songid = $request->songid;
+		$uploadtime = date("Y-m-d H:i:s");
+		$comment = comments::insert([
+			'userid' => $userid,
+			'songid' => $songid,
+			'message' => $message,
+			'uploadtime' => $uploadtime,
+		]);
 	}
 }

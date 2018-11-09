@@ -461,9 +461,10 @@ list-style: none;
 	font-family: inherit;
 	border-radius: 2px;
 }
-.button-submit.btn-dark-blue {
-	background: #721799;
+.btn-dark-blue {
+	background: #800080;
 	font-size: 14px;
+	color: #F9F9F9;
 }
 .pull-right {
 	float: right !important;
@@ -575,10 +576,10 @@ list-style: none;
 					<div class="song-info row">
 						<div class="song-name" style="word-break: break-word;">
 							<h1 class="song-title">
-								{{$item->title}} -
-								@foreach ($producer as $item2)
-								<a href="{{URL::route('producer', $item2->producerid)}}" class="vocal">{{$item2->name}}</a>
-								@endforeach
+							{{$item->title}} -
+							@foreach ($producer as $item2)
+							<a href="{{URL::route('producer', $item2->producerid)}}" class="vocal">{{$item2->name}}</a>
+							@endforeach
 							</h1>
 						</div>
 						<div class="row" style="margin-right: 0; margin-left: 0">
@@ -637,31 +638,29 @@ list-style: none;
 									<p id="timer">0:00</p>
 									<div class="controls">
 										<span class="expend">
-											<svg class="step-backward" viewBox="0 0 25 25" xml:space="preserve">
-											<g><polygon points="4.9,4.3 9,4.3 9,11.6 21.4,4.3 21.4,20.7 9,13.4 9,20.7 4.9,20.7"/></g>
-										</svg>
-									</span>
-									<svg id="play" viewBox="0 0 25 25" xml:space="preserve">
-										<defs>
-										<rect x="-49.5" y="-132.9" width="446.4" height="366.4"/>
-										</defs>
-										<g>
-											<circle fill="none" cx="12.5" cy="12.5" r="10.8"/>
-											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.7,6.9V18c0,0,0.2,1.4,1.8,0l8.1-4.8c0,0,1.2-1.1-1-2L9.8,6.5 C9.8,6.5,9.1,6,8.7,6.9z"/>
-										</g>
-									</svg>
-									<svg id="pause" viewBox="0 0 25 25" xml:space="preserve">
-										<g>
-											<rect x="6" y="4.6" width="3.8" height="15.7"/>
-											<rect x="14" y="4.6" width="3.9" height="15.7"/>
-										</g>
-									</svg>
-									<span class="expend">
-										<svg class="step-foreward" viewBox="0 0 25 25" xml:space="preserve">
+											@foreach ($prevsong as $item2)
+											<a href="{{URL::route('songs', $item2->songid)}}"><svg class="step-backward" viewBox="0 0 25 25" xml:space="preserve"><g><polygon points="4.9,4.3 9,4.3 9,11.6 21.4,4.3 21.4,20.7 9,13.4 9,20.7 4.9,20.7"/></g></svg></a>
+											@endforeach
+										</span>
+										<svg id="play" viewBox="0 0 25 25" xml:space="preserve">
+											<defs>
+											<rect x="-49.5" y="-132.9" width="446.4" height="366.4"/>
+											</defs>
 											<g>
-												<polygon points="20.7,4.3 16.6,4.3 16.6,11.6 4.3,4.3 4.3,20.7 16.7,13.4 16.6,20.7 20.7,20.7"/>
-												</g>
-											</svg>
+												<circle fill="none" cx="12.5" cy="12.5" r="10.8"/>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M8.7,6.9V18c0,0,0.2,1.4,1.8,0l8.1-4.8c0,0,1.2-1.1-1-2L9.8,6.5 C9.8,6.5,9.1,6,8.7,6.9z"/>
+											</g>
+										</svg>
+										<svg id="pause" viewBox="0 0 25 25" xml:space="preserve">
+											<g>
+												<rect x="6" y="4.6" width="3.8" height="15.7"/>
+												<rect x="14" y="4.6" width="3.9" height="15.7"/>
+											</g>
+										</svg>
+										<span class="expend">
+											@foreach ($nextsong as $item2)
+											<a href="{{URL::route('songs', $item2->songid)}}"><svg class="step-foreward" viewBox="0 0 25 25" xml:space="preserve"><g><polygon points="20.7,4.3 16.6,4.3 16.6,11.6 4.3,4.3 4.3,20.7 16.7,13.4 16.6,20.7 20.7,20.7"/></g></svg></a>
+											@endforeach
 										</span>
 									</div>
 								</div>
@@ -669,14 +668,13 @@ list-style: none;
 						</ul>
 					</div>
 				</div>
-
 				<div class="row col-md-10" style="margin: 0px 0px 25px -45px;">
-						<div class="btn btn-danger" style="margin-right: 10px;background-color: #E8567B;border-color: #E8567B;"><i class=" glyphicon glyphicon-heart"></i> Favorite</div>
-						@foreach ($user as $item2)
-						@if ($item2->id == Auth::id())
-						<div class="btn btn-success"><i class="glyphicon glyphicon-wrench"></i> Edit</div>
-						@endif
-						@endforeach
+					<div class="btn btn-danger" style="margin-right: 10px;background-color: #E8567B;border-color: #E8567B;"><i class=" glyphicon glyphicon-heart"></i> Favorite</div>
+					@foreach ($user as $item2)
+					@if ($item2->id == Auth::id())
+					<div class="btn btn-success"><i class="glyphicon glyphicon-wrench"></i> Edit</div>
+					@endif
+					@endforeach
 				</div>
 				<div class="row" style="margin: -30px;">
 					<div class="producer-info row" style="margin-bottom: 20px">
@@ -718,7 +716,7 @@ list-style: none;
 					<div class="row col-md-11" style="margin-left: 0px;">
 						<div class="box-comment">
 							<h3 class="title-section">
-								Comment ({{count($comments)}})
+							Comment ({{count($comments)}})
 							</h3>
 							<form action="{{URL::route('comment')}}" method="POST" class="form-comment">
 								{{csrf_field()}}
@@ -730,24 +728,24 @@ list-style: none;
 									@endif
 								</p>
 								<div class="wrap-comment">
-									<textarea cols="25" rows="10"></textarea>
-									<button name="btn-submit" type="submit" class="button-submit btn-dark-blue pull-right">Submit</button>
+									<textarea cols="25" rows="10" id="comment-field"></textarea>
+									<button class="btn-dark-blue pull-right btn" id="comment-button">Submit</button>
 								</div>
 							</form>
 							<ul class="list-comment">
 								@foreach ($comments as $item2)
-								<li class="item-comment">
+								<li class="item-comment row">
 									<a href="{{URL::route('user', $item2->id)}}" class="thumb-user">
 										<img src="{{$item2->avatar}}" class="user-avatar">
 									</a>
+									<a href="{{URL::route('user', $item2->id)}}" target="blank" class="username" style="word-break: break-word;">{{$item2->name}}</a>
 									<div class="post-comment comment" style="word-break: break-word;">
-										<a href="{{URL::route('user', $item2->id)}}" target="blank" class="username">{{$item2->name}}</a>
 										<p class="fn-content">{{$item2->message}}</p>
-										<div class="func-comment">
-											<div class="reply"><i class="glyphicon glyphicon-ban-circle"></i> Report</div>
-										</div>
-										<span class="time-comment">{{$item2->uploaddate}}</span>
 									</div>
+									<div class="func-comment">
+										<div class="reply"><i class="glyphicon glyphicon-ban-circle"></i> Report</div>
+									</div>
+									<span class="time-comment">{{$item2->uploadtime}}</span>
 								</li>
 								@endforeach
 							</ul>
@@ -772,9 +770,9 @@ list-style: none;
 								</h3>
 								<div class="next-idol">
 									<h4 class="idol-title">
-										@foreach ($nextproducer as $item3)
-										<a href="{{URL::route('producer', $item3->producerid)}}" class="idol-link">{{$item3->name}}</a>
-										@endforeach
+									@foreach ($nextproducer as $item3)
+									<a href="{{URL::route('producer', $item3->producerid)}}" class="idol-link">{{$item3->name}}</a>
+									@endforeach
 									</h4>
 								</div>
 							</li>
@@ -801,9 +799,9 @@ list-style: none;
 								</h3>
 								<div class="next-idol">
 									<h4 class="idol-title">
-										@foreach ($prevproducer as $item3)
-										<a href="{{URL::route('producer', $item3->producerid)}}" class="idol-link">{{$item3->name}}</a>
-										@endforeach
+									@foreach ($prevproducer as $item3)
+									<a href="{{URL::route('producer', $item3->producerid)}}" class="idol-link">{{$item3->name}}</a>
+									@endforeach
 									</h4>
 								</div>
 							</li>
@@ -818,10 +816,10 @@ list-style: none;
 				@foreach ($newsongs as $item2)
 				<div class="row next-song" style="margin-bottom: 20px;margin: 0;box-sizing: border-box;padding: 0;position: relative;">
 					<h3 class="title-song">New</h3>
-				@php
-				break;
-				@endphp
-				@endforeach
+					@php
+					break;
+					@endphp
+					@endforeach
 					@foreach ($newsongs as $item2)
 					<div class="box-content">
 						<ul class="list-element">
@@ -847,10 +845,10 @@ list-style: none;
 				@foreach ($discover as $item2)
 				<div class="row next-song" style="margin-bottom: 20px;margin: 0;box-sizing: border-box;padding: 0;position: relative;">
 					<h3 class="title-song">Discover</h3>
-				@php
-				break;
-				@endphp
-				@endforeach
+					@php
+					break;
+					@endphp
+					@endforeach
 					@foreach ($discover as $item2)
 					<div class="box-content">
 						<ul class="list-element">
@@ -899,5 +897,26 @@ $(".comment").shorten({
 	"more"  : "More",
 	"less"  : " Less"
 })
+</script>
+<script type="text/javascript">
+$(document).ready(
+	$('#comment-button').click(function (e) {
+		e.preventDefault();
+		var comment = $('#comment-field').val();
+		if(comment) {
+		$.ajax ({
+			type: 'GET',
+			url: '{{URL::route("comment")}}',
+			data: {
+			message: comment,
+			songid: '{{$song[0]->songid}}',
+			},
+			success: function (response) {
+				$("#comment-field").val("");
+				}
+		});
+		}
+	})
+)
 </script>
 @stop

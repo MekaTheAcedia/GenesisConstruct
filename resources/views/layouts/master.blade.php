@@ -102,8 +102,8 @@
 										<p>Download and Avail Special Songs Videos and Audios.</p>
 										<div class="app-devices">
 											<h5>Gets the app from</h5>
-											<a href="#"><img src="img/1.png" alt=""></a>
-											<a href="#"><img src="img/2.png" alt=""></a>
+											<a href="#"><img src="{{asset('img/1.png')}}" alt=""></a>
+											<a href="#"><img src="{{asset('img/2.png')}}" alt=""></a>
 											<div class="clearfix"> </div>
 										</div>
 									</div>
