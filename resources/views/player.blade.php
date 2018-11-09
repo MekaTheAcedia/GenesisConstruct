@@ -737,20 +737,26 @@ list-style: none;
 							<h3 class="title-section">
 							Comment ({{count($comments)}})
 							</h3>
+							@if (Auth::check())
 							<form action="{{URL::route('comment')}}" method="POST" class="form-comment">
 								{{csrf_field()}}
 								<p class="comment-avatar">
-									@if (Auth::check())
 									<img src="{{Auth::user()->avatar}}" class="useravatar">
-									@else
-									<img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="useravatar">
-									@endif
 								</p>
 								<div class="wrap-comment">
 									<textarea cols="25" rows="10" id="comment-field"></textarea>
 									<button class="btn-dark-blue pull-right btn" id="comment-button">Submit</button>
 								</div>
 							</form>
+							@else
+							<p class="comment-avatar">
+								<img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="useravatar">
+							</p>
+							<div class="wrap-comment">
+								<a href="{{route('login')}}"><textarea cols="25" rows="10" id="comment-field" disabled="">You Have To Login To Use The Comment Function</textarea></a>
+								<a href="{{route('login')}}"><button class="btn-dark-blue pull-right btn">Login</button></a>
+							</div>
+							@endif
 							<ul class="list-comment">
 								@foreach ($comments as $item2)
 								<li class="item-comment row">
