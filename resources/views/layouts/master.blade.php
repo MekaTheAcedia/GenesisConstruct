@@ -5,22 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="Genesis Construct" />
-		<!-- Bootstrap Core CSS -->
 		<link href="{{asset('css/bootstrap.css')}}" rel='stylesheet' type='text/css'/>
-		<!-- Custom CSS -->
 		<link href="{{asset('css/style.css')}}" rel='stylesheet' type='text/css'/>
-		<!-- Graph CSS -->
 		<link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
-		<!-- jQuery -->
-		<!-- lined-icons -->
 		<link rel="stylesheet" href="{{asset('css/icon-font.css')}}" type='text/css' />
-		<!-- //lined-icons -->
-		<!-- Meters graphs -->
 		<script src="{{asset('js/jquery-2.1.4.js')}}"></script>
 		<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
 	</head>
-	<!-- /w3layouts-agile -->
 	<body class="sticky-header left-side-collapsed">
 		<section>
 			<!-- left side start-->
@@ -79,7 +71,6 @@
 					<!--sidebar nav end-->
 				</div>
 			</div>
-			<!-- /w3l-agile -->
 			<!-- left side end-->
 			<!-- app-->
 			<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -112,8 +103,6 @@
 				</div>
 			</div>
 			<!-- //app-->
-			<!-- /w3l-agile -->
-			<!-- /w3layouts-agile -->
 			<!-- main content start-->
 			<div class="main-content">
 				<!-- header-starts -->
@@ -138,7 +127,6 @@
 								new UISearch( document.getElementById( 'sb-search' ) );
 							</script>
 							<!-- //search-scripts -->
-							<!---->
 							<div class="col-md-4 player">
 								<div class="audio-player">
 								</div>
@@ -213,8 +201,6 @@
 				</div>
 				<!--notification menu end -->
 				<!-- //header-ends -->
-				<!-- /w3l-agile -->
-				<!-- //header-ends -->
 				@yield('content')
 				<div class="footer">
 					<div class="footer-grid">
@@ -271,7 +257,6 @@
 					<div class="clearfix"> </div>
 				</div>
 			</div>
-			<!-- /w3l-agile -->
 			<!-- main content end-->
 		</section>
 		<script src="{{asset('js/jquery.nicescroll.js')}}"></script>

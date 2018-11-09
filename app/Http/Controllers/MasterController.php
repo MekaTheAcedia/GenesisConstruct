@@ -31,7 +31,7 @@ class MasterController extends Controller {
 	}
 
 	public function browse(Request $request) {
-		$album = albums::whereNotIn('albumid', [0])->orderBy('releasedate', '')->paginate(18);
+		$album = albums::whereNotIn('albumid', [0])->orderBy('albumid', '')->paginate(18);
 		$discover = albums::whereNotIn('albumid', [0])->inRandomOrder()->paginate(12);
 		return view('browse')->with([
 			'album' => $album,
@@ -44,7 +44,7 @@ class MasterController extends Controller {
 	}
 
 	public function radio(Request $request) {
-		$songs = songs::orderBy('uploaddate', '')->paginate(24);
+		$songs = songs::orderBy('songid', '')->paginate(24);
 		$discover = songs::inRandomOrder()->paginate(12);
 		return view('radio')->with([
 			'songs' => $songs,
@@ -419,7 +419,7 @@ class MasterController extends Controller {
 		$favorite = songs::join('favorite', 'songs.songid', '=', 'favorite.songid')
 			->select('songs.*', 'favorite.userid')
 			->where('favorite.userid', Auth::id())
-			->get();
+			->paginate(30);
 		return view('favorite')->with([
 			'favorite' => $favorite,
 		]);
